@@ -4,7 +4,7 @@
  * Programmatic guide and avis pages are generated at request time using the business API.
  */
 
-export type ArticleType = "static" | "city_guide" | "avis";
+type ArticleType = "static" | "city_guide" | "avis";
 
 export interface CityLink {
   label: string;
@@ -13,7 +13,7 @@ export interface CityLink {
   emoji?: string;
 }
 
-export interface BlogArticle {
+interface BlogArticle {
   slug: string;
   type: ArticleType;
   locale?: "fr" | "ar" | "en";

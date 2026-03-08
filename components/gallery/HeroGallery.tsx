@@ -10,7 +10,7 @@ const THUMB_SIZES = "(min-width: 768px) 33vw, 280px";
 const THUMB_BTN_CN =
   "relative h-full min-h-0 overflow-hidden rounded-xl focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-inset focus:ring-offset-2 group";
 
-export interface GalleryLayout {
+interface GalleryLayout {
   showSide: boolean;
   thumbIndices: number[];
   gridCols: number;
@@ -24,7 +24,7 @@ export interface GalleryLayout {
  * - 3 → hero + 2 thumbs + View all (2 rows, 2 cols).
  * - 4+ → hero + 3 thumbs + View all (2 rows, 2 cols).
  */
-export function getGalleryLayout(
+function getGalleryLayout(
   imageCount: number,
   maxSideThumbnails: number = 3
 ): GalleryLayout {

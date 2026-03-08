@@ -5,7 +5,7 @@
 
 import { getBusinessCityDisplay } from "@/lib/utils";
 
-export const SEO_KEYWORDS = {
+const SEO_KEYWORDS = {
   // Core platform keywords
   core: [
     "restaurant reservation",
@@ -102,7 +102,7 @@ export const SEO_KEYWORDS = {
 /**
  * Generate structured data for local business
  */
-export function generateLocalBusinessSchema(business: {
+function generateLocalBusinessSchema(business: {
   name: string;
   description: string;
   address: string;
@@ -154,7 +154,7 @@ export function generateLocalBusinessSchema(business: {
 /**
  * Generate breadcrumb structured data
  */
-export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
+function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

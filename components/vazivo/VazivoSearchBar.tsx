@@ -30,25 +30,31 @@ export function VazivoSearchBar() {
     router.push(`/search?${params.toString()}`);
   };
 
+  const labelClass =
+    "flex items-center gap-2 text-white/90 text-xs font-medium mb-1.5 [&_svg]:text-white/85 [&_svg]:shrink-0";
+  const inputClass =
+    "w-full bg-transparent border-0 p-0 text-white font-medium text-sm placeholder:text-white/70 focus:ring-0 cursor-pointer [color-scheme:dark]";
+
   return (
     <div
       className={cn(
-        "rounded-2xl bg-white/98 backdrop-blur-sm border border-white/30 shadow-vazivo overflow-hidden transition-all duration-300",
-        focused && "ring-2 ring-vazivo-orange/50 shadow-vazivo-hover"
+        "rounded-2xl bg-black/50 backdrop-blur-md border border-white/25 shadow-vazivo overflow-hidden transition-all duration-300",
+        focused && "ring-2 ring-white/40 shadow-vazivo-hover"
       )}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 divide-y md:divide-y-0 md:divide-x divide-neutral-100">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 divide-y md:divide-y-0 md:divide-x divide-white/20">
         <div className="relative p-3 sm:p-4">
-          <label className="flex items-center gap-2 text-neutral-500 text-xs font-medium mb-1.5">
+          <label className={labelClass}>
             <MapPin className="h-3.5 w-3.5" />
             Location
           </label>
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full bg-transparent border-0 p-0 text-neutral-900 font-medium text-sm focus:ring-0 cursor-pointer"
+            className={inputClass}
+            aria-label="Location"
           >
             <option value="">Where?</option>
             {CITIES.map((c) => (
@@ -57,14 +63,15 @@ export function VazivoSearchBar() {
           </select>
         </div>
         <div className="relative p-3 sm:p-4">
-          <label className="flex items-center gap-2 text-neutral-500 text-xs font-medium mb-1.5">
+          <label className={labelClass}>
             <UtensilsCrossed className="h-3.5 w-3.5" />
             Cuisine
           </label>
           <select
             value={cuisine}
             onChange={(e) => setCuisine(e.target.value)}
-            className="w-full bg-transparent border-0 p-0 text-neutral-900 font-medium text-sm focus:ring-0 cursor-pointer"
+            className={inputClass}
+            aria-label="Cuisine"
           >
             <option value="">Any cuisine</option>
             {CUISINES.map((c) => (
@@ -73,7 +80,7 @@ export function VazivoSearchBar() {
           </select>
         </div>
         <div className="relative p-3 sm:p-4">
-          <label className="flex items-center gap-2 text-neutral-500 text-xs font-medium mb-1.5">
+          <label className={labelClass}>
             <Calendar className="h-3.5 w-3.5" />
             Date
           </label>
@@ -82,18 +89,20 @@ export function VazivoSearchBar() {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             min={new Date().toISOString().slice(0, 10)}
-            className="w-full bg-transparent border-0 p-0 text-neutral-900 font-medium text-sm focus:ring-0"
+            className={inputClass}
+            aria-label="Date"
           />
         </div>
         <div className="relative p-3 sm:p-4">
-          <label className="flex items-center gap-2 text-neutral-500 text-xs font-medium mb-1.5">
+          <label className={labelClass}>
             <Clock className="h-3.5 w-3.5" />
             Time
           </label>
           <select
             value={time}
             onChange={(e) => setTime(e.target.value)}
-            className="w-full bg-transparent border-0 p-0 text-neutral-900 font-medium text-sm focus:ring-0 cursor-pointer"
+            className={inputClass}
+            aria-label="Time"
           >
             <option value="">Any time</option>
             {TIME_SLOTS.map((t) => (
@@ -102,14 +111,15 @@ export function VazivoSearchBar() {
           </select>
         </div>
         <div className="relative p-3 sm:p-4">
-          <label className="flex items-center gap-2 text-neutral-500 text-xs font-medium mb-1.5">
+          <label className={labelClass}>
             <Users className="h-3.5 w-3.5" />
             Guests
           </label>
           <select
             value={guests}
             onChange={(e) => setGuests(e.target.value === "" ? "" : Number(e.target.value))}
-            className="w-full bg-transparent border-0 p-0 text-neutral-900 font-medium text-sm focus:ring-0 cursor-pointer"
+            className={inputClass}
+            aria-label="Guests"
           >
             <option value="">Any</option>
             {GUESTS.map((n) => (

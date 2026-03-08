@@ -6,7 +6,7 @@ import type { OpeningHoursInterval } from "@/types";
 
 const STEP_MINUTES = 15;
 
-export interface TimeRangeInputProps {
+interface TimeRangeInputProps {
   value: OpeningHoursInterval;
   onChange: (value: OpeningHoursInterval) => void;
   onRemove?: () => void;

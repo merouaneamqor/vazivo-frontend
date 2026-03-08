@@ -75,7 +75,7 @@ export function useAdminUser(id: number) {
   });
 }
 
-export function useUpdateAdminUser() {
+function useUpdateAdminUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({ id, data }: { id: number; data: any }) => adminService.updateUser(id, data),
@@ -88,7 +88,7 @@ export function useUpdateAdminUser() {
   });
 }
 
-export function useDeleteAdminUser() {
+function useDeleteAdminUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => adminService.deleteUser(id),
@@ -116,7 +116,7 @@ export function useAdminProvider(id: number) {
   });
 }
 
-export function useCreateAdminProvider() {
+function useCreateAdminProvider() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: any) => adminService.createProvider(data),
@@ -128,7 +128,7 @@ export function useCreateAdminProvider() {
   });
 }
 
-export function useUpdateAdminProvider() {
+function useUpdateAdminProvider() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({ id, data }: { id: number; data: any }) => adminService.updateProvider(id, data),
@@ -141,7 +141,7 @@ export function useUpdateAdminProvider() {
   });
 }
 
-export function useApproveAdminProvider() {
+function useApproveAdminProvider() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => adminService.approveProvider(id),
@@ -194,7 +194,7 @@ export function useAdminCategories() {
   });
 }
 
-export function useCreateAdminCategory() {
+function useCreateAdminCategory() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: any) => adminService.createCategory(data),
@@ -206,7 +206,7 @@ export function useCreateAdminCategory() {
   });
 }
 
-export function useUpdateAdminCategory() {
+function useUpdateAdminCategory() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({ id, data }: { id: number; data: any }) => adminService.updateCategory(id, data),
@@ -218,7 +218,7 @@ export function useUpdateAdminCategory() {
   });
 }
 
-export function useDeleteAdminCategory() {
+function useDeleteAdminCategory() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => adminService.deleteCategory(id),
@@ -238,7 +238,7 @@ export function useAdminCities() {
   });
 }
 
-export function useCreateAdminCity() {
+function useCreateAdminCity() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: any) => adminService.createCity(data),
@@ -282,7 +282,7 @@ export function useAdminClaimRequest(id: number) {
   });
 }
 
-export function useApproveClaimRequest() {
+function useApproveClaimRequest() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => adminService.approveClaimRequest(id),
@@ -295,7 +295,7 @@ export function useApproveClaimRequest() {
   });
 }
 
-export function useRejectClaimRequest() {
+function useRejectClaimRequest() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => adminService.rejectClaimRequest(id),
@@ -325,7 +325,7 @@ export function useAdminReports() {
 }
 
 // Finance
-export function useAdminFinance() {
+function useAdminFinance() {
   return useQuery({
     queryKey: queryKeys.finance(),
     queryFn: () => adminService.getEarnings(),

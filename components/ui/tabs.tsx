@@ -186,4 +186,4 @@ export function AnimatedTabs({
   );
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+;

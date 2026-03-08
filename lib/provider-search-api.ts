@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { ProviderSearchResults } from "@/types/provider-search";
 import { api } from "@/lib/api";
 
-export async function searchProvider(query: string): Promise<ProviderSearchResults> {
+async function searchProvider(query: string): Promise<ProviderSearchResults> {
   return api.getProviderSearch(query);
 }
 

@@ -7,7 +7,7 @@ import { MapPin, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { RatingStars } from "@/components/ui/rating-stars";
 
-export interface RestaurantCardProps {
+interface RestaurantCardProps {
   name: string;
   cuisine: string;
   city: string;

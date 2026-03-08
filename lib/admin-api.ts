@@ -32,7 +32,7 @@ function getApiBaseUrl(): string {
 const API_URL = getApiBaseUrl();
 const ADMIN_PREFIX = "/admin";
 
-export class AdminApiError extends Error {
+class AdminApiError extends Error {
   constructor(
     public status: number,
     message: string,
@@ -328,20 +328,20 @@ export async function getAdminBookings(params?: {
 }
 
 /** Nested objects returned with admin booking detail */
-export interface AdminBookingDetailCustomer {
+interface AdminBookingDetailCustomer {
   id?: number;
   name?: string;
   email?: string;
 }
-export interface AdminBookingDetailProvider {
+interface AdminBookingDetailProvider {
   id?: number;
   name?: string;
 }
-export interface AdminBookingDetailService {
+interface AdminBookingDetailService {
   id?: number;
   name?: string;
 }
-export interface AdminBookingDetailPayment {
+interface AdminBookingDetailPayment {
   status?: string;
 }
 
@@ -509,7 +509,7 @@ export async function getAdminCategories(): Promise<{ acts: AdminAct[] }> {
 }
 
 /** Flatten acts + subacts into a simple { name, slug }[] list (for filters etc.) */
-export function flattenCategories(acts: AdminAct[]): { name: string; slug: string }[] {
+function flattenCategories(acts: AdminAct[]): { name: string; slug: string }[] {
   const flat: { name: string; slug: string }[] = [];
   for (const act of acts) {
     flat.push({ name: act.name, slug: act.slug });
@@ -569,7 +569,7 @@ export async function getAdminCities(): Promise<{ cities: AdminCity[] }> {
 }
 
 /** Flatten cities into { name, slug }[] for filters (backend filters by business.city) */
-export function flattenCities(cities: AdminCity[]): { name: string; slug: string }[] {
+function flattenCities(cities: AdminCity[]): { name: string; slug: string }[] {
   return cities.map((c) => ({ name: c.name, slug: c.slug }));
 }
 
@@ -689,7 +689,7 @@ export async function getAdminSettings(): Promise<{
 }
 
 // ========== Staff ==========
-export type StaffItem = {
+type StaffItem = {
   id: number;
   first_name: string;
   last_name: string;
@@ -710,7 +710,7 @@ export async function getAdminStaff(params?: {
   return handleResponse(res);
 }
 
-export type CreateStaffPayload = {
+type CreateStaffPayload = {
   first_name: string;
   last_name?: string;
   email: string;
@@ -731,7 +731,7 @@ export async function createAdminStaff(data: CreateStaffPayload): Promise<{
   return handleResponse(res);
 }
 
-export type UpdateStaffPayload = {
+type UpdateStaffPayload = {
   first_name?: string;
   last_name?: string;
   email?: string;

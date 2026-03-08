@@ -27,7 +27,7 @@ const LEGACY_ACCESS_TOKEN = "access_token";
    TYPES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export interface VerifiedSession {
+interface VerifiedSession {
   isAuth: true;
   userId: number;
   role: PrimaryRole;
@@ -50,7 +50,7 @@ const VALID_ADMIN_ROLES: readonly AdminRole[] = [
 /**
  * Check if an admin_role value is valid for admin panel access.
  */
-export function isValidAdminRole(adminRole: string | null | undefined): adminRole is AdminRole {
+function isValidAdminRole(adminRole: string | null | undefined): adminRole is AdminRole {
   if (!adminRole) return false;
   return (VALID_ADMIN_ROLES as readonly string[]).includes(adminRole);
 }
@@ -153,7 +153,7 @@ export const verifySession = cache(async (): Promise<VerifiedSession> => {
  *
  * Checks both new session cookie and legacy access_token for backward compatibility.
  */
-export const getOptionalSession = cache(async (): Promise<VerifiedSession | null> => {
+const getOptionalSession = cache(async (): Promise<VerifiedSession | null> => {
   const cookieStore = await cookies();
 
   // Try new session cookie first
@@ -210,7 +210,7 @@ export const requireAdmin = cache(async (): Promise<VerifiedSession> => {
  * Require provider role (or admin, who can access provider features).
  * Redirects to /dashboard if not authorized.
  */
-export const requireProvider = cache(async (): Promise<VerifiedSession> => {
+const requireProvider = cache(async (): Promise<VerifiedSession> => {
   const session = await verifySession();
 
   if (session.role !== "provider" && session.role !== "admin") {
@@ -224,7 +224,7 @@ export const requireProvider = cache(async (): Promise<VerifiedSession> => {
  * Require customer role.
  * Redirects to /dashboard if not authorized.
  */
-export const requireCustomer = cache(async (): Promise<VerifiedSession> => {
+const requireCustomer = cache(async (): Promise<VerifiedSession> => {
   const session = await verifySession();
 
   if (session.role !== "customer") {
@@ -238,7 +238,7 @@ export const requireCustomer = cache(async (): Promise<VerifiedSession> => {
  * Require specific admin sub-roles.
  * Useful for granular admin panel access control.
  */
-export const requireAdminRoles = cache(
+const requireAdminRoles = cache(
   async (allowedRoles: readonly AdminRole[]): Promise<VerifiedSession> => {
     const session = await verifySession();
 
@@ -267,7 +267,7 @@ export const requireAdminRoles = cache(
  * Check if current user can access admin panel.
  * Does not redirect, returns boolean.
  */
-export async function canAccessAdmin(): Promise<boolean> {
+async function canAccessAdmin(): Promise<boolean> {
   const session = await getOptionalSession();
   if (!session) return false;
   return session.role === "admin" && isValidAdminRole(session.adminRole);
@@ -277,7 +277,7 @@ export async function canAccessAdmin(): Promise<boolean> {
  * Check if current user can access provider features.
  * Does not redirect, returns boolean.
  */
-export async function canAccessProvider(): Promise<boolean> {
+async function canAccessProvider(): Promise<boolean> {
   const session = await getOptionalSession();
   if (!session) return false;
   return (
@@ -291,7 +291,7 @@ export async function canAccessProvider(): Promise<boolean> {
  * Check if current user is authenticated.
  * Does not redirect, returns boolean.
  */
-export async function isAuthenticated(): Promise<boolean> {
+async function isAuthenticated(): Promise<boolean> {
   const session = await getOptionalSession();
   return session !== null;
 }

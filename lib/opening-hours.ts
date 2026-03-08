@@ -47,7 +47,7 @@ export function openingHoursMultiToPayload(multi: OpeningHoursMulti): Record<str
  * Legacy format: one interval per day (for APIs that only accept legacy).
  * Uses first interval of each day.
  */
-export function openingHoursMultiToLegacy(multi: OpeningHoursMulti): OpeningHours {
+function openingHoursMultiToLegacy(multi: OpeningHoursMulti): OpeningHours {
   const result: OpeningHours = {};
   for (const day of DAYS) {
     const intervals = multi[day];

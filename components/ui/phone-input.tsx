@@ -20,7 +20,7 @@ function filterCountries(options: CountryOption[], query: string): CountryOption
   );
 }
 
-export interface PhoneInputProps {
+interface PhoneInputProps {
   value: string;
   onChange: (value: string, e164: string | null) => void;
   defaultCountry?: string;

@@ -7,7 +7,7 @@ import { TimeRangeInput } from "./TimeRangeInput";
 
 const MAX_INTERVALS = 5;
 
-export interface DayCardProps {
+interface DayCardProps {
   dayKey: string;
   dayLabel: string;
   intervals: OpeningHoursDay;

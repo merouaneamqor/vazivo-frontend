@@ -164,14 +164,14 @@ export interface CategorySubact {
   position: number;
 }
 
-export interface TimeSlot {
+interface TimeSlot {
   time: string;
   end_time: string;
   available: boolean;
   duration: number;
 }
 
-export interface AvailabilityDay {
+interface AvailabilityDay {
   date: string;
   day_name: string;
   is_open: boolean;
@@ -366,7 +366,7 @@ export interface ReviewSummary {
   recent_photos: string[];
 }
 
-export interface Payment {
+interface Payment {
   id: number;
   booking_id: number;
   amount: number;
@@ -385,13 +385,13 @@ export interface PaginatedResponse {
   };
 }
 
-export interface ApiError {
+interface ApiError {
   error?: string;
   errors?: string[];
 }
 
 // Dashboard stats
-export interface DashboardStats {
+interface DashboardStats {
   total_bookings: number;
   completed_bookings: number;
   pending_bookings: number;

@@ -60,7 +60,7 @@ export async function searchCities(
   ).slice(0, limit);
 }
 
-export async function searchPlaces(query: string, limit = 10): Promise<NominatimPlace[]> {
+async function searchPlaces(query: string, limit = 10): Promise<NominatimPlace[]> {
   if (!query || query.trim().length < 2) return [];
   const params = new URLSearchParams({
     q: query.trim(),

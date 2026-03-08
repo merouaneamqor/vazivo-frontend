@@ -42,7 +42,7 @@ export function formatDuration(minutes: number): string {
   return mins > 0 ? `${hours}h ${mins}min` : `${hours}h`;
 }
 
-export function formatDate(date: string | Date, format: "full" | "short" | "time" = "full"): string {
+function formatDate(date: string | Date, format: "full" | "short" | "time" = "full"): string {
   const d = typeof date === "string" ? new Date(date) : date;
   
   switch (format) {
@@ -112,7 +112,7 @@ export function debounce<T extends (...args: any[]) => void>(
 }
 
 /** Slug for URL (e.g. "Agadir" → "agadir", "Hair & Beauty" → "hair-beauty"). Matches backend parameterize. Safe for any value; non-strings are treated as empty. */
-export function slugify(name: unknown): string {
+function slugify(name: unknown): string {
   if (name === null || name === undefined) return "";
   if (typeof name !== "string") return "";
   return (

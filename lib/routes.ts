@@ -13,7 +13,7 @@ import { type SystemRole, SYSTEM_ROLES } from "./roles";
    ROUTE PATH CONSTANTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export const ROUTES = {
+const ROUTES = {
   // Public
   HOME: "/",
   LOGIN: "/login",
@@ -37,15 +37,15 @@ export const ROUTES = {
   ADMIN_LOGIN: "/admin/login",
 } as const;
 
-export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES];
+type RoutePath = (typeof ROUTES)[keyof typeof ROUTES];
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ROUTE PROTECTION LEVELS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export type ProtectionLevel = "public" | "guest" | "authenticated" | "provider" | "admin";
+type ProtectionLevel = "public" | "guest" | "authenticated" | "provider" | "admin";
 
-export interface RouteRule {
+interface RouteRule {
   pattern: string | RegExp;
   protection: ProtectionLevel;
   allowedRoles?: readonly SystemRole[];
@@ -60,7 +60,7 @@ export interface RouteRule {
  * Ordered route rules. First match wins.
  * Order matters: more specific patterns should come before general ones.
  */
-export const ROUTE_RULES: readonly RouteRule[] = [
+const ROUTE_RULES: readonly RouteRule[] = [
   // ─────────────────────────────────────────────────────────────────────────
   // STATIC & API ROUTES (always public, bypass middleware)
   // ─────────────────────────────────────────────────────────────────────────
@@ -116,7 +116,7 @@ export const ROUTE_RULES: readonly RouteRule[] = [
 /**
  * Find the matching route rule for a given pathname
  */
-export function findRouteRule(pathname: string): RouteRule {
+function findRouteRule(pathname: string): RouteRule {
   for (const rule of ROUTE_RULES) {
     const matches =
       typeof rule.pattern === "string"
@@ -135,7 +135,7 @@ export function findRouteRule(pathname: string): RouteRule {
 /**
  * Check if a pathname matches any of the given route patterns
  */
-export function matchesAnyRoute(pathname: string, patterns: readonly (string | RegExp)[]): boolean {
+function matchesAnyRoute(pathname: string, patterns: readonly (string | RegExp)[]): boolean {
   return patterns.some((pattern) =>
     typeof pattern === "string"
       ? pathname === pattern || pathname.startsWith(pattern + "/")
@@ -150,7 +150,7 @@ export function matchesAnyRoute(pathname: string, patterns: readonly (string | R
 /**
  * Build a redirect URL with optional return path
  */
-export function buildRedirectUrl(targetPath: string, returnTo?: string): string {
+function buildRedirectUrl(targetPath: string, returnTo?: string): string {
   if (!returnTo || returnTo === targetPath) {
     return targetPath;
   }
@@ -161,7 +161,7 @@ export function buildRedirectUrl(targetPath: string, returnTo?: string): string 
 /**
  * Extract return path from URL search params
  */
-export function extractReturnPath(searchParams: URLSearchParams): string | null {
+function extractReturnPath(searchParams: URLSearchParams): string | null {
   const returnTo = searchParams.get("returnTo");
   if (!returnTo) return null;
 
@@ -191,7 +191,7 @@ export function getPostLoginRedirect(role: SystemRole | null): string {
 /**
  * Check if a route requires authentication
  */
-export function isProtectedRoute(pathname: string): boolean {
+function isProtectedRoute(pathname: string): boolean {
   const rule = findRouteRule(pathname);
   return rule.protection === "authenticated" || rule.protection === "provider" || rule.protection === "admin";
 }
@@ -199,7 +199,7 @@ export function isProtectedRoute(pathname: string): boolean {
 /**
  * Check if a route is guest-only (login, register)
  */
-export function isGuestRoute(pathname: string): boolean {
+function isGuestRoute(pathname: string): boolean {
   const rule = findRouteRule(pathname);
   return rule.protection === "guest";
 }

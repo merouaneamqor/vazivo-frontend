@@ -19,7 +19,7 @@ interface BottomSheetProps {
   preventClose?: boolean;
 }
 
-export function BottomSheet({
+function BottomSheet({
   isOpen,
   onClose,
   children,

@@ -14,13 +14,13 @@ export interface City {
   lng?: number;
 }
 
-export interface Category {
+interface Category {
   name: string;
   slug: string;
   business_count: number;
 }
 
-export interface SearchFilters {
+interface SearchFilters {
   cities: City[];
   categories: Category[];
   price_range: {

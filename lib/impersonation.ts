@@ -16,7 +16,7 @@ export function setImpersonation(label?: string): void {
   }
 }
 
-export function clearImpersonation(): void {
+function clearImpersonation(): void {
   if (typeof window === "undefined") return;
   try {
     sessionStorage.removeItem(KEY);
@@ -26,7 +26,7 @@ export function clearImpersonation(): void {
   }
 }
 
-export function getImpersonationLabel(): string | null {
+function getImpersonationLabel(): string | null {
   if (typeof window === "undefined") return null;
   try {
     if (sessionStorage.getItem(KEY) !== "1") return null;
@@ -36,7 +36,7 @@ export function getImpersonationLabel(): string | null {
   }
 }
 
-export function isImpersonating(): boolean {
+function isImpersonating(): boolean {
   if (typeof window === "undefined") return false;
   try {
     return sessionStorage.getItem(KEY) === "1";

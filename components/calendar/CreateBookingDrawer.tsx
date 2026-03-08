@@ -20,7 +20,7 @@ import type { Business, StaffMember, Client } from "@/types";
 
 const STEPS = 4;
 
-export interface SelectedServiceItem {
+interface SelectedServiceItem {
   id: number;
   name: string;
   price: number;

@@ -28,23 +28,17 @@ import {
 } from "./auth/roles";
 
 // Re-export from new auth module
-export { SESSION_COOKIE_NAME } from "./auth/cookies";
-export {
-  ROUTES,
-  buildRedirectUrl,
-  findRouteRule,
-  type RouteRule,
-  type ProtectionLevel,
-} from "./auth/route-rules";
+;
+;
 
 // Re-export types from roles for backward compatibility
-export { type SystemRole } from "./roles";
+;
 
 /* ═══════════════════════════════════════════════════════════════════════════
    COOKIE CONSTANTS (Legacy - kept for backward compatibility)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export const AUTH_COOKIES = {
+const AUTH_COOKIES = {
   ACCESS_TOKEN: "access_token",
   REFRESH_TOKEN: "refresh_token",
 } as const;
@@ -57,7 +51,7 @@ export const AUTH_COOKIES = {
  * Authentication context extracted from request
  * @deprecated Use SessionPayload from lib/auth instead
  */
-export interface AuthContext {
+interface AuthContext {
   isAuthenticated: boolean;
   userId: number | null;
   role: EffectiveRole | null;
@@ -68,7 +62,7 @@ export interface AuthContext {
 /**
  * Authorization decision for a route
  */
-export type AuthDecision =
+type AuthDecision =
   | { type: "allow" }
   | { type: "redirect"; destination: string }
   | { type: "unauthorized"; reason: string };
@@ -76,7 +70,7 @@ export type AuthDecision =
 /**
  * Full request context for middleware
  */
-export interface RequestContext {
+interface RequestContext {
   auth: AuthContext;
   pathname: string;
   rule: RouteRule;
@@ -108,7 +102,7 @@ async function decryptSessionFromCookie(cookie: string | undefined): Promise<Ses
  * Pure function — no side effects, no external calls.
  * @deprecated Use session decryption from lib/auth/session instead
  */
-export function createAuthContext(request: NextRequest): AuthContext {
+function createAuthContext(request: NextRequest): AuthContext {
   // Try new session cookie first
   const sessionCookie = request.cookies.get(SESSION_COOKIE_NAME)?.value;
   
@@ -151,7 +145,7 @@ export function createAuthContext(request: NextRequest): AuthContext {
  * Create full request context for middleware decision-making
  * @deprecated Use authorizeRoute from lib/auth/route-rules instead
  */
-export function createRequestContext(request: NextRequest): RequestContext {
+function createRequestContext(request: NextRequest): RequestContext {
   const pathname = request.nextUrl.pathname;
   const auth = createAuthContext(request);
   const rule = findRouteRule(pathname);
@@ -168,7 +162,7 @@ export function createRequestContext(request: NextRequest): RequestContext {
  * Returns an authorization decision — no side effects.
  * @deprecated Use authorizeRoute from lib/auth/route-rules instead
  */
-export function authorizeRoute(context: RequestContext): AuthDecision {
+function authorizeRoute(context: RequestContext): AuthDecision {
   const { auth, pathname, rule } = context;
   const { protection, allowedRoles, redirectTo } = rule;
 
@@ -242,12 +236,12 @@ export function authorizeRoute(context: RequestContext): AuthDecision {
 /**
  * Auth state machine phases
  */
-export type AuthPhase = "initializing" | "checking" | "authenticated" | "unauthenticated";
+type AuthPhase = "initializing" | "checking" | "authenticated" | "unauthenticated";
 
 /**
  * Client-side auth state interface
  */
-export interface AuthState {
+interface AuthState {
   phase: AuthPhase;
   isAuthenticated: boolean;
   isLoading: boolean;
@@ -257,7 +251,7 @@ export interface AuthState {
 /**
  * Derive loading/ready states from phase
  */
-export function deriveAuthState(phase: AuthPhase, hasUser: boolean): AuthState {
+function deriveAuthState(phase: AuthPhase, hasUser: boolean): AuthState {
   switch (phase) {
     case "initializing":
       return { phase, isAuthenticated: false, isLoading: true, isReady: false };
@@ -276,7 +270,7 @@ export function deriveAuthState(phase: AuthPhase, hasUser: boolean): AuthState {
    GUARD HELPERS (for use in components)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export interface GuardResult {
+interface GuardResult {
   allowed: boolean;
   redirectTo: string | null;
   reason?: string;

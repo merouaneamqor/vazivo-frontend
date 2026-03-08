@@ -14,35 +14,35 @@ import type { EffectiveRole } from "./auth/types";
 // Re-export everything from the new location
 export {
   // Constants
-  PRIMARY_ROLES,
-  ADMIN_SUB_ROLES,
-  EFFECTIVE_ROLES,
-  ROLE_HIERARCHY,
-  ROLE_LABELS,
-  ALLOWED_ADMIN_ROLES,
+  
+  
+  
+  
+  
+  
   // Backward compat aliases
   SYSTEM_ROLES,
   type SystemRole,
   // Validation
-  isPrimaryRole,
-  isAdminSubRole,
-  isEffectiveRole,
-  isValidRole,
-  normalizeRole,
+  
+  
+  
+  
+  
   // Predicates
   isAdminRole,
-  isProviderRole,
-  isCustomerRole,
-  isProviderOrAdmin,
+  
+  
+  
   isProviderOrAdminRole,
-  isStaffRole,
+  
   isAllowedAdminRole,
   // Hierarchy
-  getRoleLevel,
-  hasMinimumRoleLevel,
-  hasRoleAccess,
+  
+  
+  
   // Display
-  getRoleLabel,
+  
 } from "./auth/roles";
 
 /**

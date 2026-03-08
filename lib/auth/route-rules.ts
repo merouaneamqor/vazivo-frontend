@@ -71,7 +71,7 @@ export const ROUTES = {
  * Ordered route rules. First match wins.
  * More specific patterns should come before general ones.
  */
-export const ROUTE_RULES: readonly RouteRule[] = [
+const ROUTE_RULES: readonly RouteRule[] = [
   // ─────────────────────────────────────────────────────────────────────────
   // STATIC & API ROUTES (always public, bypass protection)
   // ─────────────────────────────────────────────────────────────────────────
@@ -214,7 +214,7 @@ export function buildRedirectUrl(targetPath: string, returnTo?: string): string 
  * Determine if a session can access a route.
  * Pure function with no side effects.
  */
-export function authorizeRoute(
+function authorizeRoute(
   pathname: string,
   session: SessionPayload | null
 ): AuthDecision {

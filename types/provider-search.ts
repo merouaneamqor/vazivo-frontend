@@ -65,7 +65,7 @@ export interface SearchShortcut {
 }
 
 /** Alias for navigation/shortcut actions in global search */
-export type ShortcutAction = SearchShortcut;
+type ShortcutAction = SearchShortcut;
 
 export interface ProviderSearchResults {
   bookings: SearchBooking[];

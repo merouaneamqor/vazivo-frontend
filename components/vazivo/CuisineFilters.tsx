@@ -16,7 +16,7 @@ const CUISINES = [
   "International",
 ];
 
-export function CuisineFilters({ onFilter }: { onFilter?: (cuisine: string) => void }) {
+function CuisineFilters({ onFilter }: { onFilter?: (cuisine: string) => void }) {
   const [active, setActive] = useState("All");
 
   const handleClick = (cuisine: string) => {

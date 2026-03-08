@@ -89,7 +89,7 @@ function useRouteGuard({ checkAccess }: UseGuardOptions) {
 /**
  * Guard for routes requiring any authenticated user
  */
-export function AuthenticatedGuard({ children, fallback }: RouteGuardProps) {
+function AuthenticatedGuard({ children, fallback }: RouteGuardProps) {
   const { isReady, isAllowed, isLoading } = useRouteGuard({
     checkAccess: (isAuthenticated) => canAccessAuthenticated(isAuthenticated),
   });
@@ -135,7 +135,7 @@ export function ProviderGuard({ children, fallback }: RouteGuardProps) {
 /**
  * Guard for routes requiring admin role
  */
-export function AdminGuard({ children, fallback }: RouteGuardProps) {
+function AdminGuard({ children, fallback }: RouteGuardProps) {
   const { isReady, isAllowed, isLoading } = useRouteGuard({
     checkAccess: (isAuthenticated, role) => canAccessAdmin(isAuthenticated, role),
   });
@@ -159,7 +159,7 @@ export function AdminGuard({ children, fallback }: RouteGuardProps) {
  * Guard for routes that should only be accessible to non-authenticated users
  * (e.g., login, register pages)
  */
-export function GuestGuard({ children, fallback }: RouteGuardProps) {
+function GuestGuard({ children, fallback }: RouteGuardProps) {
   const router = useRouter();
   const { isAuthenticated, isReady } = useAuthState();
   const hasRedirected = useRef(false);
@@ -189,4 +189,4 @@ export function GuestGuard({ children, fallback }: RouteGuardProps) {
    HOOK EXPORTS (for custom implementations)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export { useRouteGuard };
+;

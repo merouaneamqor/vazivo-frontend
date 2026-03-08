@@ -186,6 +186,22 @@ const config: Config = {
           lilac: '#DDA0DD',
           mint: '#98FF98',
         },
+        // Vazivo brand (official palette)
+        vazivo: {
+          red: '#9D0208',           // Primary brand / icon
+          redLight: '#A81F24',      // Soft Red Tint – hover / accents
+          charcoal: '#18181B',     // Logo text / headings
+          white: '#FFFFFF',         // Background
+          lightGray: '#E8E8E9',    // UI borders / cards
+          // Aliases for existing usage (derived from official palette)
+          orange: '#9D0208',
+          orangeSoft: '#FEE2E2',
+          rust: '#7F1D1D',
+          cream: '#FFFFFF',
+          creamDark: '#E8E8E9',
+          warmGray: '#18181B',
+          warmMuted: '#52525B',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
@@ -197,6 +213,8 @@ const config: Config = {
         'soft-lg': '0 10px 40px -3px rgba(0, 0, 0, 0.1), 0 4px 20px -2px rgba(0, 0, 0, 0.05)',
         'glow': '0 0 20px rgba(255, 92, 124, 0.35)',
         'glow-accent': '0 0 20px rgba(168, 85, 247, 0.3)',
+        'vazivo': '0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)',
+        'vazivo-hover': '0 8px 32px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.1)',
       },
       borderRadius: {
         '4xl': '2rem',

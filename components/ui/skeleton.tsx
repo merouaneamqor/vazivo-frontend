@@ -137,8 +137,8 @@ function BookingCardSkeleton() {
 
 export {
   Skeleton,
-  BusinessCardSkeleton,
-  ServiceItemSkeleton,
-  ReviewCardSkeleton,
+  
+  
+  
   BookingCardSkeleton
 };

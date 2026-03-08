@@ -11,7 +11,7 @@ const PNF = lib.PhoneNumberFormat;
 
 export const DEFAULT_REGION = "MA";
 
-export type PhoneNumber = ReturnType<typeof phoneUtil.parse>;
+type PhoneNumber = ReturnType<typeof phoneUtil.parse>;
 
 /**
  * Get country calling code for a region (e.g. "MA" -> "212").

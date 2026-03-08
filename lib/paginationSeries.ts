@@ -2,7 +2,7 @@
  * SEO-friendly pagination series: which page numbers to show (left window, right window,
  * around current page, and "tens" for large page counts). Mirrors backend logic for consistency.
  */
-export interface PaginationSeriesOptions {
+interface PaginationSeriesOptions {
   currentPage: number;
   totalPages: number;
   left?: number;

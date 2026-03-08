@@ -38,7 +38,7 @@ function formatToHtml(text: string, multiline: boolean): string {
   return out;
 }
 
-export interface FormattedTextProps {
+interface FormattedTextProps {
   text: string;
   className?: string;
   as?: "span" | "p" | "div";

@@ -62,7 +62,7 @@ function computeEffectiveRole(user: User | null): EffectiveRole | null {
    TYPES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export interface UseAuthReturn {
+interface UseAuthReturn {
   user: User | null;
   role: EffectiveRole | null;
   adminRole: User["admin_role"];
@@ -385,6 +385,6 @@ export function useAuthState() {
 /**
  * Check if auth is ready (done loading).
  */
-export function useAuthReady(): boolean {
+function useAuthReady(): boolean {
   return useAuthStore((s) => s.phase === "ready");
 }

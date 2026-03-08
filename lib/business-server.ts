@@ -85,7 +85,7 @@ export const fetchBusinessBySlug = cache(async (slug: string): Promise<Business 
   }
 });
 
-export function buildMetaDescription(business: Business): string {
+function buildMetaDescription(business: Business): string {
   const maxLen = 160;
   const city = getBusinessCityDisplay(business.city) || "your area";
   const desc = (business.description || "").trim();

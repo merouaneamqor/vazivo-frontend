@@ -18,7 +18,7 @@ interface BusinessFilters {
   sort_by?: string;
 }
 
-export function useBusinesses(filters: BusinessFilters = {}) {
+function useBusinesses(filters: BusinessFilters = {}) {
   return useQuery({
     queryKey: queryKeys.businesses.list(filters as Record<string, unknown>),
     queryFn: () => api.getBusinesses(filters),
@@ -33,7 +33,7 @@ export function useBusiness(id: number) {
   });
 }
 
-export function useBusinessStats(id: number) {
+function useBusinessStats(id: number) {
   return useQuery({
     queryKey: queryKeys.businesses.stats(id),
     queryFn: () => api.getBusinessStats(id),
@@ -41,7 +41,7 @@ export function useBusinessStats(id: number) {
   });
 }
 
-export function useBusinessBookings(id: number, filters?: { start_date?: string; end_date?: string; status?: string }) {
+function useBusinessBookings(id: number, filters?: { start_date?: string; end_date?: string; status?: string }) {
   return useQuery({
     queryKey: queryKeys.businesses.bookings(id, filters),
     queryFn: () => api.getBusinessBookings(id, filters),
@@ -81,7 +81,7 @@ export function useUpdateBusiness() {
   });
 }
 
-export function useDeleteBusiness() {
+function useDeleteBusiness() {
   const queryClient = useQueryClient();
 
   return useMutation({

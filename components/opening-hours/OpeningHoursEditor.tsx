@@ -25,7 +25,7 @@ const DAY_LABELS: Record<string, string> = {
 const WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 const WEEKEND = ["saturday", "sunday"];
 
-export interface OpeningHoursEditorProps {
+interface OpeningHoursEditorProps {
   value: OpeningHoursMulti | OpeningHoursPayload | null | undefined;
   onChange: (value: OpeningHoursMulti) => void;
   disabled?: boolean;

@@ -53,7 +53,7 @@ export const getDefaultFilters = (maxPrice: number = 500): SearchFiltersState =>
   sortBy: "relevance",
 });
 
-export const defaultFilters: SearchFiltersState = getDefaultFilters(500);
+const defaultFilters: SearchFiltersState = getDefaultFilters(500);
 
 /* ──────────────────────── accordion section ──────────────────────── */
 

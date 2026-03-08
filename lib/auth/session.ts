@@ -30,7 +30,7 @@ const SESSION_EXPIRATION = "7d"; // 7 days
 /**
  * Encrypt session payload into a signed JWT.
  */
-export async function encrypt(payload: Omit<SessionPayload, "exp" | "iat">): Promise<string> {
+async function encrypt(payload: Omit<SessionPayload, "exp" | "iat">): Promise<string> {
   return new SignJWT(payload as unknown as JWTPayload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
@@ -63,7 +63,7 @@ export async function decrypt(session: string | undefined = ""): Promise<Session
  * Compute the effective role for routing/permissions.
  * If user is admin with a sub-role, use the sub-role; otherwise use primary role.
  */
-export function computeEffectiveRole(
+function computeEffectiveRole(
   role: PrimaryRole,
   adminRole: AdminRole | null
 ): EffectiveRole {
@@ -81,7 +81,7 @@ export function computeEffectiveRole(
  * Create a new session and set the cookie.
  * Call this after successful authentication.
  */
-export async function createSession(
+async function createSession(
   userId: number,
   role: PrimaryRole,
   adminRole: AdminRole | null = null
@@ -107,7 +107,7 @@ export async function createSession(
  * Get the current session from cookies.
  * Returns null if no valid session exists.
  */
-export async function getSession(): Promise<SessionPayload | null> {
+async function getSession(): Promise<SessionPayload | null> {
   const cookieStore = await cookies();
   const sessionCookie = cookieStore.get(SESSION_COOKIE_NAME)?.value;
   return decrypt(sessionCookie);
@@ -117,7 +117,7 @@ export async function getSession(): Promise<SessionPayload | null> {
  * Update/refresh the session cookie expiration.
  * Useful to extend session lifetime on user activity.
  */
-export async function updateSession(): Promise<void> {
+async function updateSession(): Promise<void> {
   const session = await getSession();
   if (!session) return;
 
@@ -139,7 +139,7 @@ export async function updateSession(): Promise<void> {
 /**
  * Delete the session cookie (logout).
  */
-export async function deleteSession(): Promise<void> {
+async function deleteSession(): Promise<void> {
   const cookieStore = await cookies();
   cookieStore.delete(SESSION_COOKIE_NAME);
 }

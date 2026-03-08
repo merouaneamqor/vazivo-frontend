@@ -2,7 +2,7 @@
  * Client-side locale cookie. Used to persist user preference and sync with backend user.locale.
  * Server reads this in i18n/request.ts via cookies().
  */
-export const LOCALE_COOKIE = "locale";
+const LOCALE_COOKIE = "locale";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
 
 export function setLocaleCookie(locale: string): void {

@@ -6,7 +6,7 @@
 
 import { getApiBaseUrl } from "@/lib/business-server";
 
-export interface SeoOverride {
+interface SeoOverride {
   path: string;
   title?: string | null;
   meta_description?: string | null;

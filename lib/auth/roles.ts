@@ -18,7 +18,7 @@ import type { PrimaryRole, AdminRole, EffectiveRole } from "./types";
 /**
  * Primary roles stored in database (users.role column).
  */
-export const PRIMARY_ROLES = {
+const PRIMARY_ROLES = {
   CUSTOMER: "customer",
   PROVIDER: "provider",
   ADMIN: "admin",
@@ -28,7 +28,7 @@ export const PRIMARY_ROLES = {
  * Admin sub-roles (users.admin_role column).
  * Only applicable when role === "admin".
  */
-export const ADMIN_SUB_ROLES = {
+const ADMIN_SUB_ROLES = {
   SUPERADMIN: "superadmin",
   SUPPORT: "support",
   MODERATOR: "moderator",
@@ -40,7 +40,7 @@ export const ADMIN_SUB_ROLES = {
  * All effective roles for routing and authorization.
  * Union of primary roles and admin sub-roles.
  */
-export const EFFECTIVE_ROLES = {
+const EFFECTIVE_ROLES = {
   ...PRIMARY_ROLES,
   ...ADMIN_SUB_ROLES,
 } as const;
@@ -49,7 +49,7 @@ export const EFFECTIVE_ROLES = {
  * Role hierarchy for permission inheritance.
  * Higher index = more permissions.
  */
-export const ROLE_HIERARCHY: readonly EffectiveRole[] = [
+const ROLE_HIERARCHY: readonly EffectiveRole[] = [
   "customer",
   "provider",
   "support",
@@ -75,7 +75,7 @@ const VALID_EFFECTIVE_ROLES = new Set<string>(Object.values(EFFECTIVE_ROLES));
 /**
  * Check if a string is a valid primary role.
  */
-export function isPrimaryRole(role: string | null | undefined): role is PrimaryRole {
+function isPrimaryRole(role: string | null | undefined): role is PrimaryRole {
   return !!role && VALID_PRIMARY_ROLES.has(role.toLowerCase());
 }
 
@@ -89,7 +89,7 @@ export function isAdminSubRole(role: string | null | undefined): role is AdminRo
 /**
  * Check if a string is a valid effective role.
  */
-export function isEffectiveRole(role: string | null | undefined): role is EffectiveRole {
+function isEffectiveRole(role: string | null | undefined): role is EffectiveRole {
   return !!role && VALID_EFFECTIVE_ROLES.has(role.toLowerCase());
 }
 
@@ -116,14 +116,14 @@ export function isAdminRole(role: EffectiveRole | string | null | undefined): bo
 /**
  * Check if role is provider.
  */
-export function isProviderRole(role: EffectiveRole | string | null | undefined): boolean {
+function isProviderRole(role: EffectiveRole | string | null | undefined): boolean {
   return normalizeRole(role) === "provider";
 }
 
 /**
  * Check if role is customer.
  */
-export function isCustomerRole(role: EffectiveRole | string | null | undefined): boolean {
+function isCustomerRole(role: EffectiveRole | string | null | undefined): boolean {
   return normalizeRole(role) === "customer";
 }
 
@@ -137,7 +137,7 @@ export function isProviderOrAdmin(role: EffectiveRole | string | null | undefine
 /**
  * Check if role is any staff role (has admin panel access).
  */
-export function isStaffRole(role: EffectiveRole | string | null | undefined): boolean {
+function isStaffRole(role: EffectiveRole | string | null | undefined): boolean {
   const normalized = normalizeRole(role);
   if (!normalized) return false;
   return VALID_ADMIN_SUB_ROLES.has(normalized) || normalized === "admin";
@@ -150,7 +150,7 @@ export function isStaffRole(role: EffectiveRole | string | null | undefined): bo
 /**
  * Get the hierarchy level of a role (higher = more permissions).
  */
-export function getRoleLevel(role: EffectiveRole | string | null | undefined): number {
+function getRoleLevel(role: EffectiveRole | string | null | undefined): number {
   const normalized = normalizeRole(role);
   if (!normalized) return -1;
   const index = ROLE_HIERARCHY.indexOf(normalized as EffectiveRole);
@@ -160,7 +160,7 @@ export function getRoleLevel(role: EffectiveRole | string | null | undefined): n
 /**
  * Check if userRole has at least the level of requiredRole.
  */
-export function hasMinimumRoleLevel(
+function hasMinimumRoleLevel(
   userRole: EffectiveRole | string | null | undefined,
   requiredRole: EffectiveRole
 ): boolean {
@@ -191,7 +191,7 @@ export function hasRoleAccess(
 /**
  * Human-readable role labels.
  */
-export const ROLE_LABELS: Record<EffectiveRole, string> = {
+const ROLE_LABELS: Record<EffectiveRole, string> = {
   customer: "Customer",
   provider: "Provider",
   admin: "Admin",
@@ -205,7 +205,7 @@ export const ROLE_LABELS: Record<EffectiveRole, string> = {
 /**
  * Get human-readable label for a role.
  */
-export function getRoleLabel(role: EffectiveRole | string | null | undefined): string {
+function getRoleLabel(role: EffectiveRole | string | null | undefined): string {
   const normalized = normalizeRole(role);
   if (!normalized || !isEffectiveRole(normalized)) return "Unknown";
   return ROLE_LABELS[normalized] || "Unknown";
@@ -222,7 +222,7 @@ export type SystemRole = EffectiveRole;
 export const SYSTEM_ROLES = EFFECTIVE_ROLES;
 
 /** @deprecated Use isEffectiveRole instead */
-export const isValidRole = isEffectiveRole;
+const isValidRole = isEffectiveRole;
 
 /** @deprecated Use isProviderOrAdmin instead */
 export const isProviderOrAdminRole = isProviderOrAdmin;
@@ -231,4 +231,4 @@ export const isProviderOrAdminRole = isProviderOrAdmin;
 export const isAllowedAdminRole = isAdminSubRole;
 
 /** @deprecated Use isAdminSubRole instead */
-export const ALLOWED_ADMIN_ROLES = Object.values(ADMIN_SUB_ROLES);
+const ALLOWED_ADMIN_ROLES = Object.values(ADMIN_SUB_ROLES);

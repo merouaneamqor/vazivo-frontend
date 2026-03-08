@@ -85,4 +85,4 @@ const SheetDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttrib
 );
 SheetDescription.displayName = "SheetDescription";
 
-export { Sheet, SheetContent, SheetHeader, SheetFooter, SheetTitle, SheetDescription };
+export { Sheet, SheetContent, SheetHeader, SheetFooter, SheetTitle,  };

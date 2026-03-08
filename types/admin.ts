@@ -72,7 +72,7 @@ export interface AdminActivityLogEntry {
   created_at: string;
 }
 
-export interface AdminActivityLogResponse {
+interface AdminActivityLogResponse {
   logs: AdminActivityLogEntry[];
   meta: PaginatedMeta;
 }

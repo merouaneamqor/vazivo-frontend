@@ -5,7 +5,7 @@
  * CLS (Cumulative Layout Shift): Measures visual stability
  */
 
-export interface WebVitals {
+interface WebVitals {
   name: string;
   value: number;
   rating: "good" | "ni" | "poor";
@@ -52,7 +52,7 @@ export const reportWebVitals = (metric: any) => {
 /**
  * Get thresholds for Web Vitals
  */
-export const vitalsThresholds = {
+const vitalsThresholds = {
   LCP: { good: 2500, poor: 4000 }, // Largest Contentful Paint
   FID: { good: 100, poor: 300 }, // First Input Delay
   CLS: { good: 0.1, poor: 0.25 }, // Cumulative Layout Shift
@@ -63,7 +63,7 @@ export const vitalsThresholds = {
 /**
  * Get rating for a metric based on thresholds
  */
-export const getMetricRating = (
+const getMetricRating = (
   name: string,
   value: number
 ): "good" | "ni" | "poor" => {

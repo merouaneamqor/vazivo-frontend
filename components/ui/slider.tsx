@@ -68,4 +68,4 @@ export function RangeSlider({
   );
 }
 
-export { Slider };
+;

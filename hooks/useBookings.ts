@@ -19,7 +19,7 @@ export function useBookings(filters: BookingFilters = {}) {
   });
 }
 
-export function useBooking(id: number) {
+function useBooking(id: number) {
   return useQuery({
     queryKey: queryKeys.bookings.detail(id),
     queryFn: () => api.getBooking(id),
@@ -27,7 +27,7 @@ export function useBooking(id: number) {
   });
 }
 
-export interface CreateBookingPayload {
+interface CreateBookingPayload {
   service_id?: number;
   date: string;
   start_time: string;
@@ -165,7 +165,7 @@ export function useCompleteBooking() {
   });
 }
 
-export function useServiceAvailability(serviceId: number, date: string, endDate?: string) {
+function useServiceAvailability(serviceId: number, date: string, endDate?: string) {
   return useQuery({
     queryKey: queryKeys.services.availability(serviceId, date, endDate),
     queryFn: () => api.getServiceAvailability(serviceId, date, endDate),

@@ -9,11 +9,11 @@
 
 // Client-side guards (for client navigation & UX polish)
 export {
-  AuthenticatedGuard,
+  
   ProviderGuard,
-  AdminGuard,
-  GuestGuard,
-  useRouteGuard,
+  
+  
+  
 } from "./RouteGuard";
 
 // Note: Server-side guards are NOT re-exported here to avoid

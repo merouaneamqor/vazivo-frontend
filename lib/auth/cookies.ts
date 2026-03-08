@@ -19,7 +19,7 @@ export const SESSION_COOKIE_OPTIONS = {
 } as const;
 
 /** Cookie options type for use with Next.js cookies().set() */
-export type SessionCookieSetOptions = {
+type SessionCookieSetOptions = {
   httpOnly: boolean;
   secure: boolean;
   sameSite: "lax";

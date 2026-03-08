@@ -14,7 +14,7 @@ import { create } from "zustand";
 import type { User } from "@/types";
 import type { EffectiveRole } from "@/lib/auth/types";
 
-export type AuthPhase = "initializing" | "checking" | "ready";
+type AuthPhase = "initializing" | "checking" | "ready";
 
 interface AuthStoreState {
   user: User | null;
@@ -92,7 +92,7 @@ export const useAuthPhase = () => useAuthStore((s) => s.phase);
 export const useIsAuthenticated = () =>
   useAuthStore((s) => s.phase === "ready" && s.user !== null);
 
-export const useAuthLoading = () =>
+const useAuthLoading = () =>
   useAuthStore((s) => s.phase === "initializing" || s.phase === "checking");
 
 export const useAuthReady = () => useAuthStore((s) => s.phase === "ready");
@@ -111,7 +111,7 @@ export const useAdminRole = () =>
   useAuthStore((s) => s.user?.admin_role ?? null);
 
 /** Get the raw primary role from the user */
-export const usePrimaryRole = () =>
+const usePrimaryRole = () =>
   useAuthStore((s) => s.user?.role ?? null);
 
 /** Provider is confirmed (or user is admin - admins bypass). */
@@ -135,7 +135,7 @@ export const useProviderPremium = () =>
   });
 
 /** Premium expiry date (or null). Per-business expiry comes from provider subscription API. */
-export const usePremiumExpiresAt = () =>
+const usePremiumExpiresAt = () =>
   useAuthStore((s) => (s.user as { premium_expires_at?: string | null } | undefined)?.premium_expires_at ?? null);
 
 /** Selected staff id for provider calendar (null = all). */
