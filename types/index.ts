@@ -103,6 +103,7 @@ export type OpeningHoursPayload = OpeningHours | OpeningHoursMulti;
 export interface Service {
   id: number;
   name: string;
+  slug?: string;
   description?: string;
   duration: number;
   price: number;
