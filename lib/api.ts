@@ -252,6 +252,7 @@ class ApiClient {
   async getBusinesses(params?: {
     q?: string;
     category?: string;
+    cuisine?: string;
     city?: string;
     min_price?: number;
     max_price?: number;

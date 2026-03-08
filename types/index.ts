@@ -37,6 +37,12 @@ export interface Business {
   description?: string;
   category: string;
   categories?: string[];
+  /** Restaurant: cuisine tags (e.g. ["Moroccan", "Mediterranean"]). */
+  cuisine_types?: string[];
+  /** Restaurant: price range e.g. "$", "$$", "$$$". */
+  price_range?: string | null;
+  /** Restaurant: total tables or max guests per slot. */
+  table_capacity?: number | null;
   address: string;
   city: string;
   country?: string | null;
@@ -179,6 +185,10 @@ export interface Booking {
   status: "pending" | "confirmed" | "cancelled" | "completed" | "no_show";
   total_price?: number;
   notes?: string;
+  /** Alias for notes in reservation context. */
+  special_requests?: string;
+  /** Restaurant: party size (number of guests). */
+  number_of_guests?: number | null;
   duration_minutes: number;
   can_cancel: boolean;
   can_confirm: boolean;

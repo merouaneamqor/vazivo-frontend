@@ -27,6 +27,7 @@ import SearchFilters, {
 import ProviderCard, {
   ProviderCardSkeleton,
 } from "@/components/search/ProviderCard";
+import { RestaurantCard } from "@/components/vazivo";
 
 const SearchMapView = dynamic(() => import("@/components/SearchMapView"), {
   ssr: false,
@@ -88,7 +89,7 @@ export default function SearchPageContent() {
   const currentUrlParams = useRef(searchParams.toString());
 
   const [filters, setFilters] = useState<SearchFiltersState>(() => ({
-    category: searchParams.get("category") || searchParams.get("keyword") || "",
+    category: searchParams.get("category") || searchParams.get("keyword") || searchParams.get("cuisine") || "",
     city: searchParams.get("city") || searchParams.get("location") || "",
     minRating: Number(searchParams.get("min_rating")) || 0,
     priceRange: [
@@ -289,6 +290,7 @@ export default function SearchPageContent() {
     queryFn: async () => {
       const response = await api.searchBusinesses({
         category: filters.category || undefined,
+        cuisine: filters.category || undefined,
         city: filters.city || undefined,
         min_rating: filters.minRating || undefined,
         min_price: filters.priceRange[0] || undefined,
@@ -762,28 +764,39 @@ export default function SearchPageContent() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="grid grid-cols-2 lg:flex lg:flex-col gap-2 sm:gap-3 lg:gap-4"
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
                     >
-                      {businesses.map((business, index) => (
-                        <div
-                          key={`${business.id}-${index}`}
-                          className={cn(
-                            "transition-all rounded-xl",
-                            selectedBusiness?.id === business.id && "ring-2 ring-primary-500"
-                          )}
-                          onClick={() => setSelectedBusiness(business)}
-                        >
-                          <ProviderCard
-                            business={business}
-                            index={index}
-                            hoveredId={hoveredBusinessId}
-                            onHover={setHoveredBusinessId}
-                            onSlotSelect={(biz) => {
-                              router.push(`/business/${biz.slug}`);
-                            }}
-                          />
-                        </div>
-                      ))}
+                      {businesses.map((business, index) => {
+                        const imageUrl =
+                          business.logo_url ||
+                          (Array.isArray(business.image_urls) && business.image_urls[0]) ||
+                          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80";
+                        const cuisineDisplay =
+                          (business.cuisine_types && business.cuisine_types[0]) ||
+                          business.category ||
+                          "";
+                        return (
+                          <div
+                            key={`${business.id}-${index}`}
+                            className={cn(
+                              "transition-all rounded-xl",
+                              selectedBusiness?.id === business.id && "ring-2 ring-primary-500"
+                            )}
+                            onClick={() => setSelectedBusiness(business)}
+                          >
+                            <RestaurantCard
+                              name={business.name}
+                              cuisine={cuisineDisplay}
+                              city={business.city}
+                              rating={business.average_rating}
+                              reviewCount={business.total_reviews}
+                              imageUrl={imageUrl}
+                              priceRange={business.price_range ?? undefined}
+                              slug={`/business/${business.slug}`}
+                            />
+                          </div>
+                        );
+                      })}
 
                       {/* Pagination (SEO: windowed series + crawlable links) */}
                       <Pagination
