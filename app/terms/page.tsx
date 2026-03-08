@@ -20,12 +20,12 @@ export default function TermsPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">2. Description of Service</h2>
           <p className="mb-4">
-            Vazivo is a booking platform that connects customers with beauty and wellness service providers including spas, salons, barbers, and nail studios. 
-            We facilitate appointment scheduling, service discovery, and booking management.
+            Vazivo is a booking platform that connects diners with restaurants. 
+            We facilitate table reservations, restaurant discovery, and booking management.
           </p>
           <p className="mb-4">
-            Vazivo acts as an intermediary platform. We do not provide the actual beauty and wellness services. 
-            Service providers are independent businesses responsible for delivering the services you book.
+            Vazivo acts as an intermediary platform. We do not operate the restaurants. 
+            Restaurants are independent businesses responsible for the dining experience.
           </p>
         </section>
 

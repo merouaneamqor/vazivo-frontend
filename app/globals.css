@@ -527,16 +527,16 @@
   }
 }
 
-/* Leaflet map – modern UI to match app */
+/* Leaflet map – delivery-app style (McDonald's/Glovo) */
 .leaflet-container {
   @apply font-sans rounded-xl;
   font-family: inherit;
 }
 
-/* Zoom control – rounded, soft shadow, no heavy border */
+/* Zoom control – rounded-xl, shadow, vazivo red hover */
 .leaflet-control-zoom {
   @apply border-0 !important;
-  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
   border-radius: 0.75rem !important;
   overflow: hidden;
 }
@@ -548,17 +548,20 @@
   height: 32px !important;
 }
 .leaflet-control-zoom a:hover {
-  @apply text-primary-600 !important;
+  color: #9D0208 !important;
 }
 .leaflet-control-zoom-in { border-radius: 0.75rem 0.75rem 0 0 !important; }
 .leaflet-control-zoom-out { border-radius: 0 0 0.75rem 0.75rem !important; }
 
-/* Attribution – compact, bottom-right */
+/* Attribution – compact, delivery-app */
 .leaflet-control-attribution {
-  @apply text-neutral-400 text-[10px] bg-white/90 py-1 px-2 rounded-bl-xl border-0 border-t border-l border-neutral-100 !important;
+  @apply text-neutral-400 text-[10px] bg-white/95 py-1.5 px-2.5 rounded-bl-xl border-0 border-t border-l border-neutral-200 !important;
 }
 .leaflet-control-attribution a {
-  @apply text-neutral-500 hover:text-primary-600 !important;
+  color: #52525b;
+}
+.leaflet-control-attribution a:hover {
+  color: #9D0208 !important;
 }
 
 /* Custom markers (divIcon) */
@@ -576,10 +579,11 @@
   visibility: visible !important;
 }
 
-/* Popup – card style, rounded-xl, soft shadow */
+/* Popup – delivery-app card: rounded-xl, shadow */
 .leaflet-popup-content-wrapper {
-  @apply rounded-xl border border-neutral-100;
-  box-shadow: 0 10px 40px -3px rgba(0, 0, 0, 0.1), 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+  border: 1px solid #e5e5e7;
+  box-shadow: 0 10px 40px -3px rgba(0, 0, 0, 0.1), 0 4px 20px -2px rgba(0, 0, 0, 0.06);
   padding: 0;
 }
 .leaflet-popup-content {
@@ -589,47 +593,46 @@
   box-shadow: none;
 }
 
-/* Popup content – typography and link */
+/* Popup content – vazivo/delivery-app typography and link */
 .map-popup-content {
   padding: 12px 14px;
 }
 .map-popup-title {
   font-weight: 600;
   font-size: 0.875rem;
-  color: #1c1917;
+  color: #18181B;
   margin-bottom: 4px;
   line-height: 1.3;
 }
 .map-popup-address {
   font-size: 0.75rem;
-  color: #78716c;
+  color: #52525B;
   margin-bottom: 6px;
   line-height: 1.35;
 }
 .map-popup-rating {
   font-size: 0.75rem;
-  color: #57534e;
+  color: #52525B;
   margin-bottom: 10px;
 }
 .map-popup-rating span {
-  color: #78716c;
+  color: #71717a;
   font-weight: 500;
 }
 .map-popup-link {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #7c3aed;
+  color: #fff;
+  background: #9D0208;
   padding: 6px 12px;
-  background: #faf5ff;
-  border: 1px solid #e9d5ff;
   border-radius: 0.75rem;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s, opacity 0.15s;
 }
 .map-popup-link:hover {
-  background: #f3e8ff;
-  color: #5b21b6;
+  background: #A81F24;
+  color: #fff;
 }
 
 /* Animation utilities */

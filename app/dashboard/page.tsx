@@ -116,7 +116,7 @@ export default function DashboardPage() {
                     Own a business?
                   </h3>
                   <p className="text-sm text-neutral-600">
-                    List your salon, spa, or wellness business on Vazivo and reach thousands of customers.
+                    List your restaurant on Vazivo and reach thousands of diners.
                   </p>
                 </div>
                 <Button onClick={() => router.push('/upgrade-to-provider')} className="shrink-0">

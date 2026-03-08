@@ -210,7 +210,7 @@ export function BusinessForm({
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="e.g., Salon Beauty"
+                placeholder="e.g., La Table du Chef"
                 error={errors.name}
                 required
               />

@@ -69,19 +69,19 @@ function FilterSection({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border-b border-neutral-100 last:border-b-0 py-3">
+    <div className="border-b border-vazivo-lightGray last:border-b-0 py-3">
       <button
         type="button"
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full text-left group"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-700">
+        <span className="text-xs font-semibold uppercase tracking-wider text-vazivo-warmMuted group-hover:text-vazivo-charcoal">
           {title}
         </span>
         {open ? (
-          <ChevronUp className="h-3.5 w-3.5 text-neutral-400" />
+          <ChevronUp className="h-3.5 w-3.5 text-vazivo-warmMuted" />
         ) : (
-          <ChevronDown className="h-3.5 w-3.5 text-neutral-400" />
+          <ChevronDown className="h-3.5 w-3.5 text-vazivo-warmMuted" />
         )}
       </button>
       <AnimatePresence initial={false}>
@@ -163,8 +163,8 @@ function FilterContent({
                 className={cn(
                   "px-3 py-2 rounded-lg text-sm font-medium transition-all border",
                   filters.category === cat.slug
-                    ? "bg-primary-600 text-white border-primary-600"
-                    : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-primary-200 hover:bg-primary-50/50"
+                    ? "bg-vazivo-red text-vazivo-white border-vazivo-red"
+                    : "bg-vazivo-lightGray/50 text-vazivo-charcoal border-vazivo-lightGray hover:border-vazivo-red/40 hover:bg-vazivo-red/5"
                 )}
               >
                 {cat.name}
@@ -193,8 +193,8 @@ function FilterContent({
                 className={cn(
                   "px-3 py-2 rounded-lg text-sm font-medium transition-all border",
                   filters.city === city.name
-                    ? "bg-primary-600 text-white border-primary-600"
-                    : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-primary-200 hover:bg-primary-50/50"
+                    ? "bg-vazivo-red text-vazivo-white border-vazivo-red"
+                    : "bg-vazivo-lightGray/50 text-vazivo-charcoal border-vazivo-lightGray hover:border-vazivo-red/40 hover:bg-vazivo-red/5"
                 )}
               >
                 {city.name}
@@ -232,8 +232,8 @@ function FilterContent({
               className={cn(
                 "inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all border",
                 filters.minRating === value
-                  ? "bg-primary-600 text-white border-primary-600"
-                  : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-primary-200 hover:bg-primary-50/50"
+                  ? "bg-vazivo-red text-vazivo-white border-vazivo-red"
+                  : "bg-vazivo-lightGray/50 text-vazivo-charcoal border-vazivo-lightGray hover:border-vazivo-red/40 hover:bg-vazivo-red/5"
               )}
             >
               {value > 0 && <Star className="h-3.5 w-3.5 fill-current flex-shrink-0" />}
@@ -249,7 +249,7 @@ function FilterContent({
           <label className="flex items-center justify-between cursor-pointer group py-1">
             <div className="flex items-center gap-2">
               <Zap className="h-3.5 w-3.5 text-amber-500" />
-              <span className="text-sm text-neutral-700 group-hover:text-neutral-900">
+              <span className="text-sm text-vazivo-charcoal group-hover:text-vazivo-charcoal">
                 Available today
               </span>
             </div>
@@ -267,7 +267,7 @@ function FilterContent({
           <Button
             variant="outline"
             onClick={onReset}
-            className="w-full text-sm rounded-lg border-neutral-200 hover:bg-neutral-50"
+            className="w-full text-sm rounded-lg border-vazivo-lightGray hover:bg-vazivo-lightGray"
             size="sm"
           >
             <RotateCcw className="h-3.5 w-3.5 mr-1.5" />
@@ -320,9 +320,9 @@ export default function SearchFilters({
             {/* Header: title + optional collapse + active count */}
             <div className="flex items-center justify-between gap-2 mb-4">
               <div className="flex items-center gap-2 min-w-0">
-                <span className="text-sm font-semibold text-neutral-900">Filters</span>
+                <span className="text-sm font-semibold text-vazivo-charcoal">Filters</span>
                 {activeFilterCount > 0 && (
-                  <span className="inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-medium">
+                  <span className="inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-vazivo-red/10 text-vazivo-red text-xs font-medium">
                     {activeFilterCount}
                   </span>
                 )}
@@ -331,7 +331,7 @@ export default function SearchFilters({
                 <button
                   type="button"
                   onClick={onCollapseSidebar}
-                  className="flex-shrink-0 p-1.5 rounded-lg text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 transition-colors"
+                  className="flex-shrink-0 p-1.5 rounded-lg text-vazivo-warmMuted hover:text-vazivo-charcoal hover:bg-vazivo-lightGray transition-colors"
                   aria-label="Hide filters"
                 >
                   <ChevronDown className="h-4 w-4 rotate-[-90deg]" />
@@ -360,7 +360,7 @@ export default function SearchFilters({
           <Filter className="h-3.5 w-3.5" />
           Filters
           {activeFilterCount > 0 && (
-            <span className="inline-flex items-center justify-center min-w-[1.1rem] h-[1.1rem] px-1 rounded-full bg-primary-600 text-white text-[10px] font-bold">
+            <span className="inline-flex items-center justify-center min-w-[1.1rem] h-[1.1rem] px-1 rounded-full bg-vazivo-red text-vazivo-white text-[10px] font-bold">
               {activeFilterCount}
             </span>
           )}
@@ -383,13 +383,13 @@ export default function SearchFilters({
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="fixed inset-y-0 left-0 w-full max-w-sm bg-white z-50 overflow-y-auto lg:hidden shadow-2xl"
+              className="fixed inset-y-0 left-0 w-full max-w-sm bg-vazivo-white z-50 overflow-y-auto lg:hidden shadow-2xl"
             >
               {/* Drawer header */}
-              <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-neutral-100 px-5 py-4 flex items-center justify-between z-10">
+              <div className="sticky top-0 bg-vazivo-white/95 backdrop-blur-sm border-b border-vazivo-lightGray px-5 py-4 flex items-center justify-between z-10">
                 <div className="flex items-center gap-2">
-                  <Filter className="h-4 w-4 text-primary-600" />
-                  <h3 className="font-semibold text-neutral-900">Filters</h3>
+                  <Filter className="h-4 w-4 text-vazivo-red" />
+                  <h3 className="font-semibold text-vazivo-charcoal">Filters</h3>
                   {activeFilterCount > 0 && (
                     <Badge variant="default" size="sm">
                       {activeFilterCount}
@@ -398,9 +398,9 @@ export default function SearchFilters({
                 </div>
                 <button
                   onClick={() => setShowMobileFilters(false)}
-                  className="p-2 hover:bg-neutral-100 rounded-full transition-colors"
+                  className="p-2 hover:bg-vazivo-lightGray rounded-full transition-colors"
                 >
-                  <X className="h-5 w-5 text-neutral-500" />
+                  <X className="h-5 w-5 text-vazivo-warmMuted" />
                 </button>
               </div>
 
@@ -415,10 +415,10 @@ export default function SearchFilters({
               </div>
 
               {/* Drawer footer */}
-              <div className="sticky bottom-0 bg-white border-t border-neutral-100 px-5 py-4">
+              <div className="sticky bottom-0 bg-vazivo-white border-t border-vazivo-lightGray px-5 py-4">
                 <Button
                   onClick={() => setShowMobileFilters(false)}
-                  className="w-full bg-primary-600 hover:bg-primary-700"
+                  className="w-full bg-vazivo-red hover:bg-vazivo-redLight"
                 >
                   Show Results
                 </Button>
@@ -493,13 +493,13 @@ export function ActiveFilters({
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
-          className="flex items-center gap-1 px-2.5 py-1 bg-primary-50 text-primary-700 rounded-full text-xs border border-primary-100"
+          className="flex items-center gap-1 px-2.5 py-1 bg-vazivo-red/10 text-vazivo-red rounded-full text-xs border border-vazivo-red/20"
         >
-          <span className="text-primary-500">{label}:</span>
+          <span className="text-vazivo-red">{label}:</span>
           <span className="font-medium">{value}</span>
           <button
             onClick={() => removeFilter(key)}
-            className="ml-0.5 p-0.5 hover:bg-primary-100 rounded-full"
+            className="ml-0.5 p-0.5 hover:bg-vazivo-red/20 rounded-full"
           >
             <X className="h-2.5 w-2.5" />
           </button>

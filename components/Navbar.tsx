@@ -354,7 +354,7 @@ export default function Navbar() {
                     {t("login")}
                   </Link>
                   <Link
-                    href="/register/provider"
+                    href="/business"
                     className="inline-flex items-center justify-center h-10 px-4 text-sm font-semibold text-vazivo-white rounded-lg bg-vazivo-red hover:bg-vazivo-redLight transition-colors shadow-sm whitespace-nowrap"
                   >
                     {t("forBusiness")}
@@ -439,7 +439,7 @@ export default function Navbar() {
                         {t("login")}
                       </button>
                     </Link>
-                    <Link href="/register/provider" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/business" onClick={() => setMobileMenuOpen(false)}>
                       <button className="w-full py-3.5 text-sm font-semibold text-vazivo-white rounded-xl bg-vazivo-red hover:bg-vazivo-redLight transition-all shadow-md touch-manipulation">
                         {t("forBusiness")}
                       </button>

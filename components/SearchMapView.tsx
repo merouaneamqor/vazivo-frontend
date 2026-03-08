@@ -138,17 +138,17 @@ interface SearchMapViewProps {
   hideLegend?: boolean;
 }
 
-// Modern pill-shaped pin: primary color, white border, soft shadow. Selected = larger + ring.
+// Modern pill-shaped pin: vazivo red, white border, soft shadow. Selected = larger + ring.
 function getMarkerIcon(isSelected: boolean): L.DivIcon {
   const size = isSelected ? 44 : 32;
   const border = isSelected ? 3 : 2;
   const ring = isSelected
-    ? "box-shadow: 0 2px 12px rgba(0,0,0,0.15), 0 0 0 4px rgba(139,92,246,0.35);"
-    : "box-shadow: 0 2px 8px rgba(0,0,0,0.12);";
+    ? "box-shadow: 0 2px 12px rgba(0,0,0,0.15), 0 0 0 4px rgba(157,2,8,0.35);"
+    : "box-shadow: 0 2px 10px rgba(0,0,0,0.12);";
   return L.divIcon({
     className: "custom-marker " + (isSelected ? "custom-marker-selected" : ""),
     html: `<div style="
-      background:#8b5cf6;
+      background:#9D0208;
       width:${size}px;
       height:${size}px;
       border-radius:50% 50% 50% 0;
@@ -272,9 +272,9 @@ export default function SearchMapView({
   if (!mapLoaded || !isInView) {
     return (
       <div ref={containerRef} className={className}>
-        <div className="relative w-full h-full min-h-[320px] bg-neutral-100 overflow-hidden ">
+        <div className="relative w-full h-full min-h-[320px] bg-neutral-100 overflow-hidden rounded-xl border border-neutral-200">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="animate-spin h-8 w-8 border-2 border-primary-500 border-t-transparent rounded-full" />
+            <div className="animate-spin h-8 w-8 border-2 border-vazivo-red border-t-transparent rounded-full" />
           </div>
         </div>
       </div>
@@ -283,11 +283,13 @@ export default function SearchMapView({
 
   return (
     <div ref={containerRef} className={className}>
-      <div className="relative w-full h-full min-h-[320px] overflow-hidden ">
-        {/* Ctrl+Scroll hint */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm border border-neutral-200 pointer-events-none">
+      <div className="relative w-full h-full min-h-[320px] overflow-hidden rounded-xl border border-neutral-200 shadow-md bg-white">
+        {/* Ctrl+Scroll hint – at bottom so it doesn’t cover legend or result count */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-[400] bg-white/95 backdrop-blur-sm px-3 py-2 rounded-xl shadow-lg border border-neutral-200 pointer-events-none">
           <p className="text-xs text-neutral-600 font-medium">
-            Use <kbd className="px-1.5 py-0.5 bg-neutral-100 rounded text-[10px] font-mono">Ctrl</kbd> + scroll to zoom
+            <kbd className="px-1.5 py-0.5 bg-neutral-100 rounded-lg text-[10px] font-mono border border-neutral-200">Ctrl</kbd>
+            <span className="mx-1">+</span>
+            <span>scroll pour zoomer</span>
           </p>
         </div>
         
@@ -339,7 +341,7 @@ export default function SearchMapView({
                       target="_self"
                       rel="noopener noreferrer"
                     >
-                      View business
+                      Voir l’établissement
                     </a>
                   </div>
                 </Popup>
@@ -348,10 +350,10 @@ export default function SearchMapView({
           })}
         </MapContainer>
 
-        {/* Legend – matches app card style (hidden when single business, e.g. business page) */}
+        {/* Legend – delivery-app style, matches search page */}
         {!hideLegend && businessesWithCoords.length > 0 && (
-          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-xl border border-neutral-100 px-3 py-2 text-xs text-neutral-600 z-[1000] shadow-soft font-medium">
-            {businessesWithCoords.length} {businessesWithCoords.length === 1 ? "business" : "businesses"} in this area
+          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-xl border border-neutral-200 px-4 py-2.5 text-sm font-semibold text-vazivo-charcoal z-[1000] shadow-lg">
+            {businessesWithCoords.length} résultat{businessesWithCoords.length !== 1 ? "s" : ""} dans cette zone
           </div>
         )}
       </div>

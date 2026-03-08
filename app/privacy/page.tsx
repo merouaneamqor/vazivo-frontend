@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
           <p className="mb-4">
-            Vazivo operates a booking platform connecting customers with beauty and wellness service providers. 
+            Vazivo operates a booking platform connecting diners with restaurants. 
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information.
           </p>
         </section>
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-6 mb-4 space-y-2">
             <li><strong>Account Information:</strong> Name, email address, phone number, password</li>
             <li><strong>Profile Information:</strong> Profile photo, preferences, saved addresses</li>
-            <li><strong>Booking Information:</strong> Service selections, appointment dates and times, special requests</li>
+            <li><strong>Booking Information:</strong> Restaurant selections, reservation dates and times, special requests</li>
             <li><strong>Payment Information:</strong> Credit card details, billing address (processed through secure third-party payment processors)</li>
             <li><strong>Communications:</strong> Messages, customer support inquiries, reviews and ratings</li>
           </ul>

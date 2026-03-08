@@ -111,7 +111,7 @@ export default function FavoritesPage() {
                   No saved places yet
                 </h3>
                 <p className="text-neutral-500 mb-6 max-w-sm mx-auto">
-                  Start exploring and save your favorite salons, spas, and wellness centers for quick access.
+                  Start exploring and save your favorite restaurants for quick access.
                 </p>
                 <Link href="/search">
                   <Button>

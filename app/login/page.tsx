@@ -2,7 +2,6 @@
 
 import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
@@ -13,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { PageSpinner } from "@/components/ui/spinner";
 import { cn } from "@/lib/utils";
 import { getPostLoginRedirect } from "@/lib/routes";
+import { Logo } from "@/components/Logo";
 
 function LoginPageContent() {
   const router = useRouter();
@@ -73,30 +73,22 @@ function LoginPageContent() {
           className="w-full max-w-md"
         >
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <Image
-                src="/logo.svg"
-                alt="Logo"
-                width={40}
-                height={40}
-                className=""
-              />
-            </Link>
-            <h1 className="text-3xl font-display font-bold text-neutral-900">
+            <Logo href="/" variant="full" size="sm" className="mb-6" />
+            <h1 className="text-3xl font-display font-bold text-vazivo-charcoal">
               Welcome back
             </h1>
-            <p className="text-neutral-500 mt-2">
+            <p className="text-vazivo-warmMuted mt-2">
               Sign in to continue to your account
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+              <label className="block text-sm font-medium text-vazivo-charcoal mb-1.5">
                 Email address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                 <Input
                   type="email"
                   placeholder="you@example.com"
@@ -104,21 +96,21 @@ function LoginPageContent() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className={cn(
                     "pl-10 h-12",
-                    errors.email && "border-error-500 focus:ring-error-500"
+                    errors.email && "border-vazivo-red focus:ring-vazivo-red"
                   )}
                 />
               </div>
               {errors.email && (
-                <p className="text-error-500 text-sm mt-1">{errors.email}</p>
+                <p className="text-vazivo-red text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+              <label className="block text-sm font-medium text-vazivo-charcoal mb-1.5">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                 <Input
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
@@ -126,19 +118,19 @@ function LoginPageContent() {
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   className={cn(
                     "pl-10 pr-10 h-12",
-                    errors.password && "border-error-500 focus:ring-error-500"
+                    errors.password && "border-vazivo-red focus:ring-vazivo-red"
                   )}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-vazivo-warmMuted hover:text-vazivo-charcoal"
                 >
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
               </div>
               {errors.password && (
-                <p className="text-error-500 text-sm mt-1">{errors.password}</p>
+                <p className="text-vazivo-red text-sm mt-1">{errors.password}</p>
               )}
             </div>
 
@@ -146,36 +138,36 @@ function LoginPageContent() {
               <label className="flex items-center gap-2">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded-lg border-neutral-300 text-primary-500 focus:ring-primary-500"
+                  className="w-4 h-4 rounded-lg border-vazivo-lightGray text-vazivo-red focus:ring-vazivo-red"
                 />
-                <span className="text-sm text-neutral-600">Remember me</span>
+                <span className="text-sm text-vazivo-warmMuted">Remember me</span>
               </label>
               <Link
                 href="/forgot-password"
-                className="text-sm text-primary-600 hover:text-primary-700"
+                className="text-sm text-vazivo-red hover:text-vazivo-redLight"
               >
                 Forgot password?
               </Link>
             </div>
 
-            <Button type="submit" className="w-full h-12" loading={isLoggingIn}>
+            <Button type="submit" className="w-full h-12 bg-vazivo-red hover:bg-vazivo-redLight text-vazivo-white" loading={isLoggingIn}>
               Sign in
               {!isLoggingIn && <ArrowRight className="ml-2 h-4 w-4" />}
             </Button>
 
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-neutral-200" />
+                <span className="w-full border-t border-vazivo-lightGray" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="bg-white px-3 text-neutral-500">or</span>
+                <span className="bg-vazivo-white px-3 text-vazivo-warmMuted">or</span>
               </div>
             </div>
 
             <Button
               type="button"
               variant="outline"
-              className="w-full h-12"
+              className="w-full h-12 border-vazivo-lightGray hover:border-vazivo-red/40 hover:text-vazivo-red hover:bg-vazivo-red/5"
               onClick={() => { window.location.href = getGoogleAuthUrl(); }}
             >
               <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24" aria-hidden>
@@ -188,9 +180,9 @@ function LoginPageContent() {
             </Button>
           </form>
 
-          <p className="text-center text-neutral-600 mt-6">
+          <p className="text-center text-vazivo-warmMuted mt-6">
             Do not have an account?{" "}
-            <Link href="/register" className="text-primary-600 hover:text-primary-700 font-medium">
+            <Link href="/register" className="text-vazivo-red hover:text-vazivo-redLight font-medium">
               Sign up
             </Link>
           </p>
@@ -198,28 +190,23 @@ function LoginPageContent() {
       </div>
 
       {/* Right side - Image/Graphic */}
-      <div className="hidden lg:flex flex-1 bg-gradient-warm items-center justify-center p-12">
+      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-vazivo-red/5 via-vazivo-lightGray/20 to-vazivo-red/10 items-center justify-center p-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
           className="max-w-lg text-center"
         >
-          <div className="w-64 h-64 bg-white/20 rounded-full mx-auto mb-8 flex items-center justify-center">
-            <Image
-              src="/logo.svg"
-              alt=""
-              width={128}
-              height={128}
-              className=" opacity-90"
-            />
+          <div className="w-64 h-64 bg-vazivo-white/20 rounded-full mx-auto mb-8 flex items-center justify-center">
+            <span className="inline-block scale-[2.8] opacity-90">
+              <Logo variant="icon" size="lg" />
+            </span>
           </div>
-          <h2 className="text-2xl font-display font-bold text-neutral-900 mb-4">
-            Your beauty journey awaits
+          <h2 className="text-2xl font-display font-bold text-vazivo-charcoal mb-4">
+            Your next great meal awaits
           </h2>
-          <p className="text-neutral-600">
-            Book appointments at the best spas, salons, and wellness centers. 
-            Discover new favorites and manage your bookings all in one place.
+          <p className="text-vazivo-warmMuted">
+            Discover and book the best restaurants near you. Find new favorites and manage your reservations in one place.
           </p>
         </motion.div>
       </div>

@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 import { toE164 } from "@/lib/phone";
 import { COUNTRIES, DEFAULT_COUNTRY, getCountryCode } from "@/lib/countries";
 import { useAuth } from "@/hooks/useAuth";
+import { Logo } from "@/components/Logo";
 
 export default function UpgradeToProviderPage() {
   const router = useRouter();
@@ -150,9 +151,7 @@ export default function UpgradeToProviderPage() {
       <div className="max-w-3xl mx-auto px-4 py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="Vazivo" className="h-10 w-10" />
-            </Link>
+            <Logo href="/" variant="full" size="sm" className="mb-4" />
             <h1 className="text-3xl font-display font-bold text-neutral-900">
               Create Your Business Profile
             </h1>
@@ -209,7 +208,7 @@ export default function UpgradeToProviderPage() {
                   </label>
                   <Input
                     type="text"
-                    placeholder="e.g. Bella Beauty Salon"
+                    placeholder="e.g. La Table du Chef"
                     value={businessForm.name}
                     onChange={(e) => setBusinessForm({ ...businessForm, name: e.target.value })}
                     className={cn(errors.business_name && "border-red-500")}

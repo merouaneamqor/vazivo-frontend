@@ -92,7 +92,7 @@ function UnsubscribeContent() {
           <a href="/privacy" className="text-purple-600 hover:underline">Privacy Policy</a> | 
           <a href="/terms" className="text-purple-600 hover:underline ml-2">Terms of Service</a>
         </p>
-        <p>Vazivo - Beauty & Wellness Booking Platform</p>
+        <p>Vazivo - Restaurant Discovery & Reservation Platform</p>
         <p>Casablanca, Morocco | support@vazivo.com</p>
       </div>
     </div>

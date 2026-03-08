@@ -48,7 +48,7 @@ function getTrustBadges(business: Business): TrustBadge[] {
         key: "verified",
         label: "Verified",
         icon: <BadgeCheck className="h-3 w-3" />,
-        className: "bg-primary-50 text-primary-700 border-primary-200",
+        className: "bg-vazivo-red/10 text-vazivo-red border-vazivo-red/20",
     });
 
     if (business.average_rating >= 4.8 && business.total_reviews >= 3) {
@@ -85,7 +85,7 @@ function getTrustBadges(business: Business): TrustBadge[] {
 
 export function ProviderCardSkeleton() {
     return (
-        <div className="flex flex-col sm:flex-row bg-white rounded-2xl border border-neutral-100 shadow-sm overflow-hidden">
+        <div className="flex flex-col sm:flex-row bg-vazivo-white rounded-2xl border border-vazivo-lightGray shadow-sm overflow-hidden">
             {/* Image */}
             <div className="relative sm:w-[240px] flex-shrink-0">
                 <Skeleton className="w-full aspect-[4/3] sm:h-full rounded-none" />
@@ -163,8 +163,8 @@ export default function ProviderCard({
                 className={cn(
                     "bg-white  border shadow-sm overflow-hidden transition-all duration-200 group rounded-xl",
                     isHovered
-                        ? "border-primary-300 shadow-md ring-1 ring-primary-200"
-                        : "border-neutral-100 hover:border-primary-200 hover:shadow-md"
+                        ? "border-vazivo-red/50 shadow-md ring-1 ring-vazivo-red/30"
+                        : "border-vazivo-lightGray hover:border-vazivo-red/40 hover:shadow-md"
                 )}
             >
                 <Link
@@ -206,28 +206,28 @@ export default function ProviderCard({
                         {/* Header row: name + rating */}
                         <div className="flex items-start justify-between gap-3">
                             <div className="min-w-0">
-                                <h3 className="font-display font-semibold text-base text-neutral-900 truncate group-hover:text-primary-700 transition-colors">
+                                <h3 className="font-display font-semibold text-base text-vazivo-charcoal truncate group-hover:text-vazivo-red transition-colors">
                                     {business.name}
                                 </h3>
                                 <div className="flex items-center gap-2 mt-0.5">
-                                    <span className="text-xs text-neutral-500">{getBusinessCategoryDisplay(business.category)}</span>
+                                    <span className="text-xs text-vazivo-warmMuted">{getBusinessCategoryDisplay(business.category)}</span>
                                     {priceIndicator && (
-                                        <span className="text-xs text-neutral-400">·</span>
+                                        <span className="text-xs text-vazivo-warmMuted">·</span>
                                     )}
                                     {priceIndicator && (
-                                        <span className="text-xs font-medium text-neutral-600">{priceIndicator}</span>
+                                        <span className="text-xs font-medium text-vazivo-charcoal">{priceIndicator}</span>
                                     )}
                                 </div>
                             </div>
                             {/* Rating */}
                             {business.average_rating > 0 && (
-                                <div className="flex items-center gap-1 bg-primary-50 px-2 py-1 rounded-lg flex-shrink-0">
-                                    <Star className="h-3.5 w-3.5 text-primary-600 fill-primary-600" />
-                                    <span className="text-sm font-semibold text-primary-700">
+                                <div className="flex items-center gap-1 bg-vazivo-red/10 px-2 py-1 rounded-lg flex-shrink-0">
+                                    <Star className="h-3.5 w-3.5 text-vazivo-red fill-vazivo-red" />
+                                    <span className="text-sm font-semibold text-vazivo-red">
                                         {business.average_rating.toFixed(1)}
                                     </span>
                                     {business.total_reviews > 0 && (
-                                        <span className="text-[10px] text-primary-500">
+                                        <span className="text-[10px] text-vazivo-red/80">
                                             ({business.total_reviews})
                                         </span>
                                     )}
@@ -236,7 +236,7 @@ export default function ProviderCard({
                         </div>
 
                         {/* Address */}
-                        <div className="flex items-center gap-1.5 text-neutral-500">
+                        <div className="flex items-center gap-1.5 text-vazivo-warmMuted">
                             <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
                             <span className="text-xs truncate">
                                 {business.address ? `${business.address}, ${getBusinessCityDisplay(business.city)}` : getBusinessCityDisplay(business.city)}
@@ -269,18 +269,18 @@ export default function ProviderCard({
                                         key={svc.id}
                                         className="flex items-center justify-between text-xs"
                                     >
-                                        <span className="text-neutral-600 truncate mr-2">
-                                            {svc.name}
-                                        </span>
-                                        <span className="font-medium text-neutral-900 flex-shrink-0">
+<span className="text-neutral-600 truncate mr-2">
+                                        {svc.name}
+                                    </span>
+                                        <span className="font-medium text-vazivo-charcoal flex-shrink-0">
                                             {svc.formatted_price}
                                         </span>
                                     </div>
                                 ))}
                                 {business.services.length > 2 && (
-                                    <span className="text-[10px] text-primary-500 font-medium">
-                                        +{business.services.length - 2} more services
-                                    </span>
+<span className="text-[10px] text-vazivo-red font-medium">
+                                            +{business.services.length - 2} more services
+                                        </span>
                                 )}
                             </div>
                         )}
@@ -289,7 +289,7 @@ export default function ProviderCard({
 
                 {/* Compact availability — premium only (outside link to avoid nested <a>) */}
                 {business.premium === true && (
-                <div className="flex-1 min-w-0 p-4 sm:p-5 pt-1 border-t border-neutral-50">
+                <div className="flex-1 min-w-0 p-4 sm:p-5 pt-1 border-t border-vazivo-lightGray">
                     <CompactAvailability
                         business={business}
                         maxSlots={12}

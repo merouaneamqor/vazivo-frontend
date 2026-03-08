@@ -60,10 +60,10 @@ export function Pagination({
               const href = getPageUrl(p);
               return (
                 <span key={p} className="inline-flex items-center gap-1 flex-shrink-0">
-                  {showEllipsis && <span className="px-0.5 text-neutral-400" aria-hidden>…</span>}
+                  {showEllipsis && <span className="px-0.5 text-vazivo-warmMuted" aria-hidden>…</span>}
                   {isCurrent ? (
                     <span
-                      className="min-w-[2rem] inline-flex justify-center py-1.5 px-2 rounded-lg bg-primary-100 text-primary-800 font-medium text-sm"
+                      className="min-w-[2rem] inline-flex justify-center py-1.5 px-2 rounded-lg bg-vazivo-red/10 text-vazivo-red font-medium text-sm"
                       aria-current="page"
                     >
                       {p}
@@ -71,7 +71,7 @@ export function Pagination({
                   ) : (
                     <Link
                       href={href}
-                      className="min-w-[2rem] inline-flex justify-center py-1.5 px-2 rounded-lg border border-neutral-200 text-sm text-neutral-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
+                      className="min-w-[2rem] inline-flex justify-center py-1.5 px-2 rounded-lg border border-vazivo-lightGray text-sm text-vazivo-charcoal hover:border-vazivo-red/40 hover:text-vazivo-red transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
                         onPageChange(p);
@@ -86,7 +86,7 @@ export function Pagination({
           </div>
         </div>
       ) : (
-        <span className="flex-1 text-center text-sm text-neutral-600 min-w-0 truncate">
+        <span className="flex-1 text-center text-sm text-vazivo-warmMuted min-w-0 truncate">
           {t("pageOf", { current: currentPage, total: totalPages })}
         </span>
       )}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "List your business | Vazivo for Business",
-  description: "Join Vazivo and reach more customers. List your salon, spa, or wellness business. Get more bookings and grow your client base.",
+  description: "Join Vazivo and reach more diners. List your restaurant. Get more reservations and grow your business.",
 };
 
 export default function ProviderRegisterLayout({

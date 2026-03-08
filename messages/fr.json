@@ -85,12 +85,12 @@
   },
   "home": {
     "heroTitle": "Vazivo - Réservation bien-être & beauté",
-    "heroDescription": "Découvrez et réservez dans les meilleurs spas, salons et centres bien-être près de chez vous.",
+    "heroDescription": "Découvrez et réservez les meilleurs restaurants près de chez vous.",
     "searchPlaceholder": "Nom du Salon, Prestation, Ville…",
-    "heroBadge": "Votre parcours beauté commence ici",
-    "heroHeadlineBefore": "Réservez beauté & ",
-    "heroHeadlineWellness": "bien-être",
-    "heroHeadlineAfter": "",
+    "heroBadge": "Votre prochain bon repas commence ici",
+    "heroHeadlineBefore": "Découvrez & ",
+    "heroHeadlineWellness": "réservez",
+    "heroHeadlineAfter": " des restaurants",
     "exploreCategories": "Explorer les catégories",
     "exploreCategoriesDesc": "Trouvez la prestation idéale pour votre routine",
     "feature1Title": "Réservation instantanée",
@@ -112,9 +112,9 @@
     "ctaDescription": "Rejoignez les milliers de personnes qui nous font confiance pour réserver leurs rendez-vous beauté et bien-être.",
     "bookNow": "Réserver",
     "createAccount": "Créer un compte",
-    "heroImageAlt": "Réservation salon et bien-être — réservez des prestations beauté et bien-être près de chez vous",
-    "providerPlatformTitle": "La plateforme N°1 pour réserver en ligne dans les salons de beauté !",
-    "providerPlatformDesc": "Profitez de notre système de prise de rendez-vous en ligne 24/7, avec rappels automatiques et gestion intelligente, pour garder votre agenda rempli et faire tourner votre salon en toute fluidité.",
+    "heroImageAlt": "Découverte et réservation de restaurants — trouvez et réservez des restaurants près de chez vous",
+    "providerPlatformTitle": "La plateforme N°1 pour réserver en ligne au restaurant !",
+    "providerPlatformDesc": "Réservation de tables en ligne 24h/24, rappels automatiques et gestion intelligente pour remplir votre restaurant.",
     "providerFeature1": "Réservation en ligne 24/7",
     "providerFeature2": "Rappels automatiques",
     "providerFeature3": "Gestion intelligente de l'agenda",
@@ -145,7 +145,7 @@
     "searchLabel": "Recherche",
     "serviceCategory": "Service ou catégorie",
     "cityCity": "Ville",
-    "salons": "Salons",
+    "salons": "Restaurants",
     "categories": "Catégories",
     "cities": "Villes",
     "businesses": "établissements",
@@ -1045,16 +1045,16 @@
     "defaultDescription": "Trouvez et réservez une table dans les meilleurs restaurants près de chez vous avec Vazivo. Casablanca, Rabat, Marrakech, Tanger.",
     "cities": {
       "casablanca": {
-        "title": "Réservation Salon Casablanca | Coiffeur, Barber, Spa & Hammam",
-        "description": "Trouvez et réservez les meilleurs salons de coiffure, barbershops, spas et hammams à Casablanca. Avis clients, disponibilités en temps réel, booking instantané."
+        "title": "Réservation restaurant Casablanca | Meilleurs restaurants | Vazivo",
+        "description": "Trouvez et réservez les meilleurs restaurants à Casablanca. Avis clients, disponibilités en temps réel, réservation instantanée."
       },
       "rabat": {
-        "title": "Réservation Salon Rabat | Coiffeur, Barber, Spa & Hammam",
-        "description": "Trouvez et réservez les meilleurs salons de coiffure, barbershops, spas et hammams à Rabat. Avis clients, disponibilités en temps réel."
+        "title": "Réservation restaurant Rabat | Meilleurs restaurants | Vazivo",
+        "description": "Trouvez et réservez les meilleurs restaurants à Rabat. Avis clients, disponibilités en temps réel."
       },
       "marrakech": {
-        "title": "Réservation Salon Marrakech | Coiffeur, Barber, Spa & Hammam",
-        "description": "Trouvez et réservez les meilleurs salons de coiffure, barbershops, spas et hammams à Marrakech. Avis clients, disponibilités en temps réel."
+        "title": "Réservation restaurant Marrakech | Meilleurs restaurants | Vazivo",
+        "description": "Trouvez et réservez les meilleurs restaurants à Marrakech. Avis clients, disponibilités en temps réel."
       }
     }
   },

@@ -42,7 +42,7 @@ export function RestaurantCard(props: RestaurantCardProps) {
       className={cn("group", className)}
     >
       <Link href={slug} className="block">
-        <div className="rounded-2xl overflow-hidden bg-white border border-neutral-100 shadow-vazivo transition-all duration-300 group-hover:shadow-vazivo-hover group-hover:border-vazivo-orangeSoft">
+        <div className="rounded-2xl overflow-hidden bg-white border border-neutral-200/80 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-neutral-300 group-hover:-translate-y-0.5">
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
               src={imageUrl}
@@ -71,7 +71,7 @@ export function RestaurantCard(props: RestaurantCardProps) {
               <MapPin className="h-3.5 w-3.5 shrink-0" />
               <span className="line-clamp-1">{city}</span>
             </div>
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-4 flex items-center justify-between gap-2">
               <RatingStars
                 rating={rating}
                 size="sm"
@@ -79,8 +79,8 @@ export function RestaurantCard(props: RestaurantCardProps) {
                 showCount
                 count={reviewCount}
               />
-              <span className="inline-flex items-center justify-center rounded-xl bg-vazivo-red px-4 py-2 text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
-                Book table
+              <span className="inline-flex items-center justify-center rounded-xl bg-vazivo-red px-4 py-2 text-sm font-semibold text-white shadow-sm opacity-90 group-hover:opacity-100 transition-opacity cursor-pointer shrink-0">
+                Réserver
               </span>
             </div>
           </div>

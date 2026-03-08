@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Mail, MessageCircle } from "lucide-react";
 import { QueryProvider } from "@/lib/query-client";
 import { ProviderBusinessProvider } from "@/context/ProviderBusinessContext";
+import { Logo } from "@/components/Logo";
 import { ProviderSidebar } from "@/components/provider/ProviderSidebar";
 import { ProviderGuard } from "@/components/guards";
 import { useProviderConfirmed } from "@/store/auth";
@@ -20,9 +21,7 @@ function ProviderNotConfirmedMessage() {
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4">
       <div className="max-w-md w-full text-center">
-        <Link href="/" className="inline-flex items-center gap-2 mb-8">
-          <img src="/logo.svg" alt="Logo" className="h-12 w-12" />
-        </Link>
+        <Logo href="/" variant="full" size="sm" className="mb-8" />
         <div className=" border border-amber-200 bg-amber-50/80 p-8">
           <h1 className="text-xl font-display font-bold text-neutral-900 mb-3">
             {t("title")}

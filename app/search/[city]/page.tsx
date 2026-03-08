@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: meta.title,
     description: meta.description,
-    keywords: `${cityName} beauty salons, ${cityName} wellness, beauty services in ${cityName}, find salons ${cityName}`,
+    keywords: `${cityName} restaurants, ${cityName} dining, restaurants in ${cityName}, find restaurants ${cityName}`,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -60,8 +60,8 @@ export default function SearchCityPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Beauty Services and Salons",
-    description: "Find beauty salons and wellness services in your city",
+    name: "Restaurants",
+    description: "Find and book restaurants in your city",
     url: `${appUrl}/search`,
   };
 

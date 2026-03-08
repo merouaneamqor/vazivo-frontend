@@ -34,6 +34,7 @@ import { toE164 } from "@/lib/phone";
 import { COUNTRIES, DEFAULT_COUNTRY, getCountryCode } from "@/lib/countries";
 import { useTranslations } from "next-intl";
 import { ProviderRegisterParallaxPanel } from "@/components/provider/ProviderRegisterParallaxPanel";
+import { Logo } from "@/components/Logo";
 
 export function ProviderRegisterForm() {
   const t = useTranslations("providerRegister.form");
@@ -188,7 +189,7 @@ export function ProviderRegisterForm() {
 
   return (
     <div className="h-[calc(100vh-4rem)] min-h-[480px] flex">
-      <div className="flex-[1.6] min-h-0 min-w-0  overflow-hidden bg-white/95 shadow-sm">
+      <div className="flex-[1.6] min-h-0 min-w-0  overflow-hidden bg-vazivo-white/95 shadow-sm">
         <div className="h-full min-h-0 flex items-start justify-center px-4 py-8 overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -196,13 +197,11 @@ export function ProviderRegisterForm() {
           className="w-full "
         >
           <div className="text-center mb-6">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="Vazivo" className="h-10 w-10" />
-            </Link>
-            <h1 className="text-2xl font-display font-bold text-neutral-900">
+            <Logo href="/" variant="full" size="sm" className="mb-4" />
+            <h1 className="text-2xl font-display font-bold text-vazivo-charcoal">
               {t("title")}
             </h1>
-            <p className="text-neutral-500 mt-1 text-sm">
+            <p className="text-vazivo-warmMuted mt-1 text-sm">
               {t("subtitle")}
             </p>
           </div>
@@ -220,62 +219,62 @@ export function ProviderRegisterForm() {
             )}
 
             {/* Account (owner) */}
-            <section ref={firstErrorRef} className=" border border-neutral-200 bg-neutral-50/50 p-4 md:p-5">
-              <h2 className="text-lg font-semibold text-neutral-800 mb-1 flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-100 text-primary-600 text-sm font-bold">1</span>
+            <section ref={firstErrorRef} className=" border border-vazivo-lightGray bg-vazivo-lightGray/30 p-4 md:p-5">
+              <h2 className="text-lg font-semibold text-vazivo-charcoal mb-1 flex items-center gap-2">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-vazivo-red/10 text-vazivo-red text-sm font-bold">1</span>
                 {t("account")}
               </h2>
-              <p className="text-neutral-500 text-sm mb-4">{t("accountHint")}</p>
+              <p className="text-vazivo-warmMuted text-sm mb-4">{t("accountHint")}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1">{t("firstName")}</label>
+                    <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("firstName")}</label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                       <Input
                         type="text"
                         placeholder={tPlaceholders("firstName")}
                         value={userForm.firstName}
                         onChange={(e) => setUserForm({ ...userForm, firstName: e.target.value })}
-                        className={cn("pl-10 h-11", errors.user_first_name && "border-red-500 focus:ring-red-500")}
+                        className={cn("pl-10 h-11", errors.user_first_name && "border-vazivo-red focus:ring-vazivo-red")}
                       />
                     </div>
                     {errors.user_first_name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.user_first_name}</p>
+                      <p className="text-vazivo-red text-sm mt-1">{errors.user_first_name}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1">{t("lastName")}</label>
+                    <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("lastName")}</label>
                     <Input
                       type="text"
                       placeholder={tPlaceholders("lastName")}
                       value={userForm.lastName}
                       onChange={(e) => setUserForm({ ...userForm, lastName: e.target.value })}
-                      className={cn("h-11", errors.user_last_name && "border-red-500 focus:ring-red-500")}
+                      className={cn("h-11", errors.user_last_name && "border-vazivo-red focus:ring-vazivo-red")}
                     />
                     {errors.user_last_name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.user_last_name}</p>
+                      <p className="text-vazivo-red text-sm mt-1">{errors.user_last_name}</p>
                     )}
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("email")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("email")}</label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                     <Input
                       type="email"
                       placeholder={tPlaceholders("email")}
                       value={userForm.email}
                       onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
-                      className={cn("pl-10 h-11", errors.user_email && "border-red-500 focus:ring-red-500")}
+                      className={cn("pl-10 h-11", errors.user_email && "border-vazivo-red focus:ring-vazivo-red")}
                     />
                   </div>
                   {errors.user_email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.user_email}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.user_email}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("phoneOptional")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("phoneOptional")}</label>
                   <PhoneInput
                     value={userForm.phone}
                     onChange={(value) => setUserForm({ ...userForm, phone: value })}
@@ -284,9 +283,9 @@ export function ProviderRegisterForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("password")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("password")}</label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder={tPlaceholders("password")}
@@ -300,7 +299,7 @@ export function ProviderRegisterForm() {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-vazivo-warmMuted hover:text-vazivo-charcoal"
                     >
                       {showPassword ? (
                         <EyeOff className="h-5 w-5" />
@@ -309,17 +308,17 @@ export function ProviderRegisterForm() {
                       )}
                     </button>
                   </div>
-                  <p className="text-neutral-500 text-xs mt-1">{tPlaceholders("minChars")}</p>
+                  <p className="text-vazivo-warmMuted text-xs mt-1">{tPlaceholders("minChars")}</p>
                   {errors.user_password && (
-                    <p className="text-red-500 text-sm mt-1">{errors.user_password}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.user_password}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                     {t("confirmPassword")}
                   </label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder={tPlaceholders("confirmPassword")}
@@ -334,22 +333,22 @@ export function ProviderRegisterForm() {
                     />
                   </div>
                   {errors.user_password_confirmation && (
-                    <p className="text-red-500 text-sm mt-1">{errors.user_password_confirmation}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.user_password_confirmation}</p>
                   )}
                 </div>
               </div>
             </section>
 
             {/* Business (venue) */}
-            <section className=" border border-neutral-200 bg-neutral-50/50 p-4 md:p-5">
-              <h2 className="text-lg font-semibold text-neutral-800 mb-1 flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-100 text-primary-600 text-sm font-bold">2</span>
+            <section className=" border border-vazivo-lightGray bg-vazivo-lightGray/30 p-4 md:p-5">
+              <h2 className="text-lg font-semibold text-vazivo-charcoal mb-1 flex items-center gap-2">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-vazivo-red/10 text-vazivo-red text-sm font-bold">2</span>
                 {t("business")}
               </h2>
-              <p className="text-neutral-500 text-sm mb-4">{t("businessHint")}</p>
+              <p className="text-vazivo-warmMuted text-sm mb-4">{t("businessHint")}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                     {t("businessName")}
                   </label>
                   <Input
@@ -360,7 +359,7 @@ export function ProviderRegisterForm() {
                     className={cn(errors.business_name && "border-red-500 focus:ring-red-500")}
                   />
                   {errors.business_name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.business_name}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.business_name}</p>
                   )}
                 </div>
                 <div className="md:col-span-2">
@@ -376,8 +375,8 @@ export function ProviderRegisterForm() {
                           className={cn(
                             "inline-flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors",
                             isChecked
-                              ? "border-primary-500 bg-primary-50 text-primary-700"
-                              : "border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400"
+                              ? "border-vazivo-red bg-vazivo-red/10 text-vazivo-red"
+                              : "border-vazivo-lightGray bg-vazivo-white text-vazivo-charcoal hover:border-vazivo-charcoal/30"
                           )}
                         >
                           <input
@@ -389,7 +388,7 @@ export function ProviderRegisterForm() {
                                 : [...businessForm.categories, cat.name];
                               setBusinessForm({ ...businessForm, categories: next });
                             }}
-                            className="rounded-lg border-neutral-300 text-primary-600 focus:ring-primary-500"
+                            className="rounded-lg border-vazivo-lightGray text-vazivo-red focus:ring-vazivo-red"
                           />
                           <span className="text-sm font-medium">{cat.name}</span>
                         </label>
@@ -397,18 +396,18 @@ export function ProviderRegisterForm() {
                     })}
                   </div>
                   {errors.business_category && (
-                    <p className="text-red-500 text-sm mt-1">{errors.business_category}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.business_category}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("country")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("country")}</label>
                   <select
                     value={businessForm.country}
                     onChange={(e) =>
                       setBusinessForm({ ...businessForm, country: e.target.value })
                     }
                     className={cn(
-                      "w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      "w-full rounded-lg border border-vazivo-lightGray bg-vazivo-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-vazivo-red focus:border-vazivo-red"
                     )}
                   >
                     {COUNTRIES.map((c) => (
@@ -419,7 +418,7 @@ export function ProviderRegisterForm() {
                   </select>
                 </div>
                 <div className="relative" ref={cityDropdownRef}>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("city")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("city")}</label>
                   <div className="relative">
                     <Input
                       type="text"
@@ -436,15 +435,15 @@ export function ProviderRegisterForm() {
                         errors.business_city && "border-red-500 focus:ring-red-500"
                       )}
                     />
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted pointer-events-none" />
                   </div>
                   {showCityDropdown && (
                     <div
-                      className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-neutral-200 shadow-lg z-50 max-h-60 overflow-y-auto"
+                      className="absolute top-full left-0 right-0 mt-1 bg-vazivo-white rounded-lg border border-vazivo-lightGray shadow-lg z-50 max-h-60 overflow-y-auto"
                       onMouseDown={(e) => e.preventDefault()}
                     >
                       {citiesLoading ? (
-                        <div className="px-4 py-3 text-sm text-neutral-500">{tUi("loading")}</div>
+                        <div className="px-4 py-3 text-sm text-vazivo-warmMuted">{tUi("loading")}</div>
                       ) : (
                         <>
                           {cityInputValue.length < 3 ? (
@@ -463,13 +462,13 @@ export function ProviderRegisterForm() {
                                     setCityInputValue(city.name);
                                     setShowCityDropdown(false);
                                   }}
-                                  className="w-full px-4 py-2.5 text-left text-sm hover:bg-neutral-50 text-neutral-900"
+                                  className="w-full px-4 py-2.5 text-left text-sm hover:bg-vazivo-lightGray/50 text-vazivo-charcoal"
                                 >
                                   {city.name}
                                 </button>
                               ))
                           ) : citySearchLoading ? (
-                            <div className="px-4 py-3 text-sm text-neutral-500">{tUi("searching")}</div>
+                            <div className="px-4 py-3 text-sm text-vazivo-warmMuted">{tUi("searching")}</div>
                           ) : (
                             <>
                               {cities
@@ -487,14 +486,14 @@ export function ProviderRegisterForm() {
                                       setCityInputValue(city.name);
                                       setShowCityDropdown(false);
                                     }}
-                                    className="w-full px-4 py-2.5 text-left text-sm hover:bg-neutral-50 text-neutral-900"
+                                    className="w-full px-4 py-2.5 text-left text-sm hover:bg-vazivo-lightGray/50 text-vazivo-charcoal"
                                   >
                                     {city.name}
                                   </button>
                                 ))}
                               {nominatimCityResults.length > 0 && (
                                 <>
-                                  <div className="px-4 py-2 bg-neutral-50 border-t border-neutral-100 text-xs font-semibold text-neutral-500 uppercase">
+                                  <div className="px-4 py-2 bg-vazivo-lightGray/50 border-t border-vazivo-lightGray text-xs font-semibold text-vazivo-warmMuted uppercase">
                                     {tUi("citiesWorldwide")}
                                   </div>
                                   {nominatimCityResults.map((place) => {
@@ -527,7 +526,7 @@ export function ProviderRegisterForm() {
                                           setCityInputValue(cityName);
                                           setShowCityDropdown(false);
                                         }}
-                                        className="w-full px-4 py-2.5 text-left text-sm hover:bg-neutral-50 text-neutral-900"
+                                        className="w-full px-4 py-2.5 text-left text-sm hover:bg-vazivo-lightGray/50 text-vazivo-charcoal"
                                       >
                                         {label}
                                       </button>
@@ -552,11 +551,11 @@ export function ProviderRegisterForm() {
                     </div>
                   )}
                   {errors.business_city && (
-                    <p className="text-red-500 text-sm mt-1">{errors.business_city}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.business_city}</p>
                   )}
                 </div>
                 <div className="relative" ref={neighborhoodDropdownRef}>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                     {t("neighborhoodOptional")}
                   </label>
                   <div className="relative">
@@ -570,17 +569,17 @@ export function ProviderRegisterForm() {
                       onFocus={() => businessForm.city && setShowNeighborhoodDropdown(true)}
                       onBlur={() => setTimeout(() => setShowNeighborhoodDropdown(false), 200)}
                       disabled={!businessForm.city}
-                      className="pr-10 h-11 disabled:bg-neutral-50 disabled:cursor-not-allowed"
+                      className="pr-10 h-11 disabled:bg-vazivo-lightGray/50 disabled:cursor-not-allowed"
                     />
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted pointer-events-none" />
                   </div>
                   {showNeighborhoodDropdown && businessForm.city && neighborhoodInputValue.length >= 2 && (
                     <div
-                      className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-neutral-200 shadow-lg z-50 max-h-60 overflow-y-auto"
+                      className="absolute top-full left-0 right-0 mt-1 bg-vazivo-white rounded-lg border border-vazivo-lightGray shadow-lg z-50 max-h-60 overflow-y-auto"
                       onMouseDown={(e) => e.preventDefault()}
                     >
                       {neighborhoodSearchLoading ? (
-                        <div className="px-4 py-3 text-sm text-neutral-500">{tUi("searching")}</div>
+                        <div className="px-4 py-3 text-sm text-vazivo-warmMuted">{tUi("searching")}</div>
                       ) : nominatimNeighborhoodResults.length > 0 ? (
                         nominatimNeighborhoodResults.map((place) => {
                           const label =
@@ -597,7 +596,7 @@ export function ProviderRegisterForm() {
                                 setNeighborhoodInputValue(label);
                                 setShowNeighborhoodDropdown(false);
                               }}
-                              className="w-full px-4 py-2.5 text-left text-sm hover:bg-neutral-50 text-neutral-900"
+                              className="w-full px-4 py-2.5 text-left text-sm hover:bg-vazivo-lightGray/50 text-vazivo-charcoal"
                             >
                               {label}
                             </button>
@@ -612,9 +611,9 @@ export function ProviderRegisterForm() {
                   )}
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">{t("address")}</label>
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">{t("address")}</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                     <Input
                       type="text"
                       placeholder={tPlaceholders("streetAddress")}
@@ -627,11 +626,11 @@ export function ProviderRegisterForm() {
                     />
                   </div>
                   {errors.business_address && (
-                    <p className="text-red-500 text-sm mt-1">{errors.business_address}</p>
+                    <p className="text-vazivo-red text-sm mt-1">{errors.business_address}</p>
                   )}
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                     {t("descriptionOptional")}
                   </label>
                   <textarea
@@ -639,16 +638,16 @@ export function ProviderRegisterForm() {
                     placeholder={tPlaceholders("briefDescription")}
                     value={businessForm.description}
                     onChange={(e) => setBusinessForm({ ...businessForm, description: e.target.value })}
-                    className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none"
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-vazivo-red focus:border-vazivo-red resize-none"
                   />
                 </div>
                 <div className="md:col-span-2 flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-medium text-neutral-700">{t("contactOptional")}</span>
+                  <span className="text-sm font-medium text-vazivo-charcoal">{t("contactOptional")}</span>
                   {(userForm.email || userForm.phone) && (
                     <button
                       type="button"
                       onClick={copyAccountToBusiness}
-                      className="inline-flex items-center gap-1.5 text-xs text-primary-600 hover:text-primary-700 font-medium"
+                      className="inline-flex items-center gap-1.5 text-xs text-vazivo-red hover:text-vazivo-redLight font-medium"
                     >
                       <Copy className="h-3.5 w-3.5" />
                       {t("useAccountContact")}
@@ -657,7 +656,7 @@ export function ProviderRegisterForm() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:col-span-2">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1">
+                    <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                       {t("businessPhoneOptional")}
                     </label>
                     <PhoneInput
@@ -668,7 +667,7 @@ export function ProviderRegisterForm() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1">
+                    <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                       {t("businessEmailOptional")}
                     </label>
                     <Input
@@ -680,11 +679,11 @@ export function ProviderRegisterForm() {
                   </div>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-vazivo-charcoal mb-1">
                     {t("websiteOptional")}
                   </label>
                   <div className="relative">
-                    <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                    <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vazivo-warmMuted" />
                     <Input
                       type="url"
                       placeholder={tPlaceholders("website")}
@@ -698,7 +697,7 @@ export function ProviderRegisterForm() {
             </section>
 
             <div className="pt-2">
-              <Button type="submit" className="w-full h-12" loading={submitting} disabled={submitting}>
+              <Button type="submit" className="w-full h-12 bg-vazivo-red hover:bg-vazivo-redLight text-vazivo-white" loading={submitting} disabled={submitting}>
                 {t("registerButton")}
                 {!submitting && <ArrowRight className="ml-2 h-4 w-4" />}
               </Button>

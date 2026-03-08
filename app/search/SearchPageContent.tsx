@@ -472,15 +472,18 @@ export default function SearchPageContent() {
 
   /* ══════════════════════════════ RENDER ══════════════════════════════ */
 
+  const categoriesForChips = filtersData?.categories ?? [];
+
   return (
-    <div className="min-h-screen bg-[#FAFAFE]">
-      {/* ─── Breadcrumb (Doctolib-style: Home > Category > City) ─── */}
-      <div className="bg-white border-b border-neutral-100">
-        <div className="w-full px-3 sm:px-6 lg:px-8 py-2">
-          <nav aria-label="Breadcrumb" className="text-xs">
-            <ol className="flex flex-wrap items-center gap-1.5 text-neutral-400">
+    <div className="min-h-screen bg-neutral-50">
+      {/* ─── Bold hero strip (McDonald's / Glovo style) ─── */}
+      <div className="z-30 bg-vazivo-red shadow-md">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 pb-5 sm:pb-6">
+          {/* Breadcrumb: minimal, on colored background */}
+          <nav aria-label="Breadcrumb" className="mb-3 sm:mb-4">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/90">
               <li>
-                <Link href="/" className="hover:text-neutral-700 transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Accueil
                 </Link>
               </li>
@@ -490,21 +493,21 @@ export default function SearchPageContent() {
                   citySlugForBreadcrumb ? (
                     <Link
                       href={`/search/all/${categorySlugForBreadcrumb}`}
-                      className="hover:text-neutral-700 transition-colors"
+                      className="hover:text-white transition-colors"
                     >
                       {categoryDisplayName}
                     </Link>
                   ) : (
-                    <span className="font-medium text-neutral-700" aria-current="page">
+                    <span className="font-medium text-white" aria-current="page">
                       {categoryDisplayName}
                     </span>
                   )
                 ) : citySlugForBreadcrumb ? (
-                  <Link href="/search" className="hover:text-neutral-700 transition-colors">
+                  <Link href="/search" className="hover:text-white transition-colors">
                     Recherche
                   </Link>
                 ) : (
-                  <span className="font-medium text-neutral-700" aria-current="page">
+                  <span className="font-medium text-white" aria-current="page">
                     Recherche
                   </span>
                 )}
@@ -513,7 +516,7 @@ export default function SearchPageContent() {
                 <>
                   <li aria-hidden className="select-none">/</li>
                   <li>
-                    <span className="font-medium text-neutral-700" aria-current="page">
+                    <span className="font-medium text-white" aria-current="page">
                       {filters.city}
                     </span>
                   </li>
@@ -521,31 +524,65 @@ export default function SearchPageContent() {
               )}
             </ol>
           </nav>
-        </div>
-      </div>
 
-      {/* ─── Search bar (Doctolib-style: sticky, full-width) ─── */}
-      <div className="lg:sticky lg:top-16 z-30 bg-white border-b border-neutral-200 shadow-sm">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          <p className="text-xs text-neutral-500 mb-2 hidden sm:block">
-            Trouvez et réservez en ligne
-          </p>
-          <HeroSearchBar
-            variant="searchPage"
-            className="w-full"
-            initialCity={filters.city}
-            initialCategory={categoryDisplayName}
-            onSearch={({ city, category: categoryFromBar }) => {
-              const slug =
-                categoryFromBar && filtersData
-                  ? filtersData.categories.find(
-                      (c) => c.slug === categoryFromBar || c.name === categoryFromBar
-                    )?.slug ?? categoryFromBar
-                  : categoryFromBar;
-              setFilters((prev) => ({ ...prev, city, category: slug || "" }));
-              setCurrentPage(1);
-            }}
-          />
+          {/* Prominent white search bar (elevated, Glovo-style) */}
+          <div className="bg-white rounded-2xl shadow-xl p-1.5 sm:p-2 max-w-4xl">
+            <HeroSearchBar
+              variant="searchPage"
+              embedded
+              className="w-full"
+              initialCity={filters.city}
+              initialCategory={categoryDisplayName}
+              onSearch={({ city, category: categoryFromBar }) => {
+                const slug =
+                  categoryFromBar && filtersData
+                    ? filtersData.categories.find(
+                        (c) => c.slug === categoryFromBar || c.name === categoryFromBar
+                      )?.slug ?? categoryFromBar
+                    : categoryFromBar;
+                setFilters((prev) => ({ ...prev, city, category: slug || "" }));
+                setCurrentPage(1);
+              }}
+            />
+          </div>
+
+          {/* Horizontal category chips (McDonald's / Glovo style) */}
+          {categoriesForChips.length > 0 && (
+            <div className="mt-4 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="flex gap-2 min-w-0 pb-1">
+                <button
+                  type="button"
+                  onClick={() => handleFiltersChange({ ...filters, category: "" })}
+                  className={cn(
+                    "flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all",
+                    !filters.category
+                      ? "bg-white text-vazivo-red shadow-md"
+                      : "bg-white/20 text-white hover:bg-white/30"
+                  )}
+                >
+                  Tous
+                </button>
+                {categoriesForChips.map((cat) => {
+                  const isActive = filters.category === cat.slug;
+                  return (
+                    <button
+                      key={cat.slug}
+                      type="button"
+                      onClick={() => handleFiltersChange({ ...filters, category: cat.slug })}
+                      className={cn(
+                        "flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all",
+                        isActive
+                          ? "bg-white text-vazivo-red shadow-md"
+                          : "bg-white/20 text-white hover:bg-white/30"
+                      )}
+                    >
+                      {cat.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -553,7 +590,7 @@ export default function SearchPageContent() {
       <div className="w-full flex flex-col lg:flex-row min-h-0 lg:h-[calc(100vh-10rem)]">
         {/* ── Left: Filter Sidebar (hideable on desktop) ── */}
         {filtersPanelOpen && (
-          <aside className="hidden lg:block w-[280px] flex-shrink-0 border-r border-neutral-100 bg-white px-5 py-4">
+          <aside className="hidden lg:block w-[280px] flex-shrink-0 border-r border-neutral-200 bg-white shadow-sm px-5 py-4">
             <SearchFilters
               filters={filters}
               onChange={handleFiltersChange}
@@ -565,9 +602,9 @@ export default function SearchPageContent() {
         )}
 
         {/* ── Center: Results ── */}
-        <main className="flex-1 min-w-0 flex flex-col lg:overflow-hidden">
-          {/* Results header (sticky within scroll) */}
-          <div className="flex-shrink-0 bg-white border-b border-neutral-100 px-4 sm:px-6 py-3">
+        <main className="flex-1 min-w-0 flex flex-col lg:overflow-hidden bg-neutral-50">
+          {/* Results header (sticky within scroll) - delivery-app style */}
+          <div className="flex-shrink-0 bg-white border-b border-neutral-200/80 shadow-sm px-4 sm:px-6 py-3">
             <div className="flex items-center justify-between gap-3 flex-wrap">
               {/* Left: show-filters button (desktop when sidebar hidden) + count + mobile filter */}
               <div className="flex items-center gap-3">
@@ -577,12 +614,12 @@ export default function SearchPageContent() {
                     variant="outline"
                     size="sm"
                     onClick={() => setFiltersPanelOpen(true)}
-                    className="hidden lg:inline-flex gap-1.5 rounded-lg border-neutral-200"
+                    className="hidden lg:inline-flex gap-1.5 rounded-xl border-neutral-200 shadow-sm hover:border-vazivo-red/50 hover:bg-neutral-50"
                   >
                     <SlidersHorizontal className="h-3.5 w-3.5" />
                     Filters
                     {activeFilterCount > 0 && (
-                      <span className="inline-flex items-center justify-center min-w-[1.1rem] h-[1.1rem] px-1 rounded-full bg-primary-600 text-white text-[10px] font-bold">
+                      <span className="inline-flex items-center justify-center min-w-[1.1rem] h-[1.1rem] px-1 rounded-full bg-vazivo-red text-vazivo-white text-[10px] font-bold">
                         {activeFilterCount}
                       </span>
                     )}
@@ -600,15 +637,15 @@ export default function SearchPageContent() {
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-neutral-900">
+                  <p className="text-base font-bold text-vazivo-charcoal">
                     {isLoading
-                      ? "Searching…"
-                      : `${totalCount.toLocaleString()} result${totalCount !== 1 ? "s" : ""}`}
+                      ? "Recherche…"
+                      : `${totalCount.toLocaleString()} résultat${totalCount !== 1 ? "s" : ""}`}
                   </p>
                   <p className="text-xs text-neutral-500 truncate max-w-xs">
                     {categoryDisplayName || filters.city
-                      ? `${categoryDisplayName || "All"}${filters.city ? ` in ${filters.city}` : ""}`
-                      : "All providers"}
+                      ? `${categoryDisplayName || "Tous"}${filters.city ? ` · ${filters.city}` : ""}`
+                      : "Tous les établissements"}
                   </p>
                 </div>
               </div>
@@ -619,12 +656,12 @@ export default function SearchPageContent() {
                 <div className="relative">
                   <button
                     onClick={() => setSortOpen(!sortOpen)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-neutral-200 text-xs font-medium text-neutral-700 hover:border-primary-300 transition-colors bg-white"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-neutral-200 text-sm font-medium text-vazivo-charcoal hover:border-vazivo-red/50 hover:bg-neutral-50 transition-colors bg-white shadow-sm"
                   >
                     {currentSortLabel}
                     <ChevronDown
                       className={cn(
-                        "h-3.5 w-3.5 text-neutral-400 transition-transform",
+                        "h-3.5 w-3.5 text-vazivo-warmMuted transition-transform",
                         sortOpen && "rotate-180"
                       )}
                     />
@@ -641,7 +678,7 @@ export default function SearchPageContent() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -4 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute right-0 top-full mt-1 w-48 bg-white rounded-2xl border border-neutral-100 shadow-soft-lg z-40 py-1"
+                          className="absolute right-0 top-full mt-1 w-48 bg-white rounded-2xl border border-neutral-200 shadow-lg z-40 py-1"
                         >
                           {sortOptions.map((opt) => (
                             <button
@@ -653,8 +690,8 @@ export default function SearchPageContent() {
                               className={cn(
                                 "w-full text-left px-3 py-2 text-sm transition-colors",
                                 filters.sortBy === opt.value
-                                  ? "bg-primary-50 text-primary-700 font-medium"
-                                  : "text-neutral-700 hover:bg-neutral-50"
+                                  ? "bg-vazivo-red/10 text-vazivo-red font-medium"
+                                  : "text-vazivo-charcoal hover:bg-vazivo-lightGray"
                               )}
                             >
                               {opt.label}
@@ -667,14 +704,14 @@ export default function SearchPageContent() {
                 </div>
 
                 {/* Mobile view toggle */}
-                <div className="xl:hidden flex items-center rounded-lg border border-neutral-200 overflow-hidden">
+                <div className="xl:hidden flex items-center rounded-xl border border-neutral-200 overflow-hidden shadow-sm">
                   <button
                     onClick={() => setShowMapMobile(false)}
                     className={cn(
                       "p-1.5 transition-colors",
                       !showMapMobile
-                        ? "bg-primary-600 text-white"
-                        : "bg-white text-neutral-500 hover:text-neutral-700"
+                        ? "bg-vazivo-red text-vazivo-white"
+                        : "bg-vazivo-white text-vazivo-warmMuted hover:text-vazivo-charcoal"
                     )}
                     aria-label="List view"
                   >
@@ -685,8 +722,8 @@ export default function SearchPageContent() {
                     className={cn(
                       "p-1.5 transition-colors",
                       showMapMobile
-                        ? "bg-primary-600 text-white"
-                        : "bg-white text-neutral-500 hover:text-neutral-700"
+                        ? "bg-vazivo-red text-vazivo-white"
+                        : "bg-vazivo-white text-vazivo-warmMuted hover:text-vazivo-charcoal"
                     )}
                     aria-label="Map view"
                   >
@@ -710,7 +747,7 @@ export default function SearchPageContent() {
           <div ref={resultsScrollRef} className="flex-1 min-h-0 overflow-visible lg:overflow-y-auto">
             {/* Mobile map */}
             {showMapMobile && (
-              <div className="xl:hidden h-[50vh] border-b border-neutral-200">
+              <div className="xl:hidden h-[50vh] border-b border-vazivo-lightGray">
                 <SearchMapView
                   businesses={businesses}
                   selectedBusiness={selectedBusiness}
@@ -724,10 +761,10 @@ export default function SearchPageContent() {
               </div>
             )}
 
-            <div className="px-4 sm:px-6 py-4">
+            <div className="px-4 sm:px-6 py-4 bg-neutral-50">
               {isError ? (
-                <div className="text-center py-16 bg-white rounded-2xl border border-neutral-100">
-                  <p className="text-red-500 mb-4">Failed to load results</p>
+                <div className="text-center py-16 bg-white rounded-2xl border border-neutral-200 shadow-sm">
+                  <p className="text-vazivo-red mb-4">Failed to load results</p>
                   <Button variant="outline" onClick={() => refetch()}>
                     Try Again
                   </Button>
@@ -764,7 +801,7 @@ export default function SearchPageContent() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
                     >
                       {businesses.map((business, index) => {
                         const imageUrl =
@@ -780,7 +817,7 @@ export default function SearchPageContent() {
                             key={`${business.id}-${index}`}
                             className={cn(
                               "transition-all rounded-xl",
-                              selectedBusiness?.id === business.id && "ring-2 ring-primary-500"
+                              selectedBusiness?.id === business.id && "ring-2 ring-vazivo-red"
                             )}
                             onClick={() => setSelectedBusiness(business)}
                           >
@@ -808,7 +845,7 @@ export default function SearchPageContent() {
                         }}
                         series={paginationSeries}
                         getPageUrl={buildSearchPageUrl}
-                        className="pt-6 pb-4 border-t border-neutral-100 mt-4"
+                        className="pt-6 pb-4 border-t border-vazivo-lightGray mt-4"
                       />
                     </motion.div>
                   )}
@@ -819,11 +856,11 @@ export default function SearchPageContent() {
         </main>
 
         {/* ── Right: Map ── */}
-        <aside className="hidden xl:flex w-[38%] flex-shrink-0 border-l border-neutral-100 bg-white p-4 items-stretch relative">
-          {/* Result count badge */}
+        <aside className="hidden xl:flex w-[38%] flex-shrink-0 border-l border-neutral-200 bg-white p-4 items-stretch relative">
+          {/* Result count badge - delivery-app style */}
           <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10">
-            <div className="bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2 shadow-md text-sm font-semibold text-neutral-800">
-              {totalCount.toLocaleString()} providers
+            <div className="bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-full px-4 py-2 shadow-lg text-sm font-bold text-vazivo-charcoal">
+              {totalCount.toLocaleString()} résultats
             </div>
           </div>
           <SearchMapView
@@ -862,23 +899,23 @@ function NoResults({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="text-center py-16 bg-white rounded-2xl border border-neutral-100"
+      className="text-center py-16 bg-vazivo-white rounded-2xl border border-vazivo-lightGray"
     >
-      <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Search className="h-8 w-8 text-primary-400" />
+      <div className="w-16 h-16 bg-vazivo-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <Search className="h-8 w-8 text-vazivo-red" />
       </div>
-      <h3 className="text-lg font-semibold text-neutral-900 mb-2">No providers found</h3>
-      <p className="text-neutral-500 mb-2 max-w-md mx-auto text-sm">
+      <h3 className="text-lg font-semibold text-vazivo-charcoal mb-2">No providers found</h3>
+      <p className="text-vazivo-warmMuted mb-2 max-w-md mx-auto text-sm">
         Try adjusting your filters or explore a different location.
       </p>
-      <p className="text-neutral-400 mb-6 max-w-md mx-auto text-xs">
+      <p className="text-vazivo-warmMuted mb-6 max-w-md mx-auto text-xs">
         Or clear filters below to see all providers, or pick a city or category to browse.
       </p>
 
       {/* Suggested cities */}
       {cities && cities.length > 0 && (
         <div className="mb-4">
-          <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-2">
+          <p className="text-xs font-medium text-vazivo-warmMuted uppercase tracking-wider mb-2">
             Popular Cities
           </p>
           <div className="flex flex-wrap justify-center gap-1.5">
@@ -886,7 +923,7 @@ function NoResults({
               <button
                 key={city.slug}
                 onClick={() => onSelectCity?.(city.name)}
-                className="px-3 py-1.5 rounded-full text-xs font-medium border border-neutral-200 text-neutral-600 hover:border-primary-300 hover:text-primary-700 transition-colors"
+                className="px-3 py-1.5 rounded-full text-xs font-medium border border-vazivo-lightGray text-vazivo-charcoal hover:border-vazivo-red/40 hover:text-vazivo-red transition-colors"
               >
                 {city.name}
               </button>
@@ -898,7 +935,7 @@ function NoResults({
       {/* Suggested categories */}
       {categories && categories.length > 0 && (
         <div className="mb-6">
-          <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-2">
+          <p className="text-xs font-medium text-vazivo-warmMuted uppercase tracking-wider mb-2">
             Popular Categories
           </p>
           <div className="flex flex-wrap justify-center gap-1.5">
@@ -906,7 +943,7 @@ function NoResults({
               <button
                 key={cat.slug}
                 onClick={() => onSelectCategory?.(cat.slug)}
-                className="px-3 py-1.5 rounded-full text-xs font-medium border border-neutral-200 text-neutral-600 hover:border-primary-300 hover:text-primary-700 transition-colors"
+                className="px-3 py-1.5 rounded-full text-xs font-medium border border-vazivo-lightGray text-vazivo-charcoal hover:border-vazivo-red/40 hover:text-vazivo-red transition-colors"
               >
                 {cat.name}
               </button>

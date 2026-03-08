@@ -43,6 +43,8 @@ interface HeroSearchBarProps {
   /** Initial values (e.g. from URL) so the bar reflects current search */
   initialCity?: string;
   initialCategory?: string;
+  /** When true, use borderless/flat style (e.g. inside a white hero box) */
+  embedded?: boolean;
 }
 
 export default function HeroSearchBar({
@@ -51,6 +53,7 @@ export default function HeroSearchBar({
   onSearch,
   initialCity = "",
   initialCategory = "",
+  embedded = false,
 }: HeroSearchBarProps) {
   const router = useRouter();
   const t = useTranslations("home");
@@ -257,10 +260,13 @@ export default function HeroSearchBar({
   if (variant === "searchPage") {
     return (
       <div className={cn("w-full", className)}>
-        <div className="flex flex-col gap-0 sm:flex-row sm:items-center w-full bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg border border-neutral-200">
+        <div className={cn(
+          "flex flex-col gap-0 sm:flex-row sm:items-center w-full bg-vazivo-white rounded-xl sm:rounded-2xl",
+          embedded ? "border-0 shadow-none" : "shadow-md sm:shadow-lg border border-vazivo-lightGray"
+        )}>
           <div className="relative flex-1 min-w-0" ref={categoryInputRef}>
-            <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 h-full sm:border-r border-neutral-200">
-              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-primary-500 flex-shrink-0" aria-hidden />
+            <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 h-full sm:border-r border-vazivo-lightGray">
+              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-vazivo-red flex-shrink-0" aria-hidden />
               <input
                 type="text"
                 value={category}
@@ -272,17 +278,17 @@ export default function HeroSearchBar({
                 onKeyDown={handleKeyDown}
                 placeholder={t("serviceCategory")}
                 autoComplete="off"
-                className="w-full bg-transparent text-neutral-900 placeholder-neutral-400 outline-none text-sm sm:text-base min-w-0"
+                className="w-full bg-transparent text-vazivo-charcoal placeholder-vazivo-warmMuted outline-none text-sm sm:text-base min-w-0"
                 aria-label="Search by service"
               />
               {category && (
                 <button
                   type="button"
                   onClick={() => setCategory("")}
-                  className="p-1.5 sm:p-2 hover:bg-neutral-100 rounded-lg sm:rounded-xl flex-shrink-0 transition-colors touch-manipulation"
+                  className="p-1.5 sm:p-2 hover:bg-vazivo-lightGray rounded-lg sm:rounded-xl flex-shrink-0 transition-colors touch-manipulation"
                   aria-label="Clear service"
                 >
-                  <X className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-400" />
+                  <X className="h-4 w-4 sm:h-5 sm:w-5 text-vazivo-warmMuted" />
                 </button>
               )}
             </div>
@@ -292,7 +298,7 @@ export default function HeroSearchBar({
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 4 }}
-                  className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden z-50 max-h-[60vh] overflow-y-auto"
+                  className="absolute top-full left-0 right-0 mt-1 bg-vazivo-white rounded-xl shadow-lg border border-vazivo-lightGray overflow-hidden z-50 max-h-[60vh] overflow-y-auto"
                 >
                   {categoryOptions.map((c) => (
                     <button
@@ -302,12 +308,12 @@ export default function HeroSearchBar({
                         setCategory(c.name);
                         setShowCategorySuggestions(false);
                       }}
-                      className="flex items-center gap-2.5 w-full px-3.5 py-3 sm:py-2 transition-colors text-left hover:bg-neutral-50 active:bg-neutral-100 touch-manipulation"
+                      className="flex items-center gap-2.5 w-full px-3.5 py-3 sm:py-2 transition-colors text-left hover:bg-vazivo-lightGray/50 active:bg-vazivo-lightGray touch-manipulation"
                     >
-                      <Search className="h-4 w-4 text-neutral-400 flex-shrink-0" />
+                      <Search className="h-4 w-4 text-vazivo-warmMuted flex-shrink-0" />
                       <div className="min-w-0">
-                        <p className="font-medium truncate text-[15px] sm:text-sm">{c.name}</p>
-                        <p className="text-xs text-neutral-500">
+                        <p className="font-medium truncate text-[15px] sm:text-sm text-vazivo-charcoal">{c.name}</p>
+                        <p className="text-xs text-vazivo-warmMuted">
                           {c.business_count} {t("businesses")}
                         </p>
                       </div>
@@ -318,8 +324,8 @@ export default function HeroSearchBar({
             </AnimatePresence>
           </div>
           <div className="relative flex-1 min-w-0 sm:min-w-[120px]" ref={cityInputRef}>
-            <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 h-full sm:border-r border-neutral-200">
-              <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary-500 flex-shrink-0" aria-hidden />
+            <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 h-full sm:border-r border-vazivo-lightGray">
+              <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-vazivo-red flex-shrink-0" aria-hidden />
               <input
                 type="text"
                 value={city}
@@ -331,17 +337,17 @@ export default function HeroSearchBar({
                 onKeyDown={handleKeyDown}
                 placeholder={t("cityCity")}
                 autoComplete="off"
-                className="w-full bg-transparent text-neutral-900 placeholder-neutral-400 outline-none text-sm sm:text-base min-w-0"
+                className="w-full bg-transparent text-vazivo-charcoal placeholder-vazivo-warmMuted outline-none text-sm sm:text-base min-w-0"
                 aria-label="Search by location"
               />
               {city && (
                 <button
                   type="button"
                   onClick={() => setCity("")}
-                  className="p-1.5 sm:p-2 hover:bg-neutral-100 rounded-lg sm:rounded-xl flex-shrink-0 transition-colors touch-manipulation"
+                  className="p-1.5 sm:p-2 hover:bg-vazivo-lightGray rounded-lg sm:rounded-xl flex-shrink-0 transition-colors touch-manipulation"
                   aria-label="Clear location"
                 >
-                  <X className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-400" />
+                  <X className="h-4 w-4 sm:h-5 sm:w-5 text-vazivo-warmMuted" />
                 </button>
               )}
             </div>
@@ -351,7 +357,7 @@ export default function HeroSearchBar({
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 4 }}
-                  className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-soft-lg border border-neutral-100 overflow-hidden z-50 max-h-[60vh] overflow-y-auto"
+                  className="absolute top-full left-0 right-0 mt-1 bg-vazivo-white rounded-lg shadow-soft-lg border border-vazivo-lightGray overflow-hidden z-50 max-h-[60vh] overflow-y-auto"
                 >
                   {cityOptions.map((c) => (
                     <button
@@ -361,12 +367,12 @@ export default function HeroSearchBar({
                         setCity(c.name);
                         setShowCitySuggestions(false);
                       }}
-                      className="flex items-center gap-2.5 w-full px-3.5 py-3 sm:py-2 transition-colors text-left hover:bg-neutral-50 active:bg-neutral-100 touch-manipulation"
+                      className="flex items-center gap-2.5 w-full px-3.5 py-3 sm:py-2 transition-colors text-left hover:bg-vazivo-lightGray/50 active:bg-vazivo-lightGray touch-manipulation"
                     >
-                      <MapPin className="h-4 w-4 text-neutral-400 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-vazivo-warmMuted flex-shrink-0" />
                       <div className="min-w-0">
-                        <p className="font-medium truncate text-[15px] sm:text-sm">{c.name}</p>
-                        <p className="text-xs text-neutral-500">{c.business_count} {t("businesses")}</p>
+                        <p className="font-medium truncate text-[15px] sm:text-sm text-vazivo-charcoal">{c.name}</p>
+                        <p className="text-xs text-vazivo-warmMuted">{c.business_count} {t("businesses")}</p>
                       </div>
                     </button>
                   ))}
@@ -379,7 +385,7 @@ export default function HeroSearchBar({
               type="button"
               onClick={handleSearch}
               size="sm"
-              className="w-full sm:w-auto h-11 sm:h-10 px-5 sm:px-6 font-semibold touch-manipulation"
+              className="w-full sm:w-auto h-11 sm:h-10 px-5 sm:px-6 font-semibold touch-manipulation bg-vazivo-red hover:bg-vazivo-redLight text-vazivo-white"
             >
               <Search className="h-4 w-4 sm:h-5 sm:w-5 sm:mr-2" aria-hidden />
               <span className="text-sm sm:text-base">{t("searchButton")}</span>

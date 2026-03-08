@@ -16,9 +16,8 @@ export default function PressPage() {
         </p>
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">About Vazivo</h2>
         <p>
-          Vazivo is a beauty and wellness booking platform that helps customers discover and book
-          appointments at spas, salons, barbers, and wellness centers. We operate in multiple cities
-          and are growing fast.
+          Vazivo is a restaurant discovery and reservation platform that helps diners discover and book
+          tables at restaurants. We operate in multiple cities and are growing fast.
         </p>
       </div>
     </ContentPage>

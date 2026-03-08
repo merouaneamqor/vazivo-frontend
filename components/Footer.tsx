@@ -25,7 +25,7 @@ function useFooterLinks() {
       { name: t("termsOfService"), href: "/terms" },
     ],
     business: [
-      { name: t("listYourBusiness"), href: "/for-business" },
+      { name: t("listYourBusiness"), href: "/business" },
       { name: t("providerLogin"), href: "/provider" },
       { name: t("partnerResources"), href: "/partners" },
     ],
@@ -69,8 +69,7 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-2 md:col-span-4 lg:col-span-1 lg:pr-4">
             <Logo href="/" size="lg" light className="mb-5" />
             <p className="text-sm text-neutral-400 leading-relaxed max-w-xs mb-6">
-              Your destination for beauty and wellness. Book appointments at the
-              best spas, salons, and wellness centers near you.
+              Your destination for restaurant discovery and reservations. Find and book the best tables in your city.
             </p>
             <nav aria-label="Social links" className="flex gap-2">
               {socialLinks.map((social) => (
@@ -118,7 +117,7 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-semibold mb-1">Stay updated</h3>
               <p className="text-sm text-neutral-400 max-w-md">
-                Get the latest beauty tips and exclusive offers in your inbox.
+                Get the latest restaurant picks and exclusive offers in your inbox.
               </p>
             </div>
             <form
