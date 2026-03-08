@@ -5,7 +5,7 @@ import { PreloadCarouselImages } from "@/components/provider/PreloadCarouselImag
 
 export const metadata = {
   title: "Register your business",
-  description: "Create your account and submit your venue for review. List your salon, spa, or wellness business on OllaZen.",
+  description: "Create your account and submit your venue for review. List your salon, spa, or wellness business on Vazivo.",
 };
 
 export default function ProviderRegisterFormPage() {

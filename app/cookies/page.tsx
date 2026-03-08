@@ -3,7 +3,7 @@ import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How OllaZen uses cookies and similar technologies.",
+  description: "How Vazivo uses cookies and similar technologies.",
 };
 
 export default function CookiesPage() {
@@ -11,7 +11,7 @@ export default function CookiesPage() {
     <ContentPage title="Cookie Policy" description="Last updated: February 2026">
       <div className="space-y-6 text-neutral-600">
         <p>
-          OllaZen uses cookies and similar technologies to provide and improve our service,
+          Vazivo uses cookies and similar technologies to provide and improve our service,
           keep you signed in, and remember your preferences.
         </p>
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">What we use</h2>

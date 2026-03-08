@@ -11,8 +11,8 @@ function toDisplayString(value: unknown): string {
   return "";
 }
 
-const FAVORITES_KEY = "ollazen_favorites";
-const LEGACY_KEYS = ["favorites", "booking_favorites", "saved_places", "glow_favorites", "ollazen_favorites"];
+const FAVORITES_KEY = "vazivo_favorites";
+const LEGACY_KEYS = ["favorites", "booking_favorites", "saved_places", "glow_favorites", "ollazen_favorites", "vazivo_favorites"];
 
 interface FavoriteItem {
   id: number;

@@ -34,7 +34,7 @@ function UnsubscribeContent() {
         <div className="bg-red-50 border border-red-200 rounded-lg p-8">
           <p className="text-red-700 mb-4">This unsubscribe link is invalid or incomplete.</p>
           <p className="text-sm text-gray-600">
-            Please use the unsubscribe link from your email or contact support at support@ollazen.com
+            Please use the unsubscribe link from your email or contact support at support@vazivo.com
           </p>
         </div>
       </div>
@@ -81,8 +81,8 @@ function UnsubscribeContent() {
           <p className="text-red-700 mb-4">{errorMessage}</p>
           <div className="mt-6 pt-6 border-t border-red-200 text-sm text-gray-600">
             <p className="font-semibold mb-2">Contact Us:</p>
-            <p>Email: support@ollazen.com</p>
-            <p>OllaZen - Casablanca, Morocco</p>
+            <p>Email: support@vazivo.com</p>
+            <p>Vazivo - Casablanca, Morocco</p>
           </div>
         </div>
       )}
@@ -92,8 +92,8 @@ function UnsubscribeContent() {
           <a href="/privacy" className="text-purple-600 hover:underline">Privacy Policy</a> | 
           <a href="/terms" className="text-purple-600 hover:underline ml-2">Terms of Service</a>
         </p>
-        <p>OllaZen - Beauty & Wellness Booking Platform</p>
-        <p>Casablanca, Morocco | support@ollazen.com</p>
+        <p>Vazivo - Beauty & Wellness Booking Platform</p>
+        <p>Casablanca, Morocco | support@vazivo.com</p>
       </div>
     </div>
   );

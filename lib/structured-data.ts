@@ -33,15 +33,15 @@ export const generateOrganizationSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Ollazen",
+    name: "Vazivo",
     description:
       "Discover and connect with beauty salons, wellness centers, and professional services in your area",
-    url: "https://ollazen.com",
-    logo: "https://ollazen.com/logo.png",
+    url: "https://vazivo.com",
+    logo: "https://vazivo.com/logo.png",
     sameAs: [
-      "https://facebook.com/ollazen",
-      "https://instagram.com/ollazen",
-      "https://twitter.com/ollazen",
+      "https://facebook.com/vazivo",
+      "https://instagram.com/vazivo",
+      "https://twitter.com/vazivo",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -101,12 +101,12 @@ export const generateSearchActionSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    url: "https://ollazen.com",
+    url: "https://vazivo.com",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://ollazen.com/search?q={search_term_string}",
+        urlTemplate: "https://vazivo.com/search?q={search_term_string}",
       },
       query_input: "required name=search_term_string",
     },
@@ -144,7 +144,7 @@ export const generateAggregateOfferSchema = (
     "@type": "CollectionPage",
     name: `${categoryName} in ${cityName}`,
     description: `Browse ${businessCount} ${categoryName} businesses in ${cityName}`,
-    url: `https://ollazen.com/${categoryNameToSlug(categoryName)}/${cityNameToSlug(cityName)}`,
+    url: `https://vazivo.com/${categoryNameToSlug(categoryName)}/${cityNameToSlug(cityName)}`,
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: businessCount,

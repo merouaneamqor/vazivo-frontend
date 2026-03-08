@@ -3,7 +3,7 @@ import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about OllaZen — your destination for beauty and wellness bookings.",
+  description: "Learn about Vazivo — your destination for beauty and wellness bookings.",
 };
 
 export default function AboutPage() {
@@ -11,7 +11,7 @@ export default function AboutPage() {
     <ContentPage title="About Us" description="Your beauty journey starts here">
       <div className="space-y-6 text-neutral-600">
         <p>
-          OllaZen connects people with the best beauty and wellness professionals in their city.
+          Vazivo connects people with the best beauty and wellness professionals in their city.
           We make it easy to discover spas, salons, barbers, and wellness centers — and book
           appointments in seconds.
         </p>
@@ -23,7 +23,7 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">Contact</h2>
         <p>
           Questions? Visit our <a href="/contact" className="text-primary-600 hover:underline">Contact</a> page
-          or email us at support@ollazen.example.com.
+          or email us at support@vazivo.example.com.
         </p>
       </div>
     </ContentPage>

@@ -1,5 +1,5 @@
 /**
- * SEO Configuration for Ollazen
+ * SEO Configuration for Vazivo
  * Master keyword list and structured data helpers
  */
 
@@ -8,194 +8,94 @@ import { getBusinessCityDisplay } from "@/lib/utils";
 export const SEO_KEYWORDS = {
   // Core platform keywords
   core: [
-    "online booking platform",
-    "salon booking app",
-    "beauty booking platform",
-    "barber appointment booking",
-    "book salon online",
-    "wellness booking app",
-    "spa booking system",
-    "hairdresser booking online",
-    "beauty services marketplace",
-    "salon scheduling software",
+    "restaurant reservation",
+    "book table online",
+    "restaurant booking app",
+    "dining reservation platform",
+    "find restaurants",
+    "reserve table",
+    "restaurant discovery",
+    "best restaurants near me",
+    "table booking system",
+    "restaurant scheduling",
   ],
 
   // Morocco cities
   cities: {
     casablanca: [
-      "salon casablanca",
-      "beauty salon casablanca",
-      "barber casablanca",
-      "hammam casablanca",
-      "spa casablanca",
-      "coiffeur casablanca",
-      "best barbershop casablanca",
-      "beauty salon near me casablanca",
-      "the 99 barbershop casablanca",
+      "restaurant casablanca",
+      "best restaurants casablanca",
+      "book table casablanca",
+      "moroccan cuisine casablanca",
+      "dining casablanca",
     ],
     rabat: [
-      "salon rabat",
-      "coiffeur rabat",
-      "barber rabat",
-      "spa rabat",
-      "hammam spa hay riad rabat",
-      "men's club by zakibarber rabat",
-      "so spa rabat",
-      "olm beauty rabat",
-      "hammam tkatek rabat",
-      "hammam guich oudaya",
+      "restaurant rabat",
+      "best restaurants rabat",
+      "book table rabat",
+      "dining rabat",
     ],
     marrakech: [
-      "salon marrakech",
-      "barber marrakech",
-      "spa marrakech",
-      "booking masseuse marrakech",
-      "french vibe marrakech",
-      "salon kayn marrakech",
-      "hammam marrakech les bains",
+      "restaurant marrakech",
+      "best restaurants marrakech",
+      "book table marrakech",
+      "dining marrakech",
     ],
     tanger: [
-      "salon tanger",
-      "coiffeur tanger",
-      "barber tanger",
-      "hammam boughaz tanger",
-      "lahlou hammam tanger",
-      "bangkok spa beauty and massage center",
-      "vip home tanger",
-      "glamour spa tanger",
-      "sena spa tanger",
+      "restaurant tanger",
+      "best restaurants tanger",
+      "book table tanger",
     ],
     agadir: [
-      "salon agadir",
-      "spa agadir",
-      "hammam charaf agadir",
+      "restaurant agadir",
+      "best restaurants agadir",
+      "book table agadir",
     ],
     fes: [
-      "coiffeur fes",
-      "arum salon fes",
-      "galaxy spa fes",
-      "infinity fes",
-      "ton fes",
+      "restaurant fes",
+      "best restaurants fes",
+      "book table fes",
     ],
-    meknes: [
-      "lotus spa meknes",
-      "jean louis david meknes",
-    ],
-    tetouan: [
-      "beauty center ismael hair spa tétouan",
-      "zenobia spa tetouan",
-    ],
-    essaouira: [
-      "salon de beauté essaouira",
-      "spa essaouira",
-      "centre esthétique essaouira",
-    ],
-    mohammedia: [
-      "turkish hammam al falah mohammedia",
-      "hammam mohammedia",
-      "hammam falah mohammedia",
-      "coin chic mohammedia",
-    ],
-    temara: [
-      "salon khair temara",
-      "instant de plaisir spa témara",
-      "onglerie temara",
-    ],
-    nador: [
-      "coiffeur nador",
-      "spa nador",
-      "wellness nador",
-    ],
-    harhoura: [
-      "beauty lounge harhoura",
-    ],
+    meknes: ["restaurant meknes", "dining meknes"],
+    tetouan: ["restaurant tetouan", "dining tetouan"],
+    essaouira: ["restaurant essaouira", "dining essaouira"],
+    mohammedia: ["restaurant mohammedia"],
+    temara: ["restaurant temara"],
+    nador: ["restaurant nador"],
+    harhoura: ["restaurant harhoura"],
   },
 
-  // Service-based keywords
+  // Cuisine-based keywords
   services: {
-    hair: [
-      "haircut booking",
-      "hairdresser near me",
-      "hair coloring appointment",
-      "balayage casablanca",
-      "barber beard trim",
-      "men's haircut online booking",
-      "coiffeur paris",
+    moroccan: [
+      "moroccan restaurant",
+      "traditional moroccan cuisine",
+      "tajine restaurant",
+      "couscous booking",
     ],
-    beauty: [
-      "manicure booking",
-      "gel nails booking",
-      "pedicure booking",
-      "nail salon casablanca",
-      "brow shaping booking",
-      "lash extensions booking",
-      "salon biana beauty",
-      "beauty place secret tanger",
-      "joudy beauty",
+    mediterranean: [
+      "mediterranean restaurant",
+      "mediterranean cuisine",
+      "book mediterranean",
     ],
-    wellness: [
-      "massage booking",
-      "spa appointment",
-      "facial treatment booking",
-      "hammam reservation",
-      "wellness services morocco",
-      "hammam charaf",
-      "hammam boughaz",
-      "les bains almaha spa",
-      "hammam zaryouh",
-      "leelah spa hamman",
-      "maison georgina",
-      "maison eve spa",
-      "sublime d'orient",
-      "kenso spa",
-      "so spa prestigia",
-      "spa prestigia",
-      "imane spa",
-      "hammam turc al falah",
-      "hammam lilya",
-      "hammam lalla khadija",
-      "hammam targa",
-      "le rivage clèopâtre",
-      "hammam tarik",
-      "hammam al madina",
-      "hammam el fen",
-      "coin zen et belle",
-    ],
-    fitness: [
-      "personal trainer booking",
-      "gym class booking",
-      "yoga class morocco",
-      "fitness coach appointment",
-    ],
-    medical: [
-      "laser hair removal booking",
-      "skincare clinic booking",
-      "cosmetic treatment appointment",
-    ],
+    international: ["international restaurant", "fusion dining"],
+    french: ["french restaurant", "french cuisine"],
+    seafood: ["seafood restaurant", "fish restaurant"],
   },
 
-  // Long-tail conversion keywords
   longTail: [
-    "book a haircut near me now",
-    "last-minute salon booking",
-    "affordable barber near me",
-    "best salon reviews morocco",
-    "beauty deals casablanca",
-    "same day manicure booking",
-    "cheap massage casablanca",
-    "professional hairdresser booking",
+    "book a table near me now",
+    "last minute restaurant reservation",
+    "best restaurant reviews morocco",
+    "romantic dinner reservation",
+    "family dinner booking",
   ],
 
-  // Provider/business keywords
   business: [
-    "salon software",
-    "salon CRM",
-    "barbershop management system",
-    "booking software for salons",
-    "appointment system for barbers",
-    "beauty business platform",
-    "salon online calendar",
-    "scheduling app for salons",
+    "restaurant reservation system",
+    "table management",
+    "restaurant booking software",
+    "dining reservation platform",
   ],
 };
 
@@ -216,7 +116,7 @@ export function generateLocalBusinessSchema(business: {
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "BeautySalon",
+    "@type": "Restaurant",
     name: business.name,
     description: business.description,
     address: {
@@ -238,7 +138,7 @@ export function generateLocalBusinessSchema(business: {
     ...(business.services && {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Services",
+        name: "Dining experiences",
         itemListElement: business.services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
@@ -271,23 +171,21 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
  * Generate organization schema
  */
 export function generateOrganizationSchema() {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ollazen.com";
-  
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://vazivo.com";
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Ollazen",
-    alternateName: "Ollazen Morocco",
+    name: "Vazivo",
+    alternateName: "Vazivo Morocco",
     url: appUrl,
     logo: `${appUrl}/logo.svg`,
-    description: "Plateforme de réservation en ligne pour salons de coiffure, barbershops, spas, hammams et instituts de beauté au Maroc",
+    description: "Discover and book the best restaurants. Find and reserve tables at the best restaurants near you with Vazivo.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "MA",
     },
-    sameAs: [
-      // Add social media URLs when available
-    ],
+    sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",
@@ -300,12 +198,12 @@ export function generateOrganizationSchema() {
  * Generate WebSite schema with search action
  */
 export function generateWebsiteSchema() {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ollazen.com";
-  
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://vazivo.com";
+
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Ollazen",
+    name: "Vazivo",
     url: appUrl,
     potentialAction: {
       "@type": "SearchAction",

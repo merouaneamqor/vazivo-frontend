@@ -9,7 +9,7 @@ export default function TermsPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
           <p className="mb-4">
-            By accessing or using OllaZen, you agree to be bound by these Terms of Service and our Privacy Policy. 
+            By accessing or using Vazivo, you agree to be bound by these Terms of Service and our Privacy Policy. 
             If you do not agree to these terms, you may not use our services.
           </p>
           <p className="mb-4">
@@ -20,11 +20,11 @@ export default function TermsPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">2. Description of Service</h2>
           <p className="mb-4">
-            OllaZen is a booking platform that connects customers with beauty and wellness service providers including spas, salons, barbers, and nail studios. 
+            Vazivo is a booking platform that connects customers with beauty and wellness service providers including spas, salons, barbers, and nail studios. 
             We facilitate appointment scheduling, service discovery, and booking management.
           </p>
           <p className="mb-4">
-            OllaZen acts as an intermediary platform. We do not provide the actual beauty and wellness services. 
+            Vazivo acts as an intermediary platform. We do not provide the actual beauty and wellness services. 
             Service providers are independent businesses responsible for delivering the services you book.
           </p>
         </section>
@@ -98,7 +98,7 @@ export default function TermsPage() {
 
           <h3 className="text-xl font-semibold mb-3 mt-6">5.2 Service Fees</h3>
           <p className="mb-4">
-            OllaZen may charge service fees for using the platform. Any applicable fees will be clearly displayed before you complete a booking.
+            Vazivo may charge service fees for using the platform. Any applicable fees will be clearly displayed before you complete a booking.
           </p>
 
           <h3 className="text-xl font-semibold mb-3 mt-6">5.3 Refunds</h3>
@@ -110,7 +110,7 @@ export default function TermsPage() {
 
           <h3 className="text-xl font-semibold mb-3 mt-6">5.4 Disputes</h3>
           <p className="mb-4">
-            If you have a payment dispute, contact us at support@ollazen.com within 30 days of the transaction.
+            If you have a payment dispute, contact us at support@vazivo.com within 30 days of the transaction.
           </p>
         </section>
 
@@ -147,7 +147,7 @@ export default function TermsPage() {
           
           <h3 className="text-xl font-semibold mb-3 mt-6">8.1 Our Content</h3>
           <p className="mb-4">
-            All content on OllaZen, including text, graphics, logos, images, and software, is owned by OllaZen or its licensors and protected by copyright and trademark laws.
+            All content on Vazivo, including text, graphics, logos, images, and software, is owned by Vazivo or its licensors and protected by copyright and trademark laws.
           </p>
 
           <h3 className="text-xl font-semibold mb-3 mt-6">8.2 Limited License</h3>
@@ -190,7 +190,7 @@ export default function TermsPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">10. Indemnification</h2>
           <p className="mb-4">
-            You agree to indemnify and hold harmless OllaZen, its affiliates, and their respective officers, directors, and employees from any claims, 
+            You agree to indemnify and hold harmless Vazivo, its affiliates, and their respective officers, directors, and employees from any claims, 
             damages, losses, or expenses arising from your use of the platform, violation of these terms, or infringement of any rights of another party.
           </p>
         </section>
@@ -200,7 +200,7 @@ export default function TermsPage() {
           
           <h3 className="text-xl font-semibold mb-3 mt-6">11.1 Informal Resolution</h3>
           <p className="mb-4">
-            Before filing a claim, you agree to contact us at support@ollazen.com to attempt to resolve the dispute informally.
+            Before filing a claim, you agree to contact us at support@vazivo.com to attempt to resolve the dispute informally.
           </p>
 
           <h3 className="text-xl font-semibold mb-3 mt-6">11.2 Arbitration</h3>
@@ -239,7 +239,7 @@ export default function TermsPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">15. Contact Information</h2>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="mb-2"><strong>Email:</strong> support@ollazen.com</p>
+            <p className="mb-2"><strong>Email:</strong> support@vazivo.com</p>
 
           </div>
         </section>

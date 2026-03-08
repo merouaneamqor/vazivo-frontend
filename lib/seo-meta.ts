@@ -24,50 +24,40 @@ export function unslugify(slug: string): string {
  * {city} is replaced dynamically with the resolved city name.
  */
 const CATEGORY_META: Record<string, CategoryMeta> = {
-  barber: {
-    title: 'Meilleur Barber à {city} | Coupe Homme & Barbe | OllaZen',
+  moroccan: {
+    title: "Meilleurs restaurants marocains à {city} | Réservation | Vazivo",
     description:
-      'Trouvez le meilleur barber à {city} pour une coupe homme moderne, une barbe taillée au cordeau ou un rasage traditionnel. Réservez votre place en ligne en quelques clics. Évitez les attentes\u00A0!',
+      "Trouvez les meilleurs restaurants de cuisine marocaine à {city}. Réservez votre table en ligne en quelques clics sur Vazivo.",
   },
-  coiffeur: {
-    title: 'Coiffeur à {city} | Coloration, Coupe & Brushing | OllaZen',
+  mediterranean: {
+    title: "Restaurants méditerranéens à {city} | Réservation | Vazivo",
     description:
-      'Recherchez un coiffeur talentueux à {city}\u00A0? Pour une nouvelle coupe, une coloration expert ou un brushing parfait, réservez votre rendez-vous en ligne facilement. OllaZen vous connecte aux meilleurs salons.',
+      "Réservez une table dans les meilleurs restaurants méditerranéens à {city}. Découvrez et réservez sur Vazivo.",
   },
-  massage: {
-    title: 'Massage à {city} | Soins Bien-être & Relaxation | OllaZen',
+  italian: {
+    title: "Restaurants italiens à {city} | Réservation | Vazivo",
     description:
-      "Besoin de vous détendre ? Réservez votre séance de massage à {city} : massage relaxant, deep tissue, californien et plus. Trouvez et réservez en ligne sur OllaZen.",
+      "Trouvez et réservez les meilleurs restaurants italiens à {city}. Pâtes, pizzas et plus. Réservez en ligne sur Vazivo.",
   },
-  spa: {
-    title: 'Spa à {city} | Massage, Détente & Bien-être | OllaZen',
+  french: {
+    title: "Restaurants français à {city} | Réservation | Vazivo",
     description:
-      "Besoin de vous détendre\u00A0? Réservez votre séance dans un spa de luxe à {city}. Massages relaxants, soins corps et programmes bien-être. Trouvez et bookez l'établissement parfait sur OllaZen.",
+      "Réservez une table dans un restaurant français à {city}. Cuisine raffinée et ambiance. Vazivo.",
   },
-  hammam: {
-    title: 'Hammam à {city} | Hammam Traditionnel & Soins Gommage | OllaZen',
+  japanese: {
+    title: "Restaurants japonais à {city} | Réservation | Vazivo",
     description:
-      "Vivez l'expérience authentique du hammam marocain à {city}. Réservez en ligne pour un gommage, un soin au rhassoul et une détente pure. Comparez les établissements et trouvez les meilleures offres.",
+      "Sushi, ramen et cuisine japonaise à {city}. Réservez votre table en ligne sur Vazivo.",
   },
-  salon: {
-    title: 'Coiffeur à {city} | Coloration, Coupe & Brushing | OllaZen',
+  seafood: {
+    title: "Restaurants fruits de mer à {city} | Réservation | Vazivo",
     description:
-      'Recherchez un coiffeur talentueux à {city}\u00A0? Pour une nouvelle coupe, une coloration expert ou un brushing parfait, réservez votre rendez-vous en ligne facilement. OllaZen vous connecte aux meilleurs salons.',
+      "Les meilleurs restaurants de poissons et fruits de mer à {city}. Réservez sur Vazivo.",
   },
-  fitness: {
-    title: 'Fitness à {city} | Salle de Sport & Coach | OllaZen',
+  "street-food": {
+    title: "Street food à {city} | Réservation | Vazivo",
     description:
-      'Trouvez les meilleures salles de fitness à {city}. Musculation, cours collectifs, coaching personnel. Réservez votre séance en ligne et atteignez vos objectifs.',
-  },
-  "salon-de-beaute": {
-    title: 'Salon de Beauté à {city} | Soins Visage, Épil & Maquillage | OllaZen',
-    description:
-      'Votre beauté mérite le meilleur. Réservez en ligne dans les meilleurs salons de beauté à {city} pour soins visage, épilation, manucure et maquillage professionnel. Prenez rendez-vous 24h/24.',
-  },
-  "beauty-wellness": {
-    title: 'Salon de Beauté à {city} | Soins Visage, Épil & Maquillage | OllaZen',
-    description:
-      'Votre beauté mérite le meilleur. Réservez en ligne dans les meilleurs salons de beauté à {city} pour soins visage, épilation, manucure et maquillage professionnel. Prenez rendez-vous 24h/24.',
+      "Découvrez la street food à {city}. Réservez ou trouvez les meilleures adresses sur Vazivo.",
   },
 };
 
@@ -88,8 +78,8 @@ export function getCategoryMeta(categorySlug: string, cityName: string): Categor
   // Generic fallback
   const categoryName = unslugify(categorySlug);
   return {
-    title: `${categoryName} à ${cityName} | Réservation en Ligne | OllaZen`,
-    description: `Trouvez les meilleurs établissements ${categoryName} à ${cityName}. Comparez les avis, consultez les disponibilités et réservez en ligne en quelques clics sur OllaZen.`,
+    title: `${categoryName} à ${cityName} | Réservation en ligne | Vazivo`,
+    description: `Trouvez les meilleurs restaurants ${categoryName} à ${cityName}. Comparez les avis, consultez les disponibilités et réservez votre table en ligne sur Vazivo.`,
   };
 }
 
@@ -98,8 +88,8 @@ export function getCategoryMeta(categorySlug: string, cityName: string): Categor
  */
 export function getCityMeta(cityName: string): CategoryMeta {
   return {
-    title: `Salons & Bien-être à ${cityName} | Réservation en Ligne | OllaZen`,
-    description: `Trouvez et réservez les meilleurs salons de coiffure, barber, spa, hammam et instituts de beauté à ${cityName}. Réservez en ligne facilement sur OllaZen.`,
+    title: `Restaurants à ${cityName} | Réservation en ligne | Vazivo`,
+    description: `Trouvez et réservez les meilleurs restaurants à ${cityName}. Réservez votre table en ligne facilement sur Vazivo.`,
   };
 }
 
@@ -118,7 +108,7 @@ export function getCategoryOnlyMeta(categorySlug: string): CategoryMeta {
 
   const categoryName = unslugify(categorySlug);
   return {
-    title: `${categoryName} au Maroc | Réservation en Ligne | OllaZen`,
-    description: `Trouvez les meilleurs établissements ${categoryName} au Maroc. Comparez les avis, consultez les disponibilités et réservez en ligne en quelques clics sur OllaZen.`,
+    title: `${categoryName} au Maroc | Réservation en ligne | Vazivo`,
+    description: `Trouvez les meilleurs restaurants ${categoryName} au Maroc. Comparez les avis et réservez votre table en ligne sur Vazivo.`,
   };
 }

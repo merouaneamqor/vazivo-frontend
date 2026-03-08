@@ -16,7 +16,7 @@ import type {
 import type { ProviderSearchResults } from "@/types/provider-search";
 import { getLocaleCookie, normalizeLocale } from "@/lib/locale";
 
-// Always use full backend URL to ensure requests go to infra.ollazen.com
+// Always use full backend URL to ensure requests go to API
 function getApiBaseUrl(): string {
   const base =
     process.env.NEXT_PUBLIC_API_URL ||

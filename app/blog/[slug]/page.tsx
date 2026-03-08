@@ -12,7 +12,7 @@ import {
 import { getApiBaseUrl } from "@/lib/business-server";
 import type { Business } from "@/types";
 
-const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://ollazen.com").replace(/\/+$/, "");
+const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://vazivo.com").replace(/\/+$/, "");
 
 export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -39,7 +39,7 @@ export async function generateMetadata({
     );
     if (combo) {
       const title = `Les ${combo.categoryLabel} à ${combo.cityLabel} – Top Adresses & Réservation`;
-      const description = `Découvrez les meilleurs ${combo.categoryLabel.toLowerCase()} à ${combo.cityLabel} : adresses, prix, avis clients et réservation en ligne sur OllaZen.`;
+      const description = `Découvrez les meilleurs ${combo.categoryLabel.toLowerCase()} à ${combo.cityLabel} : adresses, prix, avis clients et réservation en ligne sur Vazivo.`;
       return buildMeta(title, description, slug);
     }
   }
@@ -47,7 +47,7 @@ export async function generateMetadata({
   const avisPage = parseAvisSlug(slug);
   if (avisPage) {
     const title = `Avis sur ${avisPage.name} à ${avisPage.city} – Prix, Photos et Expérience`;
-    const description = `Découvrez ${avisPage.name} à ${avisPage.city} : avis clients, prix des services, photos et comment réserver sur OllaZen.`;
+    const description = `Découvrez ${avisPage.name} à ${avisPage.city} : avis clients, prix des services, photos et comment réserver sur Vazivo.`;
     return buildMeta(title, description, slug);
   }
 
@@ -73,7 +73,7 @@ function buildMeta(title: string, description: string, slug: string): Metadata {
       description,
       url: canonical,
       type: "article",
-      siteName: "OllaZen",
+      siteName: "Vazivo",
       locale: "fr_MA",
     },
     twitter: { card: "summary_large_image", title, description },
@@ -263,7 +263,7 @@ function ArticleShell({ title, description, breadcrumb, date, bodyHtml, badge, g
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                OllaZen
+                Vazivo
               </span>
             </div>
           )}
@@ -328,7 +328,7 @@ function BookingCTA({
       <div className="pointer-events-none absolute right-0 top-0 w-48 h-48 -translate-y-1/3 translate-x-1/3 rounded-full bg-white/10 blur-2xl" />
       <div className="pointer-events-none absolute left-0 bottom-0 w-32 h-32 translate-y-1/3 -translate-x-1/4 rounded-full bg-black/10 blur-2xl" />
       <div className="relative">
-        <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-1">OllaZen</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-1">Vazivo</p>
         <h3 className="text-lg sm:text-xl font-bold text-black mb-1">{label}</h3>
         {description && <p className="text-sm text-black/75 mb-5 max-w-sm">{description}</p>}
         <Link
@@ -357,8 +357,8 @@ function StaticArticleLayout({ article }: { article: ReturnType<typeof getStatic
     headline: article.title,
     description: article.description,
     datePublished: article.date,
-    author: { "@type": "Organization", name: "OllaZen" },
-    publisher: { "@type": "Organization", name: "OllaZen", url: appUrl },
+    author: { "@type": "Organization", name: "Vazivo" },
+    publisher: { "@type": "Organization", name: "Vazivo", url: appUrl },
     url: `${appUrl}/blog/${article.slug}`,
   };
 
@@ -411,15 +411,15 @@ function CityGuideLayout({
   const title = `Les Meilleurs ${combo.categoryLabel} à ${combo.cityLabel}`;
   const listingUrl = `/${combo.category}/${combo.city}`;
   const gradient = GRADIENTS[combo.category] || "from-primary-600 to-primary-700";
-  const description = `Vous cherchez un ${combo.categoryLabel.toLowerCase().replace(/s$/, "")} à ${combo.cityLabel} ? Voici les meilleures adresses sur OllaZen, avec avis clients et réservation en ligne.`;
+  const description = `Vous cherchez un ${combo.categoryLabel.toLowerCase().replace(/s$/, "")} à ${combo.cityLabel} ? Voici les meilleures adresses sur Vazivo, avec avis clients et réservation en ligne.`;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
-    author: { "@type": "Organization", name: "OllaZen" },
-    publisher: { "@type": "Organization", name: "OllaZen", url: appUrl },
+    author: { "@type": "Organization", name: "Vazivo" },
+    publisher: { "@type": "Organization", name: "Vazivo", url: appUrl },
     url: `${appUrl}/blog/${slug}`,
     about: { "@type": "City", name: combo.cityLabel, addressCountry: "MA" },
   };
@@ -466,7 +466,7 @@ function CityGuideLayout({
         <BookingCTA
           href={listingUrl}
           label={`Voir tous les ${combo.categoryLabel.toLowerCase()} à ${combo.cityLabel}`}
-          description="Comparez les prix, lisez les avis et réservez en ligne sur OllaZen."
+          description="Comparez les prix, lisez les avis et réservez en ligne sur Vazivo."
         />
       </ArticleShell>
     </>
@@ -487,14 +487,14 @@ function AvisLayout({
   const title = `Avis sur ${avisPage.name} à ${avisPage.city} – Prix, Photos et Expérience`;
   const description = business
     ? `Tout sur ${avisPage.name} à ${avisPage.city}${business.average_rating > 0 ? ` – note ${business.average_rating.toFixed(1)}/5` : ""} : prix, photos et avis clients.`
-    : `Découvrez ${avisPage.name} à ${avisPage.city} sur OllaZen.`;
+    : `Découvrez ${avisPage.name} à ${avisPage.city} sur Vazivo.`;
 
   const structuredData: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Review",
     name: title,
-    author: { "@type": "Organization", name: "OllaZen" },
-    publisher: { "@type": "Organization", name: "OllaZen", url: appUrl },
+    author: { "@type": "Organization", name: "Vazivo" },
+    publisher: { "@type": "Organization", name: "Vazivo", url: appUrl },
     url: `${appUrl}/blog/${slug}`,
     itemReviewed: {
       "@type": "LocalBusiness",
@@ -686,7 +686,7 @@ function AvisContent({
       <BookingCTA
         href={businessPath}
         label={`Réserver chez ${avisPage.name}`}
-        description={`Voir les disponibilités et réserver en ligne sur OllaZen.`}
+        description={`Voir les disponibilités et réserver en ligne sur Vazivo.`}
       />
     </div>
   );

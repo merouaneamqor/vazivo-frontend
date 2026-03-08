@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
           <p className="mb-4">
-            OllaZen operates a booking platform connecting customers with beauty and wellness service providers. 
+            Vazivo operates a booking platform connecting customers with beauty and wellness service providers. 
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information.
           </p>
         </section>
@@ -169,7 +169,7 @@ export default function PrivacyPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">13. Contact Us</h2>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="mb-2"><strong>Email:</strong> privacy@ollazen.com</p>
+            <p className="mb-2"><strong>Email:</strong> privacy@vazivo.com</p>
           </div>
         </section>
       </div>

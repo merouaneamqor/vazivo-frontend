@@ -43,29 +43,22 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(appUrl),
     title: {
       default: t("defaultTitle"),
-      template: "%s | OllaZen",
+      template: "%s | Vazivo",
     },
     description: t("defaultDescription"),
     keywords: [
-      // Core platform
-      "réservation salon en ligne", "booking salon maroc", "appointment booking morocco", "salon booking app",
-      // Morocco cities
-      "salon casablanca", "coiffeur casablanca", "barber casablanca", "spa casablanca", "hammam casablanca",
-      "salon rabat", "coiffeur rabat", "salon marrakech", "barber marrakech", "spa marrakech",
-      "salon tanger", "salon agadir", "beauty services morocco",
-      // Services
-      "réservation coiffeur", "booking barber", "réservation spa", "massage booking", "manucure casablanca",
-      "pédicure booking", "hammam reservation", "facial treatment", "laser hair removal morocco",
-      // Long-tail
-      "meilleur salon casablanca", "barbershop near me", "spa près de moi", "coiffeur en ligne maroc",
-      "réservation beauté maroc", "wellness booking morocco", "beauty marketplace morocco"
+      "restaurant reservation", "book table", "restaurant booking", "dining reservation",
+      "restaurant casablanca", "restaurant rabat", "restaurant marrakech", "restaurant tangier",
+      "restaurant fes", "restaurant agadir", "best restaurants morocco", "reserve table",
+      "cuisine moroccan", "cuisine mediterranean", "find restaurant", "restaurant near me",
+      "table reservation app", "restaurant discovery", "vazivo reservation", "book restaurant online",
     ],
-    authors: [{ name: "OllaZen" }],
+    authors: [{ name: "Vazivo" }],
     openGraph: {
       type: "website",
       locale: "fr_MA",
       url: process.env.NEXT_PUBLIC_APP_URL,
-      siteName: "OllaZen",
+      siteName: "Vazivo",
       title: t("defaultTitle"),
       description: t("defaultDescription"),
       images: [
@@ -73,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "OllaZen – Réservation Salon & Beauté au Maroc",
+          alt: "Vazivo – Discover and book the best restaurants",
         },
       ],
     },
@@ -116,7 +109,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#ff5c7c",
+  themeColor: "#9D0208",
   width: "device-width",
   initialScale: 1,
 };
@@ -137,7 +130,6 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://infra.ollazen.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>

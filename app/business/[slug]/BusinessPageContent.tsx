@@ -246,7 +246,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                 <SocialShareButtons
                   url={typeof window !== "undefined" ? window.location.href : ""}
                   title={`${business.name} – ${getBusinessCategoryDisplay(business.category)} ${getBusinessCityDisplay(business.city)}`}
-                  text={`Check out ${business.name} on OllaZen`}
+                  text={`Check out ${business.name} on Vazivo`}
                   variant="dropdown"
                 />
                 <FavoriteButton business={business} variant="icon" size="md" />

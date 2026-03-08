@@ -132,7 +132,7 @@ export default function UpgradeToProviderPage() {
       });
       authenticate(data.user);
       queryClient.invalidateQueries({ queryKey: queryKeys.auth.me });
-      toast.success("Welcome to Ollazen for Business!");
+      toast.success("Welcome to Vazivo for Business!");
       router.push("/provider");
     } catch (err) {
       if (err instanceof ApiError) {
@@ -151,7 +151,7 @@ export default function UpgradeToProviderPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="OllaZen" className="h-10 w-10" />
+              <img src="/logo.svg" alt="Vazivo" className="h-10 w-10" />
             </Link>
             <h1 className="text-3xl font-display font-bold text-neutral-900">
               Create Your Business Profile

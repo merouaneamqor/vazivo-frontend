@@ -34,7 +34,7 @@ export async function generateMetadata({
       description: meta.description,
       url: canonicalUrl,
       type: "website",
-      siteName: "OllaZen",
+      siteName: "Vazivo",
       locale: "fr_MA",
     },
     twitter: {

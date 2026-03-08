@@ -1,5 +1,5 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- OllaZen -->
+  <!-- Vazivo -->
   
   <!-- Soft glow background -->
   <circle cx="20" cy="20" r="19" fill="url(#bgGlow)" opacity="0.15"/>
@@ -14,21 +14,21 @@
     <path d="M11 22 L11.4 23.6 L13 24 L11.4 24.4 L11 26 L10.6 24.4 L9 24 L10.6 23.6 Z" fill="white" opacity="0.8"/>
   </g>
   
-  <!-- Letter G -->
-  <text x="20" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">G</text>
+  <!-- Letter V -->
+  <text x="20" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">V</text>
   
   <defs>
     <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#9b87f5;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#9b87f5;stop-opacity:0"/>
+      <stop offset="0%" style="stop-color:#9D0208;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#9D0208;stop-opacity:0"/>
     </radialGradient>
     <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#9b87f5"/>
-      <stop offset="100%" style="stop-color:#7E69AB"/>
+      <stop offset="0%" style="stop-color:#9D0208"/>
+      <stop offset="100%" style="stop-color:#E85D04"/>
     </linearGradient>
     <linearGradient id="stroke" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#B8A8E8"/>
-      <stop offset="100%" style="stop-color:#9b87f5"/>
+      <stop offset="0%" style="stop-color:#DC2F02"/>
+      <stop offset="100%" style="stop-color:#9D0208"/>
     </linearGradient>
   </defs>
 </svg>

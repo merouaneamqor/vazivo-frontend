@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "List your business | OllaZen for Business",
-  description: "Join OllaZen and reach more customers. List your salon, spa, or wellness business. Get more bookings and grow your client base.",
+  title: "List your business | Vazivo for Business",
+  description: "Join Vazivo and reach more customers. List your salon, spa, or wellness business. Get more bookings and grow your client base.",
 };
 
 export default function ProviderRegisterLayout({

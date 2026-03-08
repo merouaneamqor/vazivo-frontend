@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATIC_ARTICLES, CITY_GUIDE_COMBOS, AVIS_PAGES, getCityGuideSlug } from "@/lib/blog";
 
-const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://ollazen.com").replace(/\/+$/, "");
+const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://vazivo.com").replace(/\/+$/, "");
 
 export const metadata: Metadata = {
-  title: "Blog OllaZen – Guides Spa, Hammam & Beauté au Maroc",
+  title: "Blog Vazivo – Guides Spa, Hammam & Beauté au Maroc",
   description:
     "Découvrez nos guides spa, hammam et beauté au Maroc : meilleures adresses par ville, prix, avis et conseils pour bien choisir.",
   alternates: {
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Blog OllaZen – Guides Spa, Hammam & Beauté au Maroc",
+    title: "Blog Vazivo – Guides Spa, Hammam & Beauté au Maroc",
     description: "Découvrez nos guides spa, hammam et beauté au Maroc.",
     url: `${appUrl}/blog`,
     type: "website",
-    siteName: "OllaZen",
+    siteName: "Vazivo",
     locale: "fr_MA",
   },
 };
@@ -77,12 +77,12 @@ export default function BlogPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Blog OllaZen",
+    name: "Blog Vazivo",
     description: "Guides spa, hammam et beauté au Maroc",
     url: `${appUrl}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "OllaZen",
+      name: "Vazivo",
       url: appUrl,
     },
   };
@@ -98,7 +98,7 @@ export default function BlogPage() {
           {/* Header */}
           <div className="mb-10 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-3">
-              Blog OllaZen
+              Blog Vazivo
             </h1>
             <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
               Guides, avis et conseils sur les meilleurs spas, hammams et salons de beauté au Maroc.

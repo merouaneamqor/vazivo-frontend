@@ -20,7 +20,7 @@ import {
 /**
  * Business page: /[city]/[category]/[slug] (e.g. /tanger/hammam/hammam-zaryouh)
  * Canonical URL: /{city}/{category}/{slug}
- * Title format: "{name} {city} – Prix, Photos et Avis | OllaZen"
+ * Title format: "{name} {city} – Prix, Photos et Avis | Vazivo"
  */
 export async function generateMetadata({
   params,
@@ -37,13 +37,13 @@ export async function generateMetadata({
   const city = getBusinessCityDisplay(business.city) || "";
   const categoryRaw = getBusinessCategoryDisplay(business.category) || "";
 
-  // "{name} {city} – Prix, Photos et Avis | OllaZen"
+  // "{name} {city} – Prix, Photos et Avis | Vazivo"
   const title = city
     ? `${business.name} ${city} – Prix, Photos et Avis`
     : `${business.name} – Prix, Photos et Avis`;
 
   // Description ≤ 160 chars
-  const rawDesc = `Découvrez ${business.name} à ${city} : prix, photos, avis clients et services proposés. Réservez votre séance sur OllaZen.`;
+  const rawDesc = `Découvrez ${business.name} à ${city} : prix, photos, avis clients et services proposés. Réservez votre séance sur Vazivo.`;
   const description = rawDesc.length > 160 ? rawDesc.slice(0, 157) + "…" : rawDesc;
 
   // Keywords: name+city, category+city, name alone
@@ -77,7 +77,7 @@ export async function generateMetadata({
       description,
       url: canonicalUrl,
       type: "website",
-      siteName: "OllaZen",
+      siteName: "Vazivo",
       images: [{ url: ogImage, width: 1200, height: 630, alt: `${business.name} ${city}`.trim() }],
     },
     twitter: {

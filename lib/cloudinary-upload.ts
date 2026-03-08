@@ -9,7 +9,7 @@ const CLOUD_NAME = "dqssnduni";
 const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
 
 /**
- * Always use full backend URL to ensure requests go to infra.ollazen.com
+ * Always use full backend URL to ensure requests go to API
  */
 function getApiBaseUrl(): string {
   const base =

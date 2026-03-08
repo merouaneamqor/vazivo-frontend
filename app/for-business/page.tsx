@@ -6,15 +6,15 @@ import { Store, Users, BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "List Your Business",
-  description: "Join OllaZen and reach more customers. List your salon, spa, or wellness business.",
+  description: "Join Vazivo and reach more customers. List your salon, spa, or wellness business.",
 };
 
 export default function ForBusinessPage() {
   return (
-    <ContentPage title="List Your Business" description="Reach more customers with OllaZen">
+    <ContentPage title="List Your Business" description="Reach more customers with Vazivo">
       <div className="space-y-6 text-neutral-600">
         <p>
-          Join thousands of beauty and wellness businesses on OllaZen. Get more bookings,
+          Join thousands of beauty and wellness businesses on Vazivo. Get more bookings,
           manage your schedule, and grow your client base.
         </p>
         <div className="grid sm:grid-cols-3 gap-6 mt-8">

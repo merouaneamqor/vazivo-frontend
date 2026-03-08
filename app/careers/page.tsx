@@ -3,7 +3,7 @@ import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Join the OllaZen team. Explore open positions in beauty and wellness tech.",
+  description: "Join the Vazivo team. Explore open positions in beauty and wellness tech.",
 };
 
 export default function CareersPage() {
@@ -17,7 +17,7 @@ export default function CareersPage() {
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">Open positions</h2>
         <p>
           We don&apos;t have any open roles at the moment. Check back soon or send your resume to
-          careers@ollazen.example.com and we&apos;ll keep you in mind for future opportunities.
+          careers@vazivo.example.com and we&apos;ll keep you in mind for future opportunities.
         </p>
       </div>
     </ContentPage>

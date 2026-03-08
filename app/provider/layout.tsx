@@ -11,7 +11,7 @@ import { ProviderGuard } from "@/components/guards";
 import { useProviderConfirmed } from "@/store/auth";
 import { useAuthReady } from "@/store/auth";
 
-const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@ollazen.ma";
+const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@vazivo.ma";
 const SUPPORT_WHATSAPP = process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP || "+212674016417";
 
 function ProviderNotConfirmedMessage() {

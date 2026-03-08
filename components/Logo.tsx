@@ -27,30 +27,21 @@ export function Logo({
   const s = sizes[size];
 
   const textColor = light ? "text-white" : "text-neutral-900";
-  const gradientId = `ollazen-owl-grad-${size}-${light ? "light" : "dark"}`;
+  const gradientId = `vazivo-logo-grad-${size}-${light ? "light" : "dark"}`;
 
   const icon = (
     <svg width={s.icon} height={s.icon} viewBox="0 0 100 100" aria-hidden>
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="100" y2="100">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#6D28D9" />
+          <stop offset="0%" stopColor="#9D0208" />
+          <stop offset="100%" stopColor="#E85D04" />
         </linearGradient>
       </defs>
 
-      {/* owl head */}
+      {/* Restaurant / dining icon: simple plate with fork */}
       <circle cx="50" cy="50" r="42" fill={`url(#${gradientId})`} />
-
-      {/* owl eyes */}
-      <circle cx="35" cy="45" r="10" fill="white" />
-      <circle cx="65" cy="45" r="10" fill="white" />
-
-      {/* pupils */}
-      <circle cx="35" cy="45" r="4" fill="#4C1D95" />
-      <circle cx="65" cy="45" r="4" fill="#4C1D95" />
-
-      {/* beak */}
-      <polygon points="50,55 44,65 56,65" fill="#4C1D95" />
+      <circle cx="50" cy="50" r="28" fill="none" stroke="white" strokeWidth="4" opacity={0.9} />
+      <path d="M50 22 v8 M50 70 v8 M46 50 h-12 M66 50 h12" stroke="white" strokeWidth="3" strokeLinecap="round" opacity={0.9} />
     </svg>
   );
 
@@ -67,7 +58,7 @@ export function Logo({
             textColor
           )}
         >
-          Olla<span className="text-primary-600">Zen</span>
+          Vazivo
         </span>
       </>
     );
@@ -79,7 +70,7 @@ export function Logo({
 
   if (href) {
     return (
-      <Link href={href} className={wrapperClass} aria-label="OllaZen – Home">
+      <Link href={href} className={wrapperClass} aria-label="Vazivo – Home">
         {content}
       </Link>
     );

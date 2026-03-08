@@ -197,7 +197,7 @@ export function ProviderRegisterForm() {
         >
           <div className="text-center mb-6">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="OllaZen" className="h-10 w-10" />
+              <img src="/logo.svg" alt="Vazivo" className="h-10 w-10" />
             </Link>
             <h1 className="text-2xl font-display font-bold text-neutral-900">
               {t("title")}

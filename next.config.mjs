@@ -22,7 +22,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com", pathname: "/**" },
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
-      { protocol: "https", hostname: "infra.ollazen.com" },
+      { protocol: "https", hostname: "api.vazivo.com" },
       { protocol: "http", hostname: "localhost", port: "3000" },
       { protocol: "http", hostname: "localhost", port: "9000", pathname: "/**" },
     ],
@@ -61,7 +61,7 @@ const nextConfig = {
 
 export default withSentryConfig(nextIntlPlugin(nextConfig), {
   org: "amcore",
-  project: "ollazen-front",
+  project: "vazivo-front",
   silent: !process.env.CI,
   widenClientFileUpload: true,
   tunnelRoute: "/monitoring",

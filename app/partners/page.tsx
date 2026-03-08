@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Partner Resources",
-  description: "Resources for OllaZen partners and business providers.",
+  description: "Resources for Vazivo partners and business providers.",
 };
 
 export default function PartnersPage() {
@@ -12,7 +12,7 @@ export default function PartnersPage() {
     <ContentPage title="Partner Resources" description="Tools and resources for partners">
       <div className="space-y-6 text-neutral-600">
         <p>
-          If you&apos;re a business partner or provider on OllaZen, you can manage your listings,
+          If you&apos;re a business partner or provider on Vazivo, you can manage your listings,
           services, and bookings from your provider dashboard.
         </p>
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">Provider dashboard</h2>
@@ -22,7 +22,7 @@ export default function PartnersPage() {
         </p>
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">Support</h2>
         <p>
-          For partner support, contact us at partners@ollazen.example.com.
+          For partner support, contact us at partners@vazivo.example.com.
         </p>
       </div>
     </ContentPage>

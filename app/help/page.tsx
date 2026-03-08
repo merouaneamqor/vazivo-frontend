@@ -12,7 +12,7 @@ export default function HelpPage() {
     <ContentPage title="Help Center" description="How can we help?">
       <div className="space-y-6 text-neutral-600">
         <p>
-          Find answers to common questions about booking, your account, and using OllaZen.
+          Find answers to common questions about booking, your account, and using Vazivo.
         </p>
         <h2 className="text-xl font-semibold text-neutral-900 mt-8">Booking</h2>
         <p>

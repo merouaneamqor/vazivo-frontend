@@ -1,4 +1,4 @@
-# Robots.txt for Ollazen - Business Directory
+# Robots.txt for Vazivo - Restaurant discovery & reservation
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -11,7 +11,7 @@ Disallow: /search?page=*
 Allow: /search
 
 # Sitemap
-Sitemap: https://ollazen.com/sitemap.xml
+Sitemap: https://vazivo.com/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1

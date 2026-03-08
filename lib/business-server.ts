@@ -94,7 +94,7 @@ export function buildMetaDescription(business: Business): string {
     business.services?.length && business.services.length > 0
       ? ` Services from ${business.services[0].formatted_price || ""}.`
       : "";
-  const tail = ` in ${city}.${servicesHint} Book on OllaZen.`;
+  const tail = ` in ${city}.${servicesHint} Book on Vazivo.`;
   const candidate = `${part1}${tail}`;
   return candidate.length > maxLen ? candidate.slice(0, maxLen - 3) + "…" : candidate;
 }

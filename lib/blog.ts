@@ -47,7 +47,7 @@ export const STATIC_ARTICLES: BlogArticle[] = [
     date: "2026-03-01",
     body: `<p>Vous cherchez un spa ou un hammam à proximité ? Au Maroc, l'offre est riche : des hammams traditionnels aux spas de luxe en passant par les instituts de beauté, il y en a pour tous les goûts et tous les budgets.</p>
 <h2>Comment trouver un spa près de vous</h2>
-<p>Utilisez OllaZen pour rechercher par ville ou par géolocalisation. Vous pouvez filtrer par catégorie (spa, hammam, massage), par disponibilité et par note client.</p>
+<p>Utilisez Vazivo pour rechercher par ville ou par géolocalisation. Vous pouvez filtrer par catégorie (spa, hammam, massage), par disponibilité et par note client.</p>
 <h2>Conseils pour choisir le bon spa</h2>
 <ul>
   <li>Consultez les avis clients avant de réserver.</li>
@@ -77,7 +77,7 @@ export const STATIC_ARTICLES: BlogArticle[] = [
       "Trouvez un hammam ouvert maintenant près de chez vous. Liste des hammams par ville au Maroc avec horaires et réservation en ligne.",
     description_ar: "ابحث عن حمام مفتوح الآن بالقرب منك. قائمة الحمامات حسب المدينة في المغرب مع مواعيد العمل والحجز عبر الإنترنت.",
     date: "2026-03-02",
-    body: `<p>Besoin d'un hammam ouvert maintenant ? Que vous soyez à Casablanca, Rabat, Tanger ou Agadir, OllaZen vous permet de trouver un hammam disponible immédiatement.</p>
+    body: `<p>Besoin d'un hammam ouvert maintenant ? Que vous soyez à Casablanca, Rabat, Tanger ou Agadir, Vazivo vous permet de trouver un hammam disponible immédiatement.</p>
 <h2>Combien coûte un hammam au Maroc ?</h2>
 <p>Les tarifs varient selon le type d'établissement :</p>
 <ul>
@@ -85,7 +85,7 @@ export const STATIC_ARTICLES: BlogArticle[] = [
   <li>Hammam de luxe ou spa hammam : 200–500 MAD</li>
   <li>Séance avec gommage et massage : 150–400 MAD</li>
 </ul>`,
-    body_ar: `<p>هل تبحث عن حمام مفتوح الآن؟ سواء كنت في الدار البيضاء أو الرباط أو طنجة أو أكادير، يتيح لك OllaZen العثور على حمام متاح فوراً.</p>
+    body_ar: `<p>هل تبحث عن حمام مفتوح الآن؟ سواء كنت في الدار البيضاء أو الرباط أو طنجة أو أكادير، يتيح لك Vazivo العثور على حمام متاح فوراً.</p>
 <h2>تكلفة الحمام في المغرب</h2>
 <ul>
   <li>حمام تقليدي : 50–120 درهم</li>
@@ -144,7 +144,7 @@ export const STATIC_ARTICLES: BlogArticle[] = [
     body: `<p>Le barbershop connaît un véritable essor au Maroc. Des établissements premium proposant des coupes modernes aux barbiers traditionnels, l'offre est variée et de qualité.</p>
 <h2>Comment choisir un bon barbershop</h2>
 <ul>
-  <li>Consultez le portfolio de coupes sur leur page OllaZen.</li>
+  <li>Consultez le portfolio de coupes sur leur page Vazivo.</li>
   <li>Lisez les avis de clients précédents.</li>
   <li>Réservez un créneau en ligne pour éviter l'attente.</li>
   <li>Vérifiez les tarifs : une coupe homme de qualité coûte entre 60 et 200 MAD.</li>

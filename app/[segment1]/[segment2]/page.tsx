@@ -45,7 +45,7 @@ export async function generateMetadata({
       description: meta.description,
       url: canonicalUrl,
       type: "website",
-      siteName: "OllaZen",
+      siteName: "Vazivo",
       locale: "fr_MA",
     },
     twitter: {
@@ -78,7 +78,7 @@ export default async function CategoryCityListingPage({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: `${unslugify(category)} à ${cityName}`,
-    description: `Trouvez et réservez les meilleurs ${unslugify(category).toLowerCase()} à ${cityName} sur OllaZen`,
+    description: `Trouvez et réservez les meilleurs ${unslugify(category).toLowerCase()} à ${cityName} sur Vazivo`,
     url: `${appUrl}/${category}/${city}`,
   };
 

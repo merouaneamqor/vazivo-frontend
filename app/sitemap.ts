@@ -5,8 +5,8 @@ import { getAllBlogSlugs } from "@/lib/blog";
 const PER_PAGE = 200;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ollazen.com";
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://infra.ollazen.com/api/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://vazivo.com";
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.vazivo.com/api/v1";
 
   // Main pages
   const routes = [

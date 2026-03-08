@@ -50,7 +50,7 @@
     "signUp": "Inscription",
     "forBusiness": "Pour les pros",
     "logout": "Déconnexion",
-    "brand": "OllaZen",
+    "brand": "Vazivo",
     "search": "Rechercher",
     "searchPlaceholder": "Rechercher des services, entreprises, lieux...",
     "openAccountMenu": "Menu compte",
@@ -72,7 +72,7 @@
     "listYourBusiness": "Proposer votre établissement",
     "providerLogin": "Espace pro",
     "partnerResources": "Ressources partenaires",
-    "copyright": "© {year} OllaZen. Tous droits réservés."
+    "copyright": "© {year} Vazivo. Tous droits réservés."
   },
   "auth": {
     "welcomeBack": "Bon retour !",
@@ -84,7 +84,7 @@
     "updatePasswordFailed": "Échec de la mise à jour du mot de passe"
   },
   "home": {
-    "heroTitle": "OllaZen - Réservation bien-être & beauté",
+    "heroTitle": "Vazivo - Réservation bien-être & beauté",
     "heroDescription": "Découvrez et réservez dans les meilleurs spas, salons et centres bien-être près de chez vous.",
     "searchPlaceholder": "Nom du Salon, Prestation, Ville…",
     "heroBadge": "Votre parcours beauté commence ici",
@@ -120,14 +120,14 @@
     "providerFeature3": "Gestion intelligente de l'agenda",
     "createFreeAccount": "Créer un compte gratuit",
     "faqTitle": "Questions fréquentes",
-    "faqDesc": "Tout ce que vous devez savoir sur OllaZen",
-    "faqQuestion1": "Comment puis-je réserver un rendez-vous pour un service de beauté sur la plateforme OllaZen ?",
-    "faqAnswer1": "Inscrivez-vous sur OllaZen, choisissez un service, un salon partenaire, puis définissez la date et l'heure. Vous recevrez une confirmation par email ou SMS.",
+    "faqDesc": "Tout ce que vous devez savoir sur Vazivo",
+    "faqQuestion1": "Comment puis-je réserver un rendez-vous pour un service de beauté sur la plateforme Vazivo ?",
+    "faqAnswer1": "Inscrivez-vous sur Vazivo, choisissez un service, un salon partenaire, puis définissez la date et l'heure. Vous recevrez une confirmation par email ou SMS.",
     "faqQuestion2": "Puis-je modifier ou annuler mon rendez-vous beauté ?",
-    "faqAnswer2": "Oui, vous pouvez modifier ou annuler votre rendez-vous dans la section \"Mes rendez-vous\" sur OllaZen, au moins 24 heures avant pour éviter des frais.",
-    "faqQuestion3": "Quels types de services de beauté proposez-vous sur la plateforme OllaZen ?",
-    "faqAnswer3": "Nous proposons des soins du visage, coiffures, manucures, pédicures, massages, épilations et soins capillaires, directement sur OllaZen.",
-    "faqQuestion4": "Les prix des services de beauté sont-ils fixes sur la plateforme OllaZen ?",
+    "faqAnswer2": "Oui, vous pouvez modifier ou annuler votre rendez-vous dans la section \"Mes rendez-vous\" sur Vazivo, au moins 24 heures avant pour éviter des frais.",
+    "faqQuestion3": "Quels types de services de beauté proposez-vous sur la plateforme Vazivo ?",
+    "faqAnswer3": "Nous proposons des soins du visage, coiffures, manucures, pédicures, massages, épilations et soins capillaires, directement sur Vazivo.",
+    "faqQuestion4": "Les prix des services de beauté sont-ils fixes sur la plateforme Vazivo ?",
     "faqAnswer4": "Les prix peuvent varier selon le salon, le prestataire ou la durée du service. Vous pourrez consulter les tarifs avant de réserver.",
     "faqQuestion5": "Puis-je choisir le professionnel qui va me prendre en charge pour mon soin de beauté ?",
     "faqAnswer5": "Oui, vous pouvez choisir votre professionnel en fonction de ses spécialités et de ses disponibilités lors de votre réservation.",
@@ -137,7 +137,7 @@
     "faqAnswer7": "Les paiements se font directement dans le salon par espèces ou carte bancaire (Visa, MasterCard). Vérifiez lors de la réservation.",
     "faqQuestion8": "Que faire si je suis en retard à mon rendez-vous beauté ?",
     "faqAnswer8": "Prévenez le salon partenaire dès que possible. Votre rendez-vous pourrait être raccourci ou modifié en fonction des disponibilités.",
-    "faqQuestion9": "Puis-je offrir un rendez-vous beauté en cadeau à quelqu'un via OllaZen ?",
+    "faqQuestion9": "Puis-je offrir un rendez-vous beauté en cadeau à quelqu'un via Vazivo ?",
     "faqAnswer9": "Oui, vous pouvez offrir un bon cadeau pour un service spécifique ou un montant à utiliser dans un salon partenaire.",
     "faqQuestion10": "Proposez-vous des services de beauté à domicile ?",
     "faqAnswer10": "Oui, certains salons partenaires offrent des services à domicile. Vous pouvez filtrer cette option lors de la réservation.",
@@ -160,7 +160,7 @@
     "reviewsCount": "{count} avis",
     "bookNow": "Réserver",
     "bookNowAria": "Réserver",
-    "shareText": "Découvrez {name} sur OllaZen",
+    "shareText": "Découvrez {name} sur Vazivo",
     "linkCopied": "Lien copié dans le presse-papiers !",
     "noPhotosYet": "Aucune photo pour le moment",
     "photosOf": "Photos de {name}",
@@ -287,7 +287,7 @@
   "providerRegister": {
     "landing": {
       "forBusiness": "Pour les pros",
-      "title": "Ajoutez votre établissement sur OllaZen",
+      "title": "Ajoutez votre établissement sur Vazivo",
       "subtitle": "Rejoignez des milliers d'établissements beauté et bien-être. Plus de réservations, gérez votre agenda et développez votre clientèle—tout en un seul endroit.",
       "getStarted": "Commencer — c'est gratuit",
       "learnMore": "En savoir plus",
@@ -314,7 +314,7 @@
       "readyToGrow": "Prêt à développer votre activité ?",
       "joinThousands": "Rejoignez des milliers de professionnels du bien-être qui nous font confiance pour gérer leurs réservations",
       "trialTerms": "Aucune carte bancaire requise • Essai gratuit de 14 jours • Annulez à tout moment",
-      "whyList": "Pourquoi s'inscrire sur OllaZen ?",
+      "whyList": "Pourquoi s'inscrire sur Vazivo ?",
       "whyListDesc": "Tout ce dont vous avez besoin pour attirer des clients et faire tourner votre activité.",
       "benefit1Title": "Gestion intelligente des réservations",
       "benefit1Desc": "Planification automatisée, disponibilité en temps réel et confirmations instantanées. Ne manquez plus jamais une réservation.",
@@ -651,7 +651,7 @@
     "recentActivity": "Activité récente"
   },
   "adminLogin": {
-    "title": "OllaZen Admin",
+    "title": "Vazivo Admin",
     "heading": "Connexion admin",
     "description": "Seuls les rôles superadmin, support, modérateur, finance et technical_admin peuvent accéder à cette zone.",
     "email": "E-mail",
@@ -1041,8 +1041,8 @@
     }
   },
   "seo": {
-    "defaultTitle": "OllaZen | Réservation Salon, Coiffeur, Barber, Spa & Hammam au Maroc",
-    "defaultDescription": "Réservez en ligne votre salon de coiffure, barbershop, spa, hammam et institut de beauté au Maroc. Casablanca, Rabat, Marrakech, Tanger. Booking instantané, avis clients, meilleurs prix.",
+    "defaultTitle": "Vazivo — Découvrez et réservez les meilleurs restaurants",
+    "defaultDescription": "Trouvez et réservez une table dans les meilleurs restaurants près de chez vous avec Vazivo. Casablanca, Rabat, Marrakech, Tanger.",
     "cities": {
       "casablanca": {
         "title": "Réservation Salon Casablanca | Coiffeur, Barber, Spa & Hammam",

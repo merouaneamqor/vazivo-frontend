@@ -50,7 +50,7 @@
     "signUp": "Sign up",
     "forBusiness": "For Business",
     "logout": "Log out",
-    "brand": "OllaZen",
+    "brand": "Vazivo",
     "search": "Search",
     "searchPlaceholder": "Search for services, businesses, locations...",
     "openAccountMenu": "Account menu",
@@ -72,7 +72,7 @@
     "listYourBusiness": "List Your Business",
     "providerLogin": "Provider Login",
     "partnerResources": "Partner Resources",
-    "copyright": "© {year} OllaZen. All rights reserved."
+    "copyright": "© {year} Vazivo. All rights reserved."
   },
   "auth": {
     "welcomeBack": "Welcome back!",
@@ -84,9 +84,9 @@
     "updatePasswordFailed": "Failed to update password"
   },
   "home": {
-    "heroTitle": "OllaZen - Beauty & Wellness Booking",
-    "heroDescription": "Discover and book appointments at the best spas, salons, and wellness centers near you. Your perfect look is just a click away.",
-    "searchPlaceholder": "Salon Name, Service, City…",
+    "heroTitle": "Vazivo — Restaurant discovery & reservation",
+    "heroDescription": "Discover vibrant places to eat. Find and book the best restaurants instantly with Vazivo.",
+    "searchPlaceholder": "Restaurant name, cuisine, city…",
     "heroBadge": "Your beauty journey starts here",
     "heroHeadlineBefore": "Book Beauty & ",
     "heroHeadlineWellness": "Wellness",
@@ -120,27 +120,27 @@
     "providerFeature3": "Smart Agenda Management",
     "createFreeAccount": "Create Free Account",
     "faqTitle": "Frequently Asked Questions",
-    "faqDesc": "Everything you need to know about OllaZen",
-    "faqQuestion1": "How can I book an appointment for a beauty service on the OllaZen platform?",
-    "faqAnswer1": "Sign up on OllaZen, choose a service, a partner salon, then set the date and time. You will receive a confirmation by email or SMS.",
-    "faqQuestion2": "Can I modify or cancel my beauty appointment?",
-    "faqAnswer2": "Yes, you can modify or cancel your appointment in the \"My Appointments\" section on OllaZen, at least 24 hours in advance to avoid fees.",
-    "faqQuestion3": "What types of beauty services do you offer on the OllaZen platform?",
-    "faqAnswer3": "We offer facials, haircuts, manicures, pedicures, massages, waxing and hair care, directly on OllaZen.",
-    "faqQuestion4": "Are beauty service prices fixed on the OllaZen platform?",
-    "faqAnswer4": "Prices may vary depending on the salon, provider or service duration. You can check the rates before booking.",
-    "faqQuestion5": "Can I choose the professional who will take care of my beauty treatment?",
-    "faqAnswer5": "Yes, you can choose your professional based on their specialties and availability when booking.",
-    "faqQuestion6": "Do you offer promotions or discounts for beauty services?",
+    "faqDesc": "Everything you need to know about Vazivo",
+    "faqQuestion1": "How can I reserve a table on the Vazivo platform?",
+    "faqAnswer1": "Sign up on Vazivo, choose a restaurant, select date and time, then confirm. You will receive a confirmation by email or SMS.",
+    "faqQuestion2": "Can I modify or cancel my reservation?",
+    "faqAnswer2": "Yes, you can modify or cancel your reservation in the \"My Reservations\" section on Vazivo, at least 24 hours in advance to avoid fees.",
+    "faqQuestion3": "What types of cuisine do you offer on the Vazivo platform?",
+    "faqAnswer3": "We offer Moroccan, Mediterranean, Italian, French, Japanese, seafood and more. Browse by cuisine when searching.",
+    "faqQuestion4": "Are restaurant prices fixed on the Vazivo platform?",
+    "faqAnswer4": "Prices may vary by restaurant and experience. You can check the price range before reserving.",
+    "faqQuestion5": "Can I specify the number of guests for my reservation?",
+    "faqAnswer5": "Yes, you can enter the number of guests when making a reservation. Restaurants use this to prepare your table.",
+    "faqQuestion6": "Do you offer promotions or discounts for restaurant reservations?",
     "faqAnswer6": "Yes, we regularly offer promotions. Check our home page or subscribe to our newsletter for more offers.",
-    "faqQuestion7": "What payment methods are available in partner salons for beauty services?",
-    "faqAnswer7": "Payments are made directly in the salon by cash or credit card (Visa, MasterCard). Check when booking.",
-    "faqQuestion8": "What should I do if I'm late for my beauty appointment?",
-    "faqAnswer8": "Notify the partner salon as soon as possible. Your appointment could be shortened or modified depending on availability.",
-    "faqQuestion9": "Can I gift a beauty appointment to someone via OllaZen?",
-    "faqAnswer9": "Yes, you can offer a gift voucher for a specific service or an amount to use at a partner salon.",
-    "faqQuestion10": "Do you offer at-home beauty services?",
-    "faqAnswer10": "Yes, some partner salons offer at-home services. You can filter this option when booking.",
+    "faqQuestion7": "What payment methods are available at partner restaurants?",
+    "faqAnswer7": "Payments are typically made at the restaurant by cash or card. Check the restaurant page when reserving.",
+    "faqQuestion8": "What should I do if I'm late for my reservation?",
+    "faqAnswer8": "Notify the restaurant as soon as possible. Your table may be held for a short time depending on their policy.",
+    "faqQuestion9": "Can I gift a restaurant reservation to someone via Vazivo?",
+    "faqAnswer9": "Yes, you can give a gift voucher for a specific restaurant or amount to use at a partner restaurant.",
+    "faqQuestion10": "Do you offer private dining or events?",
+    "faqAnswer10": "Some partner restaurants offer private dining. You can add special requests when making your reservation.",
     "faqSeeMore": "See More Questions",
     "searchLabel": "Search",
     "serviceCategory": "Service or Category",
@@ -160,7 +160,7 @@
     "reviewsCount": "{count} reviews",
     "bookNow": "Book Now",
     "bookNowAria": "Book now",
-    "shareText": "Check out {name} on OllaZen",
+    "shareText": "Check out {name} on Vazivo",
     "linkCopied": "Link copied to clipboard!",
     "noPhotosYet": "No photos yet",
     "photosOf": "Photos of {name}",
@@ -287,7 +287,7 @@
   "providerRegister": {
     "landing": {
       "forBusiness": "For Business",
-      "title": "List your business on OllaZen",
+      "title": "List your restaurant on Vazivo",
       "subtitle": "Join thousands of beauty and wellness businesses. Get more bookings, manage your schedule, and grow your client base—all in one place.",
       "getStarted": "Get started — it's free",
       "learnMore": "Learn more",
@@ -314,7 +314,7 @@
       "readyToGrow": "Ready to grow your business?",
       "joinThousands": "Join thousands of wellness professionals who trust us to manage their bookings",
       "trialTerms": "No credit card required • 14-day free trial • Cancel anytime",
-      "whyList": "Why list with OllaZen?",
+      "whyList": "Why list with Vazivo?",
       "whyListDesc": "Everything you need to attract customers and run your business smoothly.",
       "benefit1Title": "Smart booking management",
       "benefit1Desc": "Automated scheduling, real-time availability, and instant confirmations. Never miss a booking again.",
@@ -702,7 +702,7 @@
     "recentActivity": "Recent activity"
   },
   "adminLogin": {
-    "title": "OllaZen Admin",
+    "title": "Vazivo Admin",
     "heading": "Admin sign in",
     "description": "Only superadmin, support, moderator, finance, and technical_admin roles can access this area.",
     "email": "Email",
@@ -1094,20 +1094,20 @@
     }
   },
   "seo": {
-    "defaultTitle": "OllaZen | Book Salon, Hairdresser, Barber, Spa & Hammam in Morocco",
-    "defaultDescription": "Book online your hair salon, barbershop, spa, hammam and beauty salon in Morocco. Casablanca, Rabat, Marrakech, Tangier. Instant booking, customer reviews, best prices.",
+    "defaultTitle": "Vazivo — Discover and book the best restaurants",
+    "defaultDescription": "Find and reserve tables at the best restaurants near you with Vazivo. Book online in Casablanca, Rabat, Marrakech, Tangier and more.",
     "cities": {
       "casablanca": {
-        "title": "Book Salon Casablanca | Hairdresser, Barber, Spa & Hammam",
-        "description": "Find and book the best hair salons, barbershops, spas and hammams in Casablanca. Customer reviews, real-time availability, instant booking."
+        "title": "Book a table Casablanca | Best restaurants | Vazivo",
+        "description": "Find and reserve tables at the best restaurants in Casablanca. Customer reviews, real-time availability, instant reservation."
       },
       "rabat": {
-        "title": "Book Salon Rabat | Hairdresser, Barber, Spa & Hammam",
-        "description": "Find and book the best hair salons, barbershops, spas and hammams in Rabat. Customer reviews, real-time availability."
+        "title": "Book a table Rabat | Best restaurants | Vazivo",
+        "description": "Find and reserve tables at the best restaurants in Rabat. Customer reviews, real-time availability."
       },
       "marrakech": {
-        "title": "Book Salon Marrakech | Hairdresser, Barber, Spa & Hammam",
-        "description": "Find and book the best hair salons, barbershops, spas and hammams in Marrakech. Customer reviews, real-time availability."
+        "title": "Book a table Marrakech | Best restaurants | Vazivo",
+        "description": "Find and reserve tables at the best restaurants in Marrakech. Customer reviews, real-time availability."
       }
     }
   },

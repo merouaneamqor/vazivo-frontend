@@ -9,7 +9,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-gray-900">Email</h3>
-              <p className="text-gray-600">support@ollazen.com</p>
+              <p className="text-gray-600">support@vazivo.com</p>
             </div>
             
             <div>

@@ -6,7 +6,7 @@
  */
 
 const NOMINATIM_BASE = "https://nominatim.openstreetmap.org/search";
-const USER_AGENT = "OllaZenApp/1.0 (contact@ollazen.ma)";
+const USER_AGENT = "VazivoApp/1.0 (contact@ollazen.ma)";
 
 export interface NominatimPlace {
   place_id: number;
