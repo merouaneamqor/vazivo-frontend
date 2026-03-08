@@ -112,7 +112,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-[100] bg-white border-b border-neutral-100 shadow-sm">
+      <nav className="sticky top-0 z-[100] bg-vazivo-white border-b border-vazivo-lightGray shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-18">
 
@@ -126,10 +126,10 @@ export default function Navbar() {
                       (window as any).__toggleProviderSidebar();
                     }
                   }}
-                  className="lg:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+                  className="lg:hidden p-2 rounded-lg hover:bg-vazivo-lightGray transition-colors"
                   aria-label="Open menu"
                 >
-                  <Menu className="h-5 w-5 text-neutral-600" />
+                  <Menu className="h-5 w-5 text-vazivo-charcoal" />
                 </button>
               )}
               
@@ -147,8 +147,8 @@ export default function Navbar() {
                       className={cn(
                         "flex items-center gap-2 h-10 px-4 text-sm font-medium rounded-lg transition-all",
                         isActive 
-                          ? "text-primary-600 bg-primary-50 shadow-sm" 
-                          : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
+                          ? "text-vazivo-red bg-vazivo-red/10 shadow-sm" 
+                          : "text-vazivo-warmMuted hover:text-vazivo-charcoal hover:bg-vazivo-lightGray"
                       )}
                     >
                       <Icon className="h-4 w-4" />
@@ -164,12 +164,12 @@ export default function Navbar() {
               {/* Search bar - matches control group: h-10, rounded-lg, border */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className="hidden md:flex items-center gap-2 h-10 px-3 bg-white border border-neutral-200 rounded-lg hover:border-neutral-300 hover:bg-neutral-50 transition-colors min-w-0 max-w-[220px] lg:max-w-[260px] shrink"
+                className="hidden md:flex items-center gap-2 h-10 px-3 bg-vazivo-white border border-vazivo-lightGray rounded-lg hover:border-vazivo-charcoal/20 hover:bg-vazivo-lightGray/50 transition-colors min-w-0 max-w-[220px] lg:max-w-[260px] shrink"
                 aria-label={t("search")}
               >
-                <Search className="h-4 w-4 text-neutral-400 shrink-0" aria-hidden />
-                <span className="text-sm font-medium text-neutral-600 truncate text-left min-w-0">{t("search")}</span>
-                <kbd className="hidden lg:inline-flex shrink-0 px-2 py-0.5 text-xs font-medium text-neutral-500 bg-neutral-100 border border-neutral-200 rounded">
+                <Search className="h-4 w-4 text-vazivo-warmMuted shrink-0" aria-hidden />
+                <span className="text-sm font-medium text-vazivo-charcoal truncate text-left min-w-0">{t("search")}</span>
+                <kbd className="hidden lg:inline-flex shrink-0 px-2 py-0.5 text-xs font-medium text-vazivo-warmMuted bg-vazivo-lightGray border border-vazivo-lightGray rounded">
                   ⌘K
                 </kbd>
               </button>
@@ -186,12 +186,12 @@ export default function Navbar() {
                   onValueChange={(val) => setSelectedBusinessId(parseInt(val))}
                 >
                   <SelectTrigger className={cn(
-                    "flex items-center gap-2 h-10 pl-3 pr-3 rounded-lg transition-colors border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 w-auto min-w-[160px]"
+                    "flex items-center gap-2 h-10 pl-3 pr-3 rounded-lg transition-colors border border-vazivo-lightGray hover:border-vazivo-charcoal/20 hover:bg-vazivo-lightGray/50 w-auto min-w-[160px]"
                   )}>
-                    <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center">
-                      <Building2 className="h-4 w-4 text-primary-700" />
+                    <div className="h-8 w-8 rounded-full bg-vazivo-red/10 flex items-center justify-center">
+                      <Building2 className="h-4 w-4 text-vazivo-red" />
                     </div>
-                    <span className="text-sm font-medium text-neutral-700 max-w-[120px] truncate">
+                    <span className="text-sm font-medium text-vazivo-charcoal max-w-[120px] truncate">
                       {businesses.find(b => b.id === selectedBusinessId)?.name || "Select business"}
                     </span>
                   </SelectTrigger>
@@ -213,8 +213,8 @@ export default function Navbar() {
                     className={cn(
                       "flex items-center gap-2 h-10 pl-2 pr-3 rounded-lg transition-colors border relative",
                       userMenuOpen
-                        ? "border-neutral-300 bg-white shadow-sm"
-                        : "border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50",
+                        ? "border-vazivo-lightGray bg-vazivo-white shadow-sm"
+                        : "border-vazivo-lightGray hover:border-vazivo-charcoal/20 hover:bg-vazivo-lightGray/50",
                       isImpersonating && "border-amber-400 ring-1 ring-amber-200"
                     )}
                     aria-label={userMenuOpen ? t("closeAccountMenu") : t("openAccountMenu")}
@@ -231,18 +231,18 @@ export default function Navbar() {
                       ) : (
                         <Avatar className="h-8 w-8">
                           <AvatarImage src={user?.avatar_url} alt={user?.name} />
-                          <AvatarFallback className="text-xs font-semibold bg-primary-100 text-primary-700">
+                          <AvatarFallback className="text-xs font-semibold bg-vazivo-red/10 text-vazivo-red">
                             {getInitials(user?.name || "U")}
                           </AvatarFallback>
                         </Avatar>
                       )}
                     </span>
-                    <span className="hidden lg:block text-sm font-medium text-neutral-700 max-w-[80px] truncate">
-                      {user?.name?.split(" ")[0]}
+<span className="hidden lg:block text-sm font-medium text-vazivo-charcoal max-w-[80px] truncate">
+                    {user?.name?.split(" ")[0]}
                     </span>
                     <ChevronDown
                       className={cn(
-                        "h-4 w-4 text-neutral-400 transition-transform",
+                        "h-4 w-4 text-vazivo-warmMuted transition-transform",
                         userMenuOpen && "rotate-180"
                       )}
                     />
@@ -254,23 +254,23 @@ export default function Navbar() {
                         className="fixed inset-0 z-[9998]"
                         onClick={() => setUserMenuOpen(false)}
                       />
-                      <div className="absolute right-0 mt-2 w-[220px] rounded-2xl py-1.5 z-[9999] bg-white border border-neutral-200 shadow-lg">
+                      <div className="absolute right-0 mt-2 w-[220px] rounded-2xl py-1.5 z-[9999] bg-vazivo-white border border-vazivo-lightGray shadow-lg">
                         <div className="px-4 py-3 mb-1">
                           <div className="flex items-center gap-3">
                             <Avatar className="h-9 w-9 flex-shrink-0">
                               <AvatarImage src={user?.avatar_url} alt={user?.name} />
-                              <AvatarFallback className="text-xs font-semibold bg-primary-100 text-primary-700">
+                              <AvatarFallback className="text-xs font-semibold bg-vazivo-red/10 text-vazivo-red">
                                 {getInitials(user?.name || "U")}
                               </AvatarFallback>
-                              </Avatar>
-                              <div className="min-w-0">
-                                <p className="text-sm font-semibold text-neutral-900 truncate">{user?.name}</p>
-                                <p className="text-[11px] text-neutral-400 truncate">{user?.email}</p>
-                              </div>
+                            </Avatar>
+                            <div className="min-w-0">
+                              <p className="text-sm font-semibold text-vazivo-charcoal truncate">{user?.name}</p>
+                              <p className="text-[11px] text-vazivo-warmMuted truncate">{user?.email}</p>
+                            </div>
                             </div>
                           </div>
 
-                          <div className="h-px mx-3 mb-1.5 bg-neutral-200" />
+                          <div className="h-px mx-3 mb-1.5 bg-vazivo-lightGray" />
 
                           {[
                             { href: "/dashboard", icon: User, label: t("myAccount") },
@@ -289,10 +289,10 @@ export default function Navbar() {
                                 key={item.href}
                                 href={item.href}
                                 {...linkProps}
-                                className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors mx-1.5 "
+                                className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-vazivo-warmMuted hover:text-vazivo-charcoal hover:bg-vazivo-lightGray transition-colors mx-1.5 "
                                 onClick={() => setUserMenuOpen(false)}
                               >
-                                <Icon className="w-3.5 h-3.5 text-neutral-400 flex-shrink-0" />
+                                <Icon className="w-3.5 h-3.5 text-vazivo-warmMuted flex-shrink-0" />
                                 {item.label}
                               </Link>
                             );
@@ -300,15 +300,15 @@ export default function Navbar() {
 
                           {isProvider && publicPageUrl && (
                             <>
-                              <div className="h-px mx-3 my-1.5 bg-neutral-200" />
+                              <div className="h-px mx-3 my-1.5 bg-vazivo-lightGray" />
                               <Link
                                 href={publicPageUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors mx-1.5"
+                                className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-vazivo-warmMuted hover:text-vazivo-charcoal hover:bg-vazivo-lightGray transition-colors mx-1.5"
                                 onClick={() => setUserMenuOpen(false)}
                               >
-                                <svg className="w-3.5 h-3.5 text-neutral-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="w-3.5 h-3.5 text-vazivo-warmMuted flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>
                                 View Public Page
@@ -318,7 +318,7 @@ export default function Navbar() {
 
                           {isImpersonating && (
                             <>
-                              <div className="h-px mx-3 my-1.5 bg-neutral-200" />
+                              <div className="h-px mx-3 my-1.5 bg-vazivo-lightGray" />
                               <button
                                 type="button"
                                 onClick={() => { setUserMenuOpen(false); exitImpersonation(); }}
@@ -330,7 +330,7 @@ export default function Navbar() {
                             </>
                           )}
 
-                          <div className="h-px mx-3 my-1.5 bg-neutral-200" />
+                          <div className="h-px mx-3 my-1.5 bg-vazivo-lightGray" />
 
                           <button
                             onClick={() => { setUserMenuOpen(false); logout(); }}
@@ -349,13 +349,13 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-2 shrink-0">
                   <Link
                     href="/login"
-                    className="inline-flex items-center justify-center h-10 px-4 text-sm font-medium text-neutral-600 hover:text-neutral-900 rounded-lg border border-neutral-200 bg-white hover:border-neutral-300 hover:bg-neutral-50 transition-colors whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-10 px-4 text-sm font-medium text-vazivo-charcoal hover:text-vazivo-charcoal rounded-lg border border-vazivo-lightGray bg-vazivo-white hover:border-vazivo-charcoal/20 hover:bg-vazivo-lightGray transition-colors whitespace-nowrap"
                   >
                     {t("login")}
                   </Link>
                   <Link
                     href="/register/provider"
-                    className="inline-flex items-center justify-center h-10 px-4 text-sm font-semibold text-white rounded-lg bg-primary-500 hover:bg-primary-600 transition-colors shadow-sm whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-10 px-4 text-sm font-semibold text-vazivo-white rounded-lg bg-vazivo-red hover:bg-vazivo-redLight transition-colors shadow-sm whitespace-nowrap"
                   >
                     {t("forBusiness")}
                   </Link>
@@ -365,7 +365,7 @@ export default function Navbar() {
               {/* ── Hamburger ── */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors touch-manipulation"
+                className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-vazivo-charcoal hover:bg-vazivo-lightGray transition-colors touch-manipulation"
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -385,13 +385,13 @@ export default function Navbar() {
           />
           
           {/* Drawer */}
-          <div className="fixed top-0 right-0 bottom-0 w-[280px] bg-white z-[9999] md:hidden shadow-2xl overflow-y-auto">
+          <div className="fixed top-0 right-0 bottom-0 w-[280px] bg-vazivo-white z-[9999] md:hidden shadow-2xl overflow-y-auto">
               {/* Header */}
-              <div className="flex items-center justify-between px-4 py-4 border-b border-neutral-200">
+              <div className="flex items-center justify-between px-4 py-4 border-b border-vazivo-lightGray">
                 <Logo href="/" variant="icon" size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors touch-manipulation"
+                  className="p-2 rounded-lg text-vazivo-charcoal hover:bg-vazivo-lightGray transition-colors touch-manipulation"
                   aria-label="Close menu"
                 >
                   <X className="h-5 w-5" />
@@ -409,8 +409,8 @@ export default function Navbar() {
                       className={cn(
                         "flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg transition-colors touch-manipulation",
                         isActive
-                          ? "text-neutral-900 bg-primary-50"
-                          : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
+                          ? "text-vazivo-charcoal bg-vazivo-red/10"
+                          : "text-vazivo-warmMuted hover:text-vazivo-charcoal hover:bg-vazivo-lightGray"
                       )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -422,7 +422,7 @@ export default function Navbar() {
               </div>
 
               {/* Auth Section */}
-              <div className="px-4 pb-6 pt-4 border-t border-neutral-200 mt-auto">
+              <div className="px-4 pb-6 pt-4 border-t border-vazivo-lightGray mt-auto">
                 {isAuthenticated ? (
                   <button
                     onClick={() => { setMobileMenuOpen(false); logout(); }}
@@ -435,12 +435,12 @@ export default function Navbar() {
                 ) : (
                   <div className="space-y-3">
                     <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                      <button className="w-full py-3.5 text-sm font-medium text-neutral-700 bg-white border-2 border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors touch-manipulation">
+                      <button className="w-full py-3.5 text-sm font-medium text-vazivo-charcoal bg-vazivo-white border-2 border-vazivo-lightGray rounded-xl hover:bg-vazivo-lightGray transition-colors touch-manipulation">
                         {t("login")}
                       </button>
                     </Link>
                     <Link href="/register/provider" onClick={() => setMobileMenuOpen(false)}>
-                      <button className="w-full py-3.5 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 transition-all shadow-md touch-manipulation">
+                      <button className="w-full py-3.5 text-sm font-semibold text-vazivo-white rounded-xl bg-vazivo-red hover:bg-vazivo-redLight transition-all shadow-md touch-manipulation">
                         {t("forBusiness")}
                       </button>
                     </Link>

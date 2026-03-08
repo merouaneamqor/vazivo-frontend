@@ -76,10 +76,9 @@
     background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #fafafa 100%);
   }
 
-  /* Nav bar — matches home hero/sections: same gradient tint + glass, neutral border */
+  /* Nav bar — Vazivo brand: white background, light gray border */
   .nav-bar {
-    @apply border-b border-neutral-200;
-    background: linear-gradient(180deg, rgba(250, 245, 255, 0.97) 0%, rgba(255, 255, 255, 0.95) 100%);
+    @apply border-b border-vazivo-lightGray bg-vazivo-white;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 12px rgba(0, 0, 0, 0.04);

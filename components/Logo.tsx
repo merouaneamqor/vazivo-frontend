@@ -26,7 +26,7 @@ export function Logo({
 }: LogoProps) {
   const s = sizes[size];
 
-  const textColor = light ? "text-white" : "text-neutral-900";
+  const textColor = light ? "text-white" : "text-vazivo-charcoal";
   const gradientId = `vazivo-logo-grad-${size}-${light ? "light" : "dark"}`;
 
   const icon = (
@@ -34,7 +34,7 @@ export function Logo({
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="100" y2="100">
           <stop offset="0%" stopColor="#9D0208" />
-          <stop offset="100%" stopColor="#E85D04" />
+          <stop offset="100%" stopColor="#A81F24" />
         </linearGradient>
       </defs>
 
