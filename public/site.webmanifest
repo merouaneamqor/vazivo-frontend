@@ -1,0 +1,26 @@
+{
+  "name": "OllaZen",
+  "short_name": "OllaZen",
+  "description": "Réservation en ligne pour salons de coiffure, barbershops, spas et hammams au Maroc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5c7c",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-app-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["beauty", "lifestyle", "health"],
+  "lang": "fr",
+  "dir": "ltr"
+}

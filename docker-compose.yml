@@ -1,0 +1,28 @@
+# Source is mounted: edit files on host, changes sync without rebuild. Rebuild only for package.json changes.
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend_app
+    # Allow container to reach host machine (for backend on localhost:3000)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      # API_URL: used by Next.js server to reach API from inside container
+      # host.docker.internal reaches the host machine where backend port 3000 is exposed
+      API_URL: ${API_URL:-http://host.docker.internal:3000/api/v1}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3000/api/v1}
+      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-BookingPlatform}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3001}
+      # Poll for file changes so hot reload works with Docker bind mount
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3001:3001"
+    command: npm run dev

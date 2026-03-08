@@ -1,0 +1,287 @@
+/* Google Calendar Premium Styles */
+
+.google-calendar-view {
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Tablet-first: comfortable height for agenda */
+@media (min-width: 640px) {
+  .google-calendar-view {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .google-calendar-view {
+    min-height: 600px;
+  }
+}
+
+/* FullCalendar Customization */
+.google-calendar-view .fc {
+  font-family: inherit;
+}
+
+/* Toolbar */
+.google-calendar-view .fc-toolbar {
+  display: none;
+}
+
+/* Header */
+.google-calendar-view .fc-col-header {
+  background: #fafafa;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.google-calendar-view .fc-col-header-cell {
+  padding: 12px 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #404040;
+}
+
+.google-calendar-view .fc-col-header-cell-cushion {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Time Grid */
+.google-calendar-view .fc-timegrid-slot {
+  height: 48px;
+  border-color: #f5f5f5;
+}
+
+.google-calendar-view .fc-timegrid-slot-label {
+  font-size: 0.75rem;
+  color: #737373;
+  padding-right: 8px;
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+/* Grid Lines */
+.google-calendar-view .fc-timegrid-divider {
+  display: none;
+}
+
+.google-calendar-view .fc-scrollgrid {
+  border-color: #e5e5e5;
+}
+
+.google-calendar-view .fc-scrollgrid td,
+.google-calendar-view .fc-scrollgrid th {
+  border-color: #f5f5f5;
+}
+
+/* Events */
+.google-calendar-view .fc-event {
+  border-radius: 6px;
+  border-width: 0;
+  border-left-width: 4px;
+  padding: 4px 6px;
+  margin: 1px 2px;
+  font-size: 0.8125rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.google-calendar-view .fc-event:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01);
+  z-index: 10;
+}
+
+.google-calendar-view .fc-event-main {
+  color: white;
+}
+
+.google-calendar-view .fc-event-title {
+  font-weight: 500;
+}
+
+/* Now Indicator */
+.google-calendar-view .fc-timegrid-now-indicator-line {
+  border-color: #ef4444;
+  border-width: 2px;
+}
+
+.google-calendar-view .fc-timegrid-now-indicator-arrow {
+  border-color: #ef4444;
+  border-width: 6px;
+}
+
+/* Day Grid (Month View) */
+.google-calendar-view .fc-daygrid-day {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.google-calendar-view .fc-daygrid-day:hover {
+  background-color: #fafafa;
+}
+
+.google-calendar-view .fc-daygrid-day-number {
+  padding: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #404040;
+}
+
+.google-calendar-view .fc-daygrid-day.fc-day-today {
+  background-color: #fef3c7;
+}
+
+.google-calendar-view .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-calendar-view .fc-daygrid-event {
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: 1px 2px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* List View - tablet first: comfortable padding and touch targets */
+.google-calendar-view .fc-list {
+  border-color: #e5e5e5;
+}
+
+.google-calendar-view .fc-list-day-cushion {
+  background-color: #fafafa;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #404040;
+}
+
+.google-calendar-view .fc-list-event {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-height: 48px; /* touch target */
+}
+
+.google-calendar-view .fc-list-event:hover {
+  background-color: #fafafa;
+}
+
+.google-calendar-view .fc-list-event-time {
+  font-size: 0.8125rem;
+  color: #737373;
+  padding: 12px 16px;
+  min-width: 4.5rem;
+}
+
+.google-calendar-view .fc-list-event-title {
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+}
+
+/* Scrollbar */
+.google-calendar-view .fc-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.google-calendar-view .fc-scroller::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.google-calendar-view .fc-scroller::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+.google-calendar-view .fc-scroller::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* Selection */
+.google-calendar-view .fc-highlight {
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 2px dashed #8b5cf6;
+}
+
+/* Responsive - mobile: compact but still touch-friendly */
+@media (max-width: 639px) {
+  .google-calendar-view {
+    min-height: 380px;
+  }
+
+  .google-calendar-view .fc-timegrid-slot {
+    height: 36px;
+  }
+
+  .google-calendar-view .fc-event {
+    font-size: 0.7rem;
+    padding: 2px 3px;
+    margin: 0 1px;
+    border-left-width: 3px;
+  }
+
+  .google-calendar-view .fc-col-header-cell {
+    padding: 6px 2px;
+    font-size: 0.7rem;
+  }
+
+  .google-calendar-view .fc-timegrid-slot-label {
+    font-size: 0.65rem;
+    padding-right: 4px;
+  }
+
+  /* Touch targets */
+  .google-calendar-view .fc-event {
+    min-height: 28px;
+  }
+
+  .google-calendar-view .fc-timeGridDay-view .fc-timegrid-slot {
+    height: 44px;
+  }
+
+  /* Agenda list: compact but tap-friendly */
+  .google-calendar-view .fc-list-event {
+    min-height: 44px;
+  }
+
+  .google-calendar-view .fc-list-event-time,
+  .google-calendar-view .fc-list-event-title {
+    padding: 10px 12px;
+    font-size: 0.875rem;
+  }
+
+  .google-calendar-view .fc-list-day-cushion {
+    padding: 10px 12px;
+    font-size: 0.8125rem;
+  }
+
+  .google-calendar-view .fc-daygrid-day-number {
+    padding: 4px;
+    font-size: 0.75rem;
+  }
+
+  .google-calendar-view .fc-daygrid-event {
+    font-size: 0.7rem;
+    padding: 1px 3px;
+  }
+
+  .google-calendar-view .fc-timeGridWeek-view .fc-col-header-cell {
+    font-size: 0.65rem;
+    padding: 4px 1px;
+  }
+
+  .google-calendar-view .fc-timeGridWeek-view .fc-timegrid-slot {
+    height: 32px;
+  }
+}
