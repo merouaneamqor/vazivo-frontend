@@ -35,7 +35,7 @@ const SearchMapView = dynamic(() => import("@/components/SearchMapView"), {
 import { Button } from "@/components/ui/button";
 import { Pagination } from "@/components/admin/Pagination";
 import { getPaginationSeries } from "@/lib/paginationSeries";
-import { cn, cityNameToSlug } from "@/lib/utils";
+import { cn, cityNameToSlug, getBusinessPath } from "@/lib/utils";
 import { unslugify } from "@/lib/seo-meta";
 import { getCityCenter } from "@/lib/city-coordinates";
 import { useSearchFilters, type City } from "@/hooks/useSearchMetadata";
@@ -829,7 +829,7 @@ export default function SearchPageContent() {
                               reviewCount={business.total_reviews}
                               imageUrl={imageUrl}
                               priceRange={business.price_range ?? undefined}
-                              slug={`/business/${business.slug}`}
+                              slug={getBusinessPath({ city: business.city, category: business.category, slug: business.slug })}
                             />
                           </div>
                         );

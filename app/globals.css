@@ -10,13 +10,13 @@
     --card-foreground: 0 0% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 4%;
-    --primary: 263 91% 66%;
+    --primary: 357 97% 31%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 4%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
-    --accent: 292 84% 61%;
+    --accent: 357 97% 31%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -25,7 +25,7 @@
     --info: 217 91% 60%;
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 263 91% 66%;
+    --ring: 357 97% 31%;
     --radius: 0.75rem;
     /* Editorial nav: warm cream/stone (navbar only) */
     --nav-cream: 253 251 248;
@@ -69,11 +69,11 @@
   }
 
   .bg-gradient-warm {
-    @apply bg-gradient-to-br from-primary-50 via-accent-50 to-rose-50;
+    @apply bg-gradient-to-br from-primary-50 via-primary-100 to-rose-50;
   }
 
   .bg-gradient-hero {
-    background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #fafafa 100%);
+    background: linear-gradient(135deg, #FEE2E2 0%, #fafafa 50%, #fafafa 100%);
   }
 
   /* Nav bar — Vazivo brand: white background, light gray border */
@@ -209,9 +209,8 @@
   @apply bg-neutral-400;
 }
 
-/* Focus visible styles */
 :focus-visible {
-  @apply outline-2 outline-primary-500 outline-offset-2;
+  @apply outline-2 outline-vazivo-red outline-offset-2;
 }
 
 /* FullCalendar provider dashboard */

@@ -71,7 +71,7 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 ### Viewport Optimization
 ```tsx
 viewport: {
-  themeColor: "#ff5c7c",
+  themeColor: "#9D0208",
   width: "device-width",
   initialScale: 1,
   userScalable: "yes" // Allow user zoom

@@ -159,56 +159,69 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="pt-3 pb-1">
-          <ol className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
-            <li>
-              <Link href="/" className="hover:text-foreground hover:underline">
-                {t("home")}
-              </Link>
-            </li>
-            <li aria-hidden className="select-none">
-              /
-            </li>
-            <li>
-              <Link
-                href={
-                  getBusinessCityDisplay(business.city)
-                    ? `/search/${cityNameToSlug(getBusinessCityDisplay(business.city))}`
-                    : "/search"
-                }
-                className="hover:text-foreground hover:underline"
-              >
-                {getBusinessCityDisplay(business.city) || t("search")}
-              </Link>
-            </li>
-            <li aria-hidden className="select-none">
-              /
-            </li>
-            <li>
-              <Link
-                href={getSearchPath(
-                  getBusinessCityDisplay(business.city) || null,
-                  getBusinessCategoryDisplay(business.category) || null
-                )}
-                className="hover:text-foreground hover:underline"
-              >
-                {getBusinessCategoryDisplay(business.category) || t("category")}
-              </Link>
-            </li>
-            <li aria-hidden className="select-none">
-              /
-            </li>
-            <li>
-              <span className="font-medium text-foreground" aria-current="page">
-                {business.name}
-              </span>
-            </li>
-          </ol>
-        </nav>
+      {/* ─── Red hero strip (same as search page) ─── */}
+      <div className="z-30 bg-vazivo-red shadow-md">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 pb-5 sm:pb-6">
+          {/* Breadcrumb: minimal, white on red */}
+          <nav aria-label="Breadcrumb" className="mb-3 sm:mb-4">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/90">
+              <li>
+                <Link href="/" className="hover:text-white transition-colors">
+                  Accueil
+                </Link>
+              </li>
+              <li aria-hidden className="select-none">/</li>
+              <li>
+                <Link href={getSearchPath(null, null)} className="hover:text-white transition-colors">
+                  Recherche
+                </Link>
+              </li>
+              {getBusinessCategoryDisplay(business.category) && (
+                <>
+                  <li aria-hidden className="select-none">/</li>
+                  <li>
+                    <Link
+                      href={getSearchPath(
+                        getBusinessCityDisplay(business.city) || null,
+                        getBusinessCategoryDisplay(business.category) || null
+                      )}
+                      className="hover:text-white transition-colors"
+                    >
+                      {getBusinessCategoryDisplay(business.category)}
+                    </Link>
+                  </li>
+                </>
+              )}
+              {getBusinessCityDisplay(business.city) && (
+                <>
+                  <li aria-hidden className="select-none">/</li>
+                  <li>
+                    <Link
+                      href={getSearchPath(
+                        getBusinessCityDisplay(business.city) || null,
+                        getBusinessCategoryDisplay(business.category) || null
+                      )}
+                      className="hover:text-white transition-colors"
+                    >
+                      {getBusinessCityDisplay(business.city)}
+                    </Link>
+                  </li>
+                </>
+              )}
+              <li aria-hidden className="select-none">/</li>
+              <li>
+                <span className="font-medium text-white" aria-current="page">
+                  {business.name}
+                </span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
 
-        <main className="px-3 md:px-4">
+      {/* ─── Page content (same max-w and padding as search) ─── */}
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <main className="px-0">
           {/* ── Header ── */}
           <header className="pt-4 pb-4">
             {/* Row 1: Category + action icons */}
@@ -237,7 +250,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                         credentials: "include",
                       }).catch(() => {});
                     }}
-                    className="inline-flex items-center justify-center h-9 w-9 rounded-lg border border-neutral-200 hover:bg-neutral-50 transition-colors"
+                    className="inline-flex items-center justify-center h-9 w-9 rounded-lg border border-vazivo-lightGray hover:border-vazivo-red/50 hover:bg-neutral-50 transition-colors"
                     aria-label="Navigate with Waze"
                   >
                     <Navigation className="h-4 w-4 text-neutral-600" />
@@ -263,7 +276,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                   </Avatar>
                 )}
                 <div className="flex-1 min-w-0">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-foreground leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-vazivo-charcoal leading-tight">
                     {business.name}
                   </h1>
 
@@ -281,13 +294,13 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                             <button
                               onClick={() => setShowMapDropdown(!showMapDropdown)}
                               onBlur={() => setTimeout(() => setShowMapDropdown(false), 200)}
-                              className="inline-flex items-center gap-1 text-primary hover:text-primary-600 font-medium"
+                              className="inline-flex items-center gap-1 text-vazivo-red hover:text-vazivo-redLight font-medium"
                             >
                               {t("showMap")}
                               <ChevronDown className="h-3 w-3" />
                             </button>
                             {showMapDropdown && (
-                              <div className="absolute left-0 top-full mt-1 w-40 bg-white rounded-xl shadow-lg border border-neutral-200 py-1 z-10">
+                              <div className="absolute left-0 top-full mt-1 w-40 bg-white rounded-xl shadow-lg border border-vazivo-lightGray py-1 z-10">
                                 {mapUrl && (
                                   <a
                                     href={mapUrl}
@@ -334,7 +347,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                     {/* Rating */}
                     <div className="flex items-center gap-1">
                       <RatingStars rating={Number(business.average_rating) || 0} size="sm" />
-                      <span className="text-xs md:text-sm text-muted-foreground">
+                      <span className="text-xs md:text-sm text-vazivo-warmMuted">
                         {(Number(business.average_rating) || 0).toFixed(1)} ({t("reviewsCount", { count: business.total_reviews || 0 })})
                       </span>
                     </div>
@@ -347,7 +360,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                 {isPremium && (
                   <Button
                     size="default"
-                    className="h-10 rounded-xl px-6 text-base font-semibold flex-1 lg:flex-none bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                    className="h-10 rounded-xl px-6 text-base font-semibold flex-1 lg:flex-none bg-vazivo-red hover:bg-vazivo-redLight text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                     onClick={() => {
                       document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
@@ -360,7 +373,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                 <Button
                   variant="outline"
                   size="default"
-                  className="h-10 px-4 rounded-lg text-sm border border-neutral-200 text-neutral-500 hover:text-foreground flex-1 lg:flex-none"
+                  className="h-10 px-4 rounded-lg text-sm border border-vazivo-lightGray text-vazivo-warmMuted hover:text-vazivo-charcoal flex-1 lg:flex-none"
                   onClick={() => setShowClaimModal(true)}
                   aria-label={t("claimButton")}
                 >
@@ -415,9 +428,9 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
             )}
             {/* Non-Premium Message */}
             {!isPremium && (
-                  <div className="mt-3 mb-4 p-3 md:p-4 bg-primary-50 border border-primary-200 rounded-xl">
+                  <div className="mt-3 mb-4 p-3 md:p-4 bg-vazivo-red/10 border border-vazivo-red/20 rounded-xl">
                     <div className="flex items-start gap-2.5">
-                      <AlertCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <AlertCircle className="h-5 w-5 text-vazivo-red flex-shrink-0 mt-0.5" />
                       <div className="flex-1">
                         <p className="text-xs md:text-sm text-neutral-700 leading-relaxed">
                           {t("contactDirectlyMessage")}
@@ -435,7 +448,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                               }
                               setShowPhoneModal(true);
                             }}
-                            className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors text-sm font-medium animate-pulse hover:animate-none"
+                            className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-vazivo-red text-white rounded-lg hover:bg-vazivo-redLight transition-colors text-sm font-medium animate-pulse hover:animate-none"
                             aria-label={t("callAria")}
                           >
                             <Phone className="h-4 w-4" />
@@ -450,7 +463,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
             {/* Location — map preview card */}
             <section aria-labelledby="location-heading" id="location">
               <header className="mb-4">
-                <h2 id="location-heading" className="text-2xl font-semibold text-foreground tracking-tight">
+                <h2 id="location-heading" className="text-2xl font-semibold text-vazivo-charcoal tracking-tight">
                   {t("location")}
                 </h2>
               </header>
@@ -464,8 +477,8 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
 
             {/* Team (only if staff present and premium) */}
             {isPremium && Array.isArray(business.staff) && business.staff.length > 0 && (
-              <section className=" border border-neutral-200 bg-white rounded-xl p-4 md:p-6 shadow-sm" aria-labelledby="team-heading">
-                <h2 id="team-heading" className="text-2xl font-semibold text-foreground tracking-tight mb-4">
+              <section className="border border-neutral-200/80 bg-white rounded-2xl p-4 md:p-6 shadow-md" aria-labelledby="team-heading">
+                <h2 id="team-heading" className="text-2xl font-semibold text-vazivo-charcoal tracking-tight mb-4">
                   {t("team")}
                 </h2>
                 <ul className="list-none p-0 m-0 flex flex-wrap gap-4" role="list">
@@ -477,7 +490,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                         ) : null}
                         <AvatarFallback className="text-sm">{getInitials(member.name)}</AvatarFallback>
                       </Avatar>
-                      <span className="text-sm font-medium text-foreground">{member.name}</span>
+                      <span className="text-sm font-medium text-vazivo-charcoal">{member.name}</span>
                     </li>
                   ))}
                 </ul>
@@ -486,8 +499,8 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
 
             {/* Reviews — premium only */}
             {isPremium && (
-            <section className=" border border-neutral-200 bg-white rounded-xl p-4 md:p-6 shadow-sm" aria-labelledby="reviews-heading">
-              <h2 id="reviews-heading" className="text-2xl font-semibold text-foreground tracking-tight mb-4">
+            <section className="border border-neutral-200/80 bg-white rounded-2xl p-4 md:p-6 shadow-md" aria-labelledby="reviews-heading">
+              <h2 id="reviews-heading" className="text-2xl font-semibold text-vazivo-charcoal tracking-tight mb-4">
                 {t("reviews")}
               </h2>
               
@@ -515,7 +528,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-vazivo-warmMuted">
                   {t("noReviewsYet")}
                 </p>
               )}
@@ -523,19 +536,19 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
             )}
 
             {/* About */}
-            <section className=" border border-neutral-200 bg-white rounded-xl p-4 md:p-6 shadow-sm" aria-labelledby="about-heading">
-              <h2 id="about-heading" className="text-2xl font-semibold text-foreground tracking-tight mb-4">
+            <section className="border border-neutral-200/80 bg-white rounded-2xl p-4 md:p-6 shadow-md" aria-labelledby="about-heading">
+              <h2 id="about-heading" className="text-2xl font-semibold text-vazivo-charcoal tracking-tight mb-4">
                 {t("about")}
               </h2>
-              <p className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
+              <p className="text-sm text-vazivo-warmMuted whitespace-pre-line leading-relaxed">
                 {business.description || t("noDescription")}
               </p>
             </section>
 
             {/* Categories - Premium only */}
             {isPremium && (
-              <section className=" border border-neutral-200 bg-white rounded-xl p-4 md:p-6 shadow-sm" aria-labelledby="categories-heading">
-                <h2 id="categories-heading" className="text-2xl font-semibold text-foreground tracking-tight mb-4">
+              <section className="border border-neutral-200/80 bg-white rounded-2xl p-4 md:p-6 shadow-md" aria-labelledby="categories-heading">
+                <h2 id="categories-heading" className="text-2xl font-semibold text-vazivo-charcoal tracking-tight mb-4">
                   {t("inThisEstablishment")}
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -564,21 +577,21 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
               <SimilarBusinesses category={getBusinessCategoryDisplay(business.category)} city={getBusinessCityDisplay(business.city)} currentBusinessId={business.id} />
             )}
 
-            <div className=" border border-neutral-200 bg-white rounded-xl p-4 md:p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-foreground mb-3">{t("overallRating")}</h3>
+            <div className="border border-neutral-200/80 bg-white rounded-2xl p-4 md:p-6 shadow-md">
+              <h3 className="text-lg font-semibold text-vazivo-charcoal mb-3">{t("overallRating")}</h3>
               <div className="flex items-center gap-3 mb-1.5">
-                <span className="text-2xl md:text-3xl font-bold text-foreground tabular-nums">
+                <span className="text-2xl md:text-3xl font-bold text-vazivo-charcoal tabular-nums">
                   {(Number(business.average_rating) || 0).toFixed(1)}
                 </span>
                 <RatingStars rating={Number(business.average_rating) || 0} size="md" />
               </div>
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-sm text-vazivo-warmMuted mb-3">
                 {t("reviewsCount", { count: business.total_reviews || 0 })}
               </p>
               {business.total_reviews > 0 && business.rating_breakdown ? (
                 <RatingBreakdown reviews={business.reviews || []} />
               ) : (
-                <p className="text-sm text-muted-foreground">{t("noReviewsYet")}</p>
+                <p className="text-sm text-vazivo-warmMuted">{t("noReviewsYet")}</p>
               )}
             </div>
           </aside>
@@ -602,33 +615,33 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-semibold text-vazivo-charcoal">
                 {t("call")}
               </h2>
               <button
                 type="button"
                 onClick={() => setShowPhoneModal(false)}
-                className="p-2 rounded-lg hover:bg-neutral-100 text-muted-foreground"
+                className="p-2 rounded-lg hover:bg-neutral-100 text-vazivo-warmMuted"
                 aria-label={tCommon("close")}
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
             <div className="text-center py-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-full mb-4">
-                <Phone className="h-8 w-8 text-primary-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-vazivo-red/10 rounded-full mb-4">
+                <Phone className="h-8 w-8 text-vazivo-red" />
               </div>
               <p className="text-sm text-neutral-600 mb-2">{business.name}</p>
               <a
                 href={`tel:${business.phone}`}
-                className="text-2xl md:text-3xl font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                className="text-2xl md:text-3xl font-semibold text-vazivo-red hover:text-vazivo-redLight transition-colors"
               >
                 {business.phone}
               </a>
             </div>
             <Button
               size="lg"
-              className="w-full "
+              className="w-full bg-vazivo-red hover:bg-vazivo-redLight text-white"
               asChild
             >
               <a href={`tel:${business.phone}`}>
@@ -654,24 +667,24 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-4">
-              <h2 id="claim-modal-title" className="text-xl font-semibold text-foreground">
+              <h2 id="claim-modal-title" className="text-xl font-semibold text-vazivo-charcoal">
                 {t("claimModalTitle")}
               </h2>
               <button
                 type="button"
                 onClick={() => setShowClaimModal(false)}
-                className="p-2 rounded-lg hover:bg-neutral-100 text-muted-foreground"
+                className="p-2 rounded-lg hover:bg-neutral-100 text-vazivo-warmMuted"
                 aria-label={tCommon("close")}
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-vazivo-warmMuted mb-4">
               {t("claimModalDescription", { name: business.name })}
             </p>
             <form onSubmit={handleClaimSubmit} className="space-y-4">
               <div>
-                <label htmlFor="claim-name" className="block text-sm font-medium text-foreground mb-1.5">
+                <label htmlFor="claim-name" className="block text-sm font-medium text-vazivo-charcoal mb-1.5">
                   {t("claimName")}
                 </label>
                 <Input
@@ -685,7 +698,7 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                 />
               </div>
               <div>
-                <label htmlFor="claim-email" className="block text-sm font-medium text-foreground mb-1.5">
+                <label htmlFor="claim-email" className="block text-sm font-medium text-vazivo-charcoal mb-1.5">
                   {t("claimEmail")}
                 </label>
                 <Input
@@ -699,8 +712,8 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                 />
               </div>
               <div>
-                <label htmlFor="claim-message" className="block text-sm font-medium text-foreground mb-1.5">
-                  {t("claimMessage")} <span className="text-muted-foreground font-normal">{t("claimMessageOptional")}</span>
+                <label htmlFor="claim-message" className="block text-sm font-medium text-vazivo-charcoal mb-1.5">
+                  {t("claimMessage")} <span className="text-vazivo-warmMuted font-normal">{t("claimMessageOptional")}</span>
                 </label>
                 <textarea
                   id="claim-message"
@@ -708,19 +721,19 @@ export function BusinessPageContent({ slug, initialData }: BusinessPageContentPr
                   placeholder={t("claimMessagePlaceholder")}
                   value={claimForm.message}
                   onChange={(e) => setClaimForm((f) => ({ ...f, message: e.target.value }))}
-                  className="w-full  border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full  border border-vazivo-lightGray px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-vazivo-red focus:border-transparent"
                 />
               </div>
               <div className="flex gap-3 pt-2">
                 <Button
                   type="button"
                   variant="outline"
-                  className=" flex-1"
+                  className="flex-1 border-vazivo-lightGray hover:border-vazivo-red/50 hover:bg-neutral-50"
                   onClick={() => setShowClaimModal(false)}
                 >
                   {tCommon("cancel")}
                 </Button>
-                <Button type="submit" className=" flex-1" disabled={claimSubmitting}>
+                <Button type="submit" className="flex-1 bg-vazivo-red hover:bg-vazivo-redLight text-white" disabled={claimSubmitting}>
                   {claimSubmitting ? t("claimSending") : t("claimSubmit")}
                 </Button>
               </div>
@@ -744,7 +757,7 @@ function RatingBreakdown({ reviews }: { reviews: Review[] }) {
     <div className="space-y-1.5">
       {breakdown.map(({ rating, count, percentage }) => (
         <div key={rating} className="flex items-center gap-2 text-sm">
-          <span className="w-3 text-muted-foreground">{rating}</span>
+          <span className="w-3 text-vazivo-warmMuted">{rating}</span>
           <Star className="h-3 w-3 text-amber-400 fill-amber-400 shrink-0" />
           <div className="flex-1 h-2 bg-neutral-100 rounded-full overflow-hidden">
             <div
@@ -752,7 +765,7 @@ function RatingBreakdown({ reviews }: { reviews: Review[] }) {
               style={{ width: `${percentage}%` }}
             />
           </div>
-          <span className="w-8 text-muted-foreground text-right">{count}</span>
+          <span className="w-8 text-vazivo-warmMuted text-right">{count}</span>
         </div>
       ))}
     </div>
